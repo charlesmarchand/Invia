@@ -1,0 +1,2 @@
+class Studie < ApplicationRecord
+end
