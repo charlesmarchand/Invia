@@ -2,7 +2,7 @@ class CreateProfessionals < ActiveRecord::Migration[5.2]
   def change
     create_table :professionals do |t|
       t.string :name
-      t.string :job
+      t.string :current_job
       t.string :school
       t.string :linkedin_link
 
