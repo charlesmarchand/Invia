@@ -1,0 +1,38 @@
+.popup {
+  /* Fenêtre du popup */
+  position: relative;
+  width: 50%;
+  height: 700px;
+  margin: auto auto;
+
+  background: white;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+
+.popup-container {
+  padding: 3em 3em;
+}
+
+.popup-image {
+  height: 175px;
+  border-radius: 3px;
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.popup-titre {
+  position: absolute;
+  top: 175px;
+  color: $purple-invia;
+  text-transform: uppercase;
+}
+
+.popup-description {
+  position: absolute;
+  top: 250px;
+  color: $grey-invia;
+}
+
