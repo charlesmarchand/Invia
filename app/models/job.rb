@@ -1,6 +1,10 @@
 class Job < ApplicationRecord
-  validates :name :description, presence: true
+  validates :name :description :category, presence: true
   validates :name, uniqueness: true
-  has_and_belongs_to_many :keywords, :studies
+
+  belongs_to :category
+
   has_many :profesionnals
+
+  has_and_belongs_to_many :keywords, :studies
 end
