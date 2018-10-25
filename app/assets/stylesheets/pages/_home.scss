@@ -1,4 +1,29 @@
 // Specific CSS for your home-page
-.ctaButton{
+.ctaButton {
   margin: -35px auto;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.card {
+
+
+}
+
+.card-title {
+  font-size: 15px;
+  color: $purple-invia;
+}
+.card-title h3 {
+  font-size: 15px;
+}
+
+.card-description {
+  color: $grey-invia;
+  font-size: 10px;
+}
+
