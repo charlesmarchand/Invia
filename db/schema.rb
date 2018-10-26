@@ -10,10 +10,98 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_121852) do
+ActiveRecord::Schema.define(version: 2018_10_26_120328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diplomas", force: :cascade do |t|
+    t.string "name"
+    t.integer "length"
+    t.integer "cost"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diplomas_schools", id: false, force: :cascade do |t|
+    t.bigint "school_id", null: false
+    t.bigint "diploma_id", null: false
+  end
+
+  create_table "diplomas_studies", id: false, force: :cascade do |t|
+    t.bigint "study_id", null: false
+    t.bigint "diploma_id", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_jobs_on_category_id"
+  end
+
+  create_table "jobs_keywords", id: false, force: :cascade do |t|
+    t.bigint "keyword_id", null: false
+    t.bigint "job_id", null: false
+  end
+
+  create_table "jobs_studies", id: false, force: :cascade do |t|
+    t.bigint "study_id", null: false
+    t.bigint "job_id", null: false
+  end
+
+  create_table "keywords", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professionals", force: :cascade do |t|
+    t.string "name"
+    t.string "school"
+    t.string "linkedin_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "job_id"
+    t.index ["job_id"], name: "index_professionals_on_job_id"
+  end
+
+  create_table "profile_saved_infos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "job_id"
+    t.bigint "study_id"
+    t.bigint "diploma_id"
+    t.bigint "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diploma_id"], name: "index_profile_saved_infos_on_diploma_id"
+    t.index ["job_id"], name: "index_profile_saved_infos_on_job_id"
+    t.index ["school_id"], name: "index_profile_saved_infos_on_school_id"
+    t.index ["study_id"], name: "index_profile_saved_infos_on_study_id"
+    t.index ["user_id"], name: "index_profile_saved_infos_on_user_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "localisation"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "studies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +115,10 @@ ActiveRecord::Schema.define(version: 2018_10_24_121852) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "professionals", "jobs"
+  add_foreign_key "profile_saved_infos", "diplomas"
+  add_foreign_key "profile_saved_infos", "jobs"
+  add_foreign_key "profile_saved_infos", "schools"
+  add_foreign_key "profile_saved_infos", "studies"
+  add_foreign_key "profile_saved_infos", "users"
 end
