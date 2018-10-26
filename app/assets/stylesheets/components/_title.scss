@@ -1,0 +1,22 @@
+.title {
+  color: $purple-invia;
+  text-align:center;
+}
+
+.title:before, .title:after {
+  content:'';
+  width:100%;
+  border-bottom: $purple-invia solid;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.title:before {
+  margin-left:-100%;
+  margin-right:0.5em
+}
+
+.title:after {
+  margin-right:-100%;
+  margin-left:0.5em;
+}

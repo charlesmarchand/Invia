@@ -2,7 +2,7 @@
 .container-content {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 10%;
   flex-wrap: wrap;
 }
 
@@ -40,3 +40,37 @@
   text-align: justify;
   text-justify: inter-word;
 }
+
+
+.functions-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  flex-wrap: wrap;
+  & .one-function {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $purple-invia;
+    width: 250px;
+    & .description {
+      color: $grey-invia;
+      font-weight: lighter;
+      font-size: 17px;
+    }
+    & h3 {
+      font-size: 22px;
+    }
+    & i {
+       font-size: 54px;
+    }
+  }
+}
+
+.different-background {
+  background-color: white;
+}
+
+
+
