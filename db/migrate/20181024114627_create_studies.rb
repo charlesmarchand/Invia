@@ -5,7 +5,6 @@ class CreateStudies < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :length
       t.integer :difficulty
-
       t.timestamps
     end
   end
