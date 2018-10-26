@@ -4,8 +4,9 @@
   height: 60vh;
   background-size: cover !important;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
 }
 
 .banner h1 {
@@ -22,8 +23,8 @@
   margin-bottom: 30px;
 }
 
-.banner a {
-  position: absolute;
-  margin-left: -150px;
-  margin-top: 150px;
+
+.banner .ctaButton {
+  margin-bottom: -1.5em;
+  margin-top: 7em;
 }
