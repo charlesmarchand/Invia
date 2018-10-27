@@ -17,17 +17,20 @@
 .img-vertical {
   width: 10em;
   margin-left: 1em;
-  margin-top: 1em;
+  margin-top: 0em;
   border-radius: 2px;
   text-align: center;
+}
+
+.heart {
+  color: $purple-invia;
+  margin-left: 11.5em;
 }
 .card-vertical-category {
   font-size: 15px;
   text-transform: uppercase;
 }
-.card-vertical-description {
 
-}
 .card-vertical-category h2 {
   margin-left: 1.1em;
   letter-spacing: 1px;
@@ -42,7 +45,7 @@
   opacity: 0.6;
   font-size: 12px;
   text-align: justify;
-  padding: 0.5em 1.5em;
+  padding: 0.5em 1.5em 0em 1.5em;
   margin-bottom: 0em;
 }
 
@@ -76,6 +79,6 @@
 }
 
 .down {
-  margin-top: 2.2em;
+  margin-top: 1.7em;
   font-size: 12px;
 }

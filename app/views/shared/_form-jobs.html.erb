@@ -1,0 +1,17 @@
+
+<div id="formjobs" class="container-form">
+
+  <div class="form">
+    <%= simple_form_for @job do |f| %>
+    <div class="cell">
+      <%= f.input :name, placeholder: 'Centres intêrets', label: false %>
+    </div>
+    <div class="cell">
+      <%= f.input :name, placeholder: 'Matières favorites', label: false %>
+    </div>
+      <%= f.submit "Trouver un métier !", class:"ctaButton"%>
+    </div>
+   <% end %>
+  </div>
+
+</div>
