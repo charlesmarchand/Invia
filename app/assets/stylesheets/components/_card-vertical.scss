@@ -1,0 +1,81 @@
+
+.container-cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.8em;
+}
+
+.card-vertical {
+  height: 25em;
+  width: 12em;
+  background-color: white;
+  background-position: center;
+  color: black;
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px #E6E6E6
+}
+.img-vertical {
+  width: 10em;
+  margin-left: 1em;
+  margin-top: 1em;
+  border-radius: 2px;
+  text-align: center;
+}
+.card-vertical-category {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-vertical-description {
+
+}
+.card-vertical-category h2 {
+  margin-left: 1.1em;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: $purple-invia;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+}
+.card-vertical-description p {
+  color: $grey-invia;
+  font-weight: lighter;
+  letter-spacing: -0.5px;
+  opacity: 0.6;
+  font-size: 12px;
+  text-align: justify;
+  padding: 0.5em 1.5em;
+  margin-bottom: 0em;
+}
+
+.buttoncenter {
+  text-align: center;
+}
+
+.ensavoirplus {
+  color: $purple-invia;
+  font-weight: lighter;
+  font-size: 10px;
+  color: $purple-invia;
+}
+
+.ensavoirplus:visited {
+  color: $purple-invia;
+  text-decoration: none;
+}
+
+.ensavoirplus.underlined {
+   text-decoration: none;
+}
+
+.ensavoirplus:hover {
+  color: $light-purple-invia;
+}
+
+.ctaButton:active {
+  color: $purple-invia;
+  text-decoration: none;
+}
+
+.down {
+  margin-top: 2.2em;
+  font-size: 12px;
+}
