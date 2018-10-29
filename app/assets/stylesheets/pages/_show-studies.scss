@@ -1,0 +1,69 @@
+.container {
+  font-family: Raleway;
+}
+
+.header {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.title {
+  color: $purple-invia;
+  font-size: 30px;
+  font-family: Raleway;
+  padding: 15px;
+}
+
+.description {
+  color: $grey-invia;
+  font-size: 20px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.formation-map {
+  display: flex;
+}
+
+.formations {
+  width: 50%
+}
+
+.map {
+  width: 50%
+}
+
+
+.formation {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+.see-map {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.diploma {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.formation-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.formation-description h2 {
+  font-size: 24px;
+}
