@@ -28,3 +28,13 @@
   margin-bottom: -1.5em;
   margin-top: 7em;
 }
+
+.banner .go_back_Button {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  border-radius: 3px;
+  color: $purple-invia;
+  border-color: $purple-invia;
+  font-size: 17px;
+}
