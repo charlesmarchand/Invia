@@ -31,39 +31,50 @@
 }
 
 .formations {
-  width: 50%
+  width: 40%;
 }
 
 .map {
-  width: 50%
+  width: 60%;
+  height: 350px;
+  margin-left: 50px;
+  margin-top: 50px;
 }
 
 
 .formation {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
+  color: $purple-invia;
+  background-color: white;
+  border: 1px solid $purple-invia;
+  margin: 40px 0px;
   position: relative;
+
 }
 .see-map {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: -17px;
 }
 .diploma {
   position: absolute;
   top: 10px;
   left: 10px;
   font-size: 15px;
-  text-transform: uppercase;
 }
 .formation-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.formation-description h2 {
-  font-size: 24px;
+.formation-description h3 {
+  font-size: 15px;
+}
+
+.ctaButton {
+  font-weight: bold;
+  width: 130px;
+  font-size: 13px;
+  padding: 7px 5px;
+  margin: 0px;
 }

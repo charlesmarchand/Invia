@@ -1,6 +1,6 @@
 <div class="container">
 
-<button type="button" class="btn btn-outline-success">Retour</button>
+<button type="button" class="go_back_Button">Retour</button>
 
 
     <div class= "header">
@@ -17,19 +17,15 @@
       <div class="formations">
         <%@study.diplomas.each do |diploma|%>
         <div class="formation">
-          <div class="formation-category"><%=diploma.name%></div>
+          <div class="diploma"><%=diploma.name.capitalize%></div>
           <div class="formation-description">
             <h3>Les établissements que tu vas sélectionner</h3></div>
-          <div class="button-call-to-action see-map">Afficher sur le plan</div>
-        </div>
+            <div class="see-map"><button class="ctaButton">Afficher sur le plan</button></div>
+          </div>
         <% end %>
       </div>
 
-
-      <div class="map">
-
+      <div id="map" class="map" data-markers="<%= @markers.to_json %>">
       </div>
-
-
     </div>
 </div>
