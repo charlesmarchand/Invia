@@ -1,0 +1,13 @@
+.titles {
+  text-align: center;
+    & h1 {
+    color: $purple-invia;
+    font-size: 20px;
+    }
+    & h2 {
+    color: $grey-invia;
+    font-size: 12px
+    }
+}
+
+

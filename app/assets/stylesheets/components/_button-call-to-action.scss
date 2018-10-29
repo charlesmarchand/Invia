@@ -1,4 +1,4 @@
-.ctaButton {
+.ctaButton:link {
   padding: 1em;
   background: $purple-invia;
   border-radius: 3px;
@@ -7,10 +7,29 @@
   text-align: center;
   box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
   font-weight: lighter;
+  text-decoration: none;
 }
+
+.ctaButton:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.ctaButton.underlined {
+   text-decoration: none;
+}
+
 
 .ctaButton:hover{
   box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3) inset;
   color: white;
   text-decoration: none;
 }
+
+.ctaButton:active {
+  color: white;
+  text-decoration: none;
+}
+
+
+
