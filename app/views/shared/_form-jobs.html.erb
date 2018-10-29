@@ -4,10 +4,14 @@
   <div class="form">
     <%= simple_form_for @job do |f| %>
     <div class="cell">
-      <%= f.input :name, placeholder: 'Centres intêrets', label: false %>
+      <div id="interest">
+        <%= f.input :name, placeholder: 'Centres intêrets', label: false %>
+      </div>
     </div>
     <div class="cell">
-      <%= f.input :name, placeholder: 'Matières favorites', label: false %>
+      <div id="subject">
+        <%= f.input :name, placeholder: 'Matières favorites', label: false %>
+      </div>
     </div>
       <%= f.submit "Trouver un métier !", class: "ctaButton" %>
     </div>
