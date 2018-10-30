@@ -70,7 +70,21 @@
 
 .different-background {
   background-color: white;
+  padding-top: 2em;
 }
 
+.modal-content {
+  & .ctaButton{
+    width: 100%;
+  }
+  & p {
+    color: $purple-invia;
+    padding: 1em;
+  }
+}
 
-
+#creerCompteBtn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

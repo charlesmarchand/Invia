@@ -1,10 +1,20 @@
 
+
+
+
+
 <div class="banner" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('assets/banner.png')">
+
   <div class="banner-content">
+    <!-- Button trigger modal -->
+    <button type="button" class="go_back_Button" data-toggle="modal" data-target="#seConnecter">
+      Se connecter
+    </button>
+
     <h1>Fais de ta passion, ton métier</h1>
     <h2>Invia se base sur tes passions et te propose les métiers qui te correspondent.</h2>
   </div>
-  <a class="ctaButton" href="#" title="Comment ça marche ?">Comment ça marche ?</a>
+  <button type="button" class="ctaButton" href="#" title="Comment ça marche ?">Comment ça marche ?</button>
 </div>
 
 <div class="container-content">
@@ -80,6 +90,10 @@
     </div>
   </div>
 
+  <button type="button" class="ctaButton" id="creerCompteBtn" title="Créer un compte" data-toggle="modal" data-target="#creerCompte">Créer un compte</button>
+
+
+
   <div class="title">Ce que nos utilisateurs en pensent</div>
   <div class="reviews-container">
     <div class="one-review">
@@ -104,6 +118,97 @@
       <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
       <div class="one-review-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         <div class="one-review-author">Martin Dys, élève de Terminale S</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal pour se connecter-->
+<div class="modal fade" id="seConnecter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Continuez pour vous connecter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Adresse email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Nous ne communiquerons pas votre adresse email sans votre accord.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Mot de passe</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="ctaButton">Connexion</button>
+          <p><a href="#" class="blue-text ml-1"> Mot de passe oublié ?</a></p>
+          <p>ou continuer avec</p>
+          <div class="row my-3 d-flex justify-content-center">
+            <!--Facebook-->
+            <button type="button" class="go_back_Button">Facebook</button>
+            <!--Google +-->
+            <button type="button" class="go_back_Button">Gmail</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p>Vous n'avez pas de compte ? <a href="#" class="blue-text ml-1"> Inscription</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal pour créer son compte-->
+<div class="modal fade" id="creerCompte" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Inscrivez-vous avec Facebook ou Google</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form group">
+            <label data-error="wrong" data-success="right" for="form3">Your name</label>
+            <input type="text" id="form3" class="form-control validate">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Adresse email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Nous ne communiquerons pas votre adresse email sans votre accord.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Mot de passe</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="ctaButton">Connexion</button>
+          <p><a href="#" class="blue-text ml-1"> Mot de passe oublié ?</a></p>
+          <p>ou continuer avec</p>
+          <div class="row my-3 d-flex justify-content-center">
+            <!--Facebook-->
+            <button type="button" class="go_back_Button">Facebook</button>
+            <!--Google +-->
+            <button type="button" class="go_back_Button">Gmail</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p>Vous n'avez pas de compte ? <a href="#" class="blue-text ml-1"> Inscription</a></p>
       </div>
     </div>
   </div>
