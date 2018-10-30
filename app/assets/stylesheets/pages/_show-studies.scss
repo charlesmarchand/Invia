@@ -27,54 +27,38 @@
 }
 
 .formation-map {
+  margin-top: 35px;
   display: flex;
+  justify-content: space-around;
 }
 
 .formations {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.map {
-  width: 60%;
-  height: 350px;
-  margin-left: 50px;
-  margin-top: 50px;
-}
-
 
 .formation {
-  height: 175px;
+  height: 145px;
   color: $purple-invia;
   background-color: white;
   border: 1px solid $purple-invia;
-  margin: 40px 0px;
-  position: relative;
+  margin-bottom: 20px;
+}
 
-}
-.see-map {
-  position: absolute;
-  right: 10px;
-  top: -17px;
-}
-.diploma {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-}
 .formation-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.formation-description h3 {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .ctaButton {
+  margin-bottom: -10px;
   font-weight: bold;
-  width: 130px;
+  width: 250px;
   font-size: 13px;
   padding: 7px 5px;
-  margin: 0px;
+}
+.map {
+  width: 40%;
+  height: 400px;
 }
