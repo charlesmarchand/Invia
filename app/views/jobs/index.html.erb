@@ -2,17 +2,7 @@
 <div class="titles"> <h1>Choisis le métier qui te plaît</h1>
 <h2>Voici les propositions de métiers qui correspondent à tes passions !</h2></div>
 
-
-<div>
-<%= form_tag jobs_path, method: :get do %>
- <%= text_field_tag :query,
-   params[:query],
-   class: "form-control",
-   placeholder: "Find a movie"
- %>
-<% end %>
-</div>
-
+<%= render "shared/form-jobs" %>
 
 <div class="container-cards">
 
