@@ -1,22 +1,16 @@
 
-.container-cards {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1.8em;
-}
-
 .card-vertical {
-  height: 25em;
-  width: 12em;
+  width: 18em;
   background-color: white;
   background-position: center;
   color: black;
   border-radius: 3px;
-  box-shadow: 2px 2px 4px #E6E6E6
+  box-shadow: 2px 2px 4px #E6E6E6;
+  margin: 0em 2em;
 }
 .img-vertical {
-  width: 10em;
-  margin-left: 1em;
+  width: 15em;
+  margin-left: 1.5em;
   margin-top: 0em;
   border-radius: 2px;
   text-align: center;
@@ -24,7 +18,7 @@
 
 .heart {
   color: $purple-invia;
-  margin-left: 11.5em;
+  margin-left: 17.5em;
 }
 .card-vertical-category {
   font-size: 15px;
@@ -32,21 +26,21 @@
 }
 
 .card-vertical-category h2 {
-  margin-left: 1.1em;
+  margin-left: 1.5em;
   letter-spacing: 1px;
   font-size: 18px;
   color: $purple-invia;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
 }
 .card-vertical-description p {
+  margin-left: 1em;
   color: $grey-invia;
   font-weight: lighter;
   letter-spacing: -0.5px;
   opacity: 0.6;
   font-size: 12px;
   text-align: justify;
-  padding: 0.5em 1.5em 0em 1.5em;
-  margin-bottom: 0em;
+  padding: 0em 1.5em 0em 1.5em;
 }
 
 .buttoncenter {
@@ -58,6 +52,7 @@
   font-weight: lighter;
   font-size: 10px;
   color: $purple-invia;
+  margin-top: 1em;
 }
 
 .ensavoirplus:visited {
@@ -79,6 +74,6 @@
 }
 
 .down {
-  margin-top: 1.7em;
+  margin-top: 2em;
   font-size: 12px;
 }

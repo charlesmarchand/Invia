@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
 
+  resources :keywords, only: [:index]
+
   resources :jobs, only: [:index] do
     resources :professionals, only: [:index]
     resources :studies, only: [:index, :show]
