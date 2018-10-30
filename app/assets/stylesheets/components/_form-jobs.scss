@@ -1,26 +1,32 @@
 .form-container {
   display: flex;
   justify-content: space-evenly;
+  margin: 0em 13em 3em 13em;
+  font-size: 10px;
+
 }
 
 .cell {
-  padding: 0em 1em;
+   width: 100%;
+   padding-right: 1em;
+
 }
 
 .form-control {
   border-radius: 3px;
+  font-size: 12px;
+
+
 }
 
 .formButton {
-  padding: 1em;
+  height: 3.8em;
+  margin-left: 1em;
   background: $purple-invia;
   border-radius: 3px;
-  height: 1.7em;
-  width: 7em;
   color: white;
   z-index: 1;
-
-  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
+  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.2);
   font-weight: lighter;
   text-decoration: none;
 }

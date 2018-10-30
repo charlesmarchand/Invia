@@ -1,26 +1,29 @@
-<div class="form-container">
   <%= form_tag(jobs_path, class: 'form-container', method: :get) do %>
 
   <div class="cell">
+
    <%= text_field_tag :interests,
      params[:interests],
      class: "form-control",
-     placeholder: "Centres intêrets ?"
+     placeholder: "Centres d'intêrets ?"
    %>
+
   </div>
 
   <div class="cell">
+
    <%= text_field_tag :subjects,
      params[:subjects],
       class: "form-control",
      placeholder: "Matières favorites ?"
    %>
+
   </div>
 
   <%= submit_tag "Trouve un métier !", class: 'formButton'%>
 
   <% end %>
-</div>
+
 
 
 
