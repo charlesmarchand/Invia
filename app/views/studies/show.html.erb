@@ -8,22 +8,30 @@
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
     </div>
-
     <div class="formation-map">
       <div class="formations">
         <%@study.diplomas.each do |diploma|%>
-          <button id="show_schools" class="ctaButton">Afficher les <%=diploma.name.capitalize%>s sur le plan</button>
+        <% markers = diploma.schools.map do |school|
+            {
+              lat: school.latitude,
+              lng: school.longitude,
+              infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school })) }
+            } %>
+          <% end %>
           <div class="formation">
+            <div class= "choisis" > Choisis tes <%=diploma.name.capitalize%>s </div>
             <h3 class="formation-description">Les établissements que tu vas sélectionner</h3>
           </div>
+            <button class="ctaButton show_schools" data-markers="<%= markers.to_json %>">Afficher sur le plan</button>
         <% end %>
 
+
         <!-- Button trigger modal -->
-        <button type="button" class="ctaButton" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="ctaButton" data-toggle="modal" data-target="#show_study">
           Voir mon parcours
         </button>
                 <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="show_study" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -47,7 +55,7 @@
         </div>
       </div>
 
-      <div id="map" class="map" data-markers="<%= @markers.to_json %>">
+      <div id="map" class="map" >
       </div>
     </div>
     <div class="inputs">

@@ -40,11 +40,15 @@
 }
 
 .formation {
-  height: 145px;
+  display:flex;
+  flex-direction: column;
+  align-items:center ;
+  height: 100px;
   color: $purple-invia;
   background-color: white;
   border: 1px solid $purple-invia;
-  margin-bottom: 20px;
+  z-index: 3;
+  margin-bottom: 15px;
 }
 
 .formation-description {
@@ -52,13 +56,24 @@
 }
 
 .ctaButton {
-  margin-bottom: -10px;
   font-weight: bold;
-  width: 250px;
+  width: 150px;
   font-size: 13px;
   padding: 7px 5px;
+  margin-bottom: 30px;
 }
+
 .map {
   width: 40%;
   height: 400px;
+}
+
+.choisis {
+  border: 1px solid $purple-invia;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -15px;
+  z-index: 1;
+  padding: 5px 5px;
+  background-color:white;
 }
