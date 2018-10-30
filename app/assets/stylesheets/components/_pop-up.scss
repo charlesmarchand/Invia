@@ -1,27 +1,12 @@
 .popup {
-  /* Fenêtre du popup */
-  position: relative;
-  width: 50%;
-  height: 700px;
-  background: white;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
-  z-index: 2;
  }
-
-.popup-container {
-  padding: 2em 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
 .popup-image {
   height: 180px;
   border-radius: 3px;
   background-size: cover !important;
   background-position: center;
-  color: white;
 }
 
 .popup-titre {
@@ -32,11 +17,7 @@
 .popup-description {
   color: $grey-invia;
   text-align: justify;
-}
-
-.popup .ctaButton {
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
+  font-weight: lighter;
+  font-size: 12px;
 }
 

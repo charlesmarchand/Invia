@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     render layout: 'application-homepage'
   end
+
+  def dashboard
+    render layout: 'application'
+  end
 end
