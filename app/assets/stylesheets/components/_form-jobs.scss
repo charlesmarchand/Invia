@@ -1,15 +1,27 @@
-.simple_form {
+.form-container {
   display: flex;
   justify-content: space-evenly;
 }
 
 .cell {
-  width: 20em;
+  padding: 0em 1em;
 }
 
 .form-control {
   border-radius: 3px;
-  font-size: 12px;
 }
 
+.formButton {
+  padding: 1em;
+  background: $purple-invia;
+  border-radius: 3px;
+  height: 1.7em;
+  width: 7em;
+  color: white;
+  z-index: 1;
+
+  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
+  font-weight: lighter;
+  text-decoration: none;
+}
 
