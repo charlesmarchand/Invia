@@ -5,31 +5,45 @@
 <%= render "shared/form-jobs" %>
 
 <div class="container-cards">
-
   <div class="row">
-
     <% @jobs.each do |job| %>
 
       <div class="col-xs-12 col-sm-4">
-
         <div class="card-vertical">
           <div class="heart"> <i class="far fa-heart"></i> </div>
           <img class="img-vertical" src="assets/datascientist.jpeg">
           <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
-            <div class="card-vertical-description">
-              <p><%= job.description %> </p>
+
+          <div class="card-vertical-description">
+            <p><%= job.description %></p>
+          </div>
+          <!-- Bouton pour lancer la modal -->
+          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a></div>
+          <!-- Modal -->
+          <div class="modal fade" id="ModalLong<%= job.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="popup-titre"> <h2><%= job.name %></h2></div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="popup-image" style="background-image: url('assets/datascientist.jpg')"></div>
+                  <div class="popup-description">
+                    <%= job.description %>
+                  </div>
+                  <%= link_to "Développe ton réseau", job_professionals_path(job), class: "ctaButton" %>
+                </div>
+              </div>
             </div>
-          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#">En savoir plus...</a> </div>
-          <div class="buttoncenter down"> <a  class="ctaButton" href="#" title="Les formations">Les formations</a> </div>
+          </div>
+          <!-- Fin de la modal -->
+          <%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %>
         </div>
-
       </div>
-
     <% end %>
-
     <div class="arrow" >  <a href=""></a> <i class="fas fa-angle-double-right"></i> </div>
-
-
   </div>
-
 </div>
