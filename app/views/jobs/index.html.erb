@@ -7,11 +7,13 @@
 <div class="container-cards">
   <div class="row">
     <% @jobs.each do |job| %>
+
       <div class="col-xs-12 col-sm-4">
         <div class="card-vertical">
           <div class="heart"> <i class="far fa-heart"></i> </div>
           <img class="img-vertical" src="assets/datascientist.jpeg">
           <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
+
           <div class="card-vertical-description">
             <p><%= job.description %></p>
           </div>
