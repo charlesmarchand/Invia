@@ -10,22 +10,26 @@
 
     <% @jobs.each do |job| %>
 
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-vertical">
-        <div class="heart"> <i class="far fa-heart"></i> </div>
-        <img class="img-vertical" src="assets/datascientist.jpeg">
-        <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
-          <div class="card-vertical-description">
-            <p><%= job.description %> </p>
-          </div>
-        <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#">En savoir plus...</a> </div>
-        <div class="buttoncenter down"> <a  class="ctaButton" href="#" title="Les formations">Les formations</a> </div>
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="card-vertical">
+          <div class="heart"> <i class="far fa-heart"></i> </div>
+          <img class="img-vertical" src="assets/datascientist.jpeg">
+          <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
+            <div class="card-vertical-description">
+              <p><%= job.description %> </p>
+            </div>
+          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#">En savoir plus...</a> </div>
+          <div class="buttoncenter down"> <a  class="ctaButton" href="#" title="Les formations">Les formations</a> </div>
+        </div>
+
       </div>
-    </div>
+
     <% end %>
 
     <div class="arrow" >  <a href=""></a> <i class="fas fa-angle-double-right"></i> </div>
-    </div>
+
+
   </div>
 
 </div>
