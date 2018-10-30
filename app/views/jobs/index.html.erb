@@ -4,16 +4,15 @@
 
 
 <div>
-
-<%= form_tag keywords_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
-  %>
+<%= form_tag jobs_path, method: :get do %>
+ <%= text_field_tag :query,
+   params[:query],
+   class: "form-control",
+   placeholder: "Find a movie"
+ %>
 <% end %>
-
 </div>
+
 
 <div class="container-cards">
 

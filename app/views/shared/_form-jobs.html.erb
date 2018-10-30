@@ -5,7 +5,12 @@
     <%= simple_form_for @job do |f| %>
     <div class="cell">
       <div id="interest">
-        <%= f.input :name, placeholder: 'Centres intêrets', label: false %>
+        <%= f.input :name,
+                    placeholder: 'Centres intêrets',
+                     label: false,
+                    method: :get,
+                    text_field_tag: :query,
+                    params: :query %>
       </div>
     </div>
     <div class="cell">
