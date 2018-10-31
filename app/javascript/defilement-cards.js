@@ -32,7 +32,7 @@ $(document).ready(function () {
             $(this).parent().attr("id", "MultiCarousel" + id);
 
 
-            if (bodyWidth >= 1000) {
+            if (bodyWidth >= 1200) {
                 itemWidth = sampwidth / 3; // afficher 3 cards pour cette taille d'écran
             }
             else if (bodyWidth >= 768) {
