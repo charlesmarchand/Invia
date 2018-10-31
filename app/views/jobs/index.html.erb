@@ -9,9 +9,9 @@
     <% @jobs.each do |job| %>
 
       <div class="col-xs-12 col-sm-4">
+          <a class="heart" href="#"> <i class="far fa-heart"></i> </a>
         <div class="card-vertical">
-          <div class="heart"> <i class="far fa-heart"></i> </div>
-          <img class="img-vertical" src="assets/datascientist.jpeg">
+          <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
           <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
 
           <div class="card-vertical-description">
@@ -30,7 +30,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <div class="popup-image" style="background-image: url('assets/datascientist.jpg')"></div>
+                  <div class="popup-image" style="background-image: url('<%= job.url %>')"></div>
                   <div class="popup-description">
                     <%= job.description %>
                   </div>

@@ -1,4 +1,18 @@
 import "bootstrap";
+import "save-infos-user";
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
   $('button[href^="#"]').on('click', function(evt){
     evt.preventDefault();
