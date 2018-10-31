@@ -3,14 +3,17 @@ class JobsController < ApplicationController
 
     if (params[:interests].present?) || (params[:subjects].present?)
       allparams = []
-      if params[:subjects].present?
-      allparams << params[:subjects]
+
+      allparams = [ params[:interests].split, params[:subjects].split ].flatten
+
+      search = []
+      allparams.each do |keyword|
+        search << Job.joins(:keywords).where("keywords.name ILIKE ?", "#{keyword}")
       end
-      if params[:interests].present?
-      allparams << params[:interests]
-      end
-      @keywords = Keyword.where("name ILIKE ?", "%#{allparams.join(',')}%")
-      @jobs = Job.joins(:jobs_keywords).where('jobs_keywords.keyword_id IN (?)', @keywords.ids)
+
+      @jobs = search.flatten.each_with_object(Hash.new(0)) { |job,counts| counts[job] += 1 }
+        .select { |_,number| number >= allparams.length }
+        .keys
     else
       @jobs = Job.all
     end

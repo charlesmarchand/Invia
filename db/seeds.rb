@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+csv_options = { col_sep: ';'}
+
+CSV.foreach('seed-invia.csv', csv_options) do |row|
+  job = Job.create(name: "#{row[0]}", description: "#{row[2]}", url: "#{row[3]}")
+  row[1].split(",").each do |keyword|
+    if ! Keyword.find_by_name("#{keyword}").nil?
+      job.keywords << Keyword.find_by_name("#{keyword}")
+    else
+      job.keywords << Keyword.create(name: "#{keyword}")
+    end
+  end
+end
