@@ -48,6 +48,7 @@
   background-color: white;
   border: 1px solid $purple-invia;
   z-index: 3;
+  width: 350px;
   margin-bottom: 15px;
 }
 
@@ -76,4 +77,13 @@
   z-index: 1;
   padding: 5px 5px;
   background-color:white;
+}
+
+.school_details {
+  text-decoration: none;
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 25px;
+  padding: 5px 10px;
+  font-size: 15px;
 }
