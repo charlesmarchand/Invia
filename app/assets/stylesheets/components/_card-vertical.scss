@@ -2,11 +2,9 @@
 .card-vertical {
   width: 18em;
   background-color: white;
-  background-position: center;
-  color: black;
   border-radius: 3px;
   box-shadow: 2px 2px 4px #E6E6E6;
-  margin: 1em 2em;
+
 }
 .img-vertical {
   width: 15em;
@@ -41,6 +39,9 @@
   font-size: 12px;
   text-align: justify;
   padding: 0em 1.5em 0em 1.5em;
+  height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .buttoncenter {
