@@ -1,0 +1,43 @@
+.MultiCarousel {
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  position:relative;
+}
+ .MultiCarousel .MultiCarousel-inner {
+  transition: 1s ease all;
+  float: left;
+}
+.MultiCarousel .MultiCarousel-inner .item {
+  float: left;
+}
+
+.MultiCarousel .leftLst{
+  left:0;
+  position:absolute;
+  top:calc(50% - 20px);
+  color: $purple-invia;
+  border: none;
+  background: none;
+  font-size: 50px;
+  outline: none;
+  &.over {
+    pointer-events: none;
+    color: $grey-invia-button-go-back;
+  }
+}
+
+.MultiCarousel .rightLst {
+  right:0;
+  position:absolute;
+  top:calc(50% - 20px);
+  color: $purple-invia;
+  border: none;
+  background: none;
+  font-size: 50px;
+  outline: none;
+  &.over {
+    pointer-events: none;
+    color: $grey-invia-button-go-back;
+  }
+}
