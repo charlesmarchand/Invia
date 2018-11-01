@@ -3,44 +3,22 @@
 
 <%= render "shared/form-jobs" %>
 
-
-
-
-
-
-
-
 <div class="container">
-<div class="responsive">
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-</div>
-  <div class="MultiCarousel" data-slide="1" id="MultiCarousel"  data-interval="1000">
-    <div class="MultiCarousel-inner">
-      <% @jobs.each do |job| %>
-        <div class="item">
-          <div class="card-vertical">
-            <div class="heart"> <i class="far fa-heart"></i> </div>
-            <img class="img-vertical" src="assets/datascientist.jpeg">
-            <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
-            <div class="card-vertical-description"> <p><%= job.description %></p> </div>
-            <!-- Bouton pour lancer la modal -->
-            <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a></div>
-            <!-- Fin du bouton pour lancer la modal -->
-            <%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %>
-          </div>
+  <div class="responsive">
+    <% @jobs.each do |job| %>
+      <div class="item">
+        <div class="card-vertical">
+          <div class="heart"> <i class="far fa-heart"></i> </div>
+          <img class="img-vertical" src="assets/datascientist.jpeg">
+          <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
+          <div class="card-vertical-description"> <p><%= job.description %></p> </div>
+          <!-- Bouton pour lancer la modal -->
+          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a></div>
+          <!-- Fin du bouton pour lancer la modal -->
+          <%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %>
         </div>
-      <% end %>
-    </div>
-    <button class="leftLst"><i class="fas fa-angle-double-left"></i></button>
-    <button class="rightLst"><i class="fas fa-angle-double-right"></i></button>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -63,9 +41,8 @@
       </div>
     </div>
   </div>
-
 <% end %>
-  <!-- Fin de la modal -->
+<!-- Fin de la modal -->
 
 
 

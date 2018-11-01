@@ -10,43 +10,25 @@
     }
 }
 
-.MultiCarousel {
-  float: left;
-  overflow: hidden;
-  padding: 15px; width: 100%;
-  position:relative;
-}
- .MultiCarousel .MultiCarousel-inner {
-  transition: 1s ease all;
-  float: left;
-}
-.MultiCarousel .MultiCarousel-inner .item {
-  float: left
-}
 
-.MultiCarousel .leftLst{
-  position:absolute;
-  border-radius:50%;
-  top:calc(50% - 20px);
-  left:0;
-  color: $purple-invia;
-  &.over {
-    pointer-events: none;
-    background:#ccc;
-    color: $grey-invia;
-  }
-}
 
-.MultiCarousel .rightLst {
-  position:absolute;
-  border-radius:50%;
-  top:calc(50% - 20px);
-  right:0;
-  color: $purple-invia;
-  &.over {
-    pointer-events: none;
-    background:#ccc;
-    color: $grey-invia;
-  }
-}
 
+
+
+.slick-prev:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f100";
+    color: $purple-invia;
+    font-size: 50px;
+    opacity: 0.2;
+ }
+
+ .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f101";
+    color: $purple-invia;
+    font-size: 50px;
+    opacity: 0.2;
+ }
