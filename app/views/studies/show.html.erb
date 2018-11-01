@@ -8,11 +8,18 @@
 
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
-    </div>
+        <div class="inputs">
+          <input id="school_address"type="text" placeholder="Ville">
+          <input type="text" placeholder="Selectivité">
+          <input type="text" placeholder="Coût de la formation">
+        </div>
+      </div>
+
     <div class="formation-map">
       <div class="formations">
         <%@study.diplomas.each do |diploma|%>
-        <% markers = diploma.schools.map do |school|
+
+          <% markers = diploma.schools.map do |school|
             {
               lat: school.latitude,
               lng: school.longitude,
@@ -20,11 +27,48 @@
             } %>
           <% end %>
           <div class="formation">
-            <div class= "choisis" > Choisis tes <%=diploma.name.capitalize%>s </div>
-            <div id="diploma-<%=diploma.id%>" class="formation-description"></div>
+            <button class="ctaButton show_schools" data-markers="<%= markers.to_json %>">Choisis tes <%=diploma.name.capitalize%>s</button>
+
+            <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush invisible">
+            <% diploma.schools.each do |school| %>
+               <li class="list-group-item"><%=school.name%></li>
+            <% end %>
+            </ul>
           </div>
-            <button class="ctaButton show_schools" data-markers="<%= markers.to_json %>">Afficher sur le plan</button>
         <% end %>
+      </div>
+
+      <div id="map" class="map" >
+      </div>
+
+ <!-- MON PARCOURS  -->
+        <button type="button" class="ctaButton" data-toggle="modal" data-target="#recap_schools">
+          Voir mon parcours
+        </button>
+        <div id="recap_schools" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="show_title">Mon parcours pour devenir <%=@job.name%></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <%@study.diplomas.each do |diploma|%>
+                <div class="show_title">Ma liste des <%=diploma.name%>s sauvegardées</div>
+                <div class="recap-body">
+                </div>
+              <% end %>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sauvegarder mon parcours</button>
+    <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
 
 
  <!-- VOIR DETAILS ECOLE  -->
@@ -48,49 +92,3 @@
           </div>
         </div>
       </div>
-
-
- <!-- VOIR MON PARCOURS  -->
-        <!-- Button trigger modal -->
-        <button type="button" class="ctaButton" data-toggle="modal" data-target="#show_study">
-          Voir mon parcours
-        </button>
-
-
-                <!-- Modal -->
-        <div class="modal fade" id="show_study" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="title" id="exampleModalLongTitle">Mon parcours pour devenir <%=@job.name%></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <%@study.diplomas.each do |diploma|%>
-                <div class="title">Ma liste des <%=diploma.name%>s sauvegardées</div>
-                <div class="modal-body">
-
-                </div>
-              <% end %>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sauvegarder mon parcours</button>
-                <button type="button" class="btn btn-primary">Découvrir d'autres parcours</button>
-              </div>
-            </div>
-          </div>
-        </div>
- <!-- VOIR MON PARCOURS  -->
-
-      </div>
-
-      <div id="map" class="map" >
-      </div>
-    </div>
-    <div class="inputs">
-        <input id="school_address"type="text" placeholder="Ville">
-        <input type="text" placeholder="Selectivité">
-        <input type="text" placeholder="Coût de la formation">
-      </div>
-
-</div>

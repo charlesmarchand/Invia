@@ -1,27 +1,3 @@
- <!-- Button trigger modal -->
-<button type="button" class="ctaButton" data-toggle="modal" data-id="<%=school.id%>" data-name="<%=school.name%>"" data-target="#show_school_<%=school.id%>"><%=school.name%></button>
 
-<%=link_to school.name, details_path(school.id), method: :post, class: 'school_details',  remote: true %>
-        <!-- Modal -->
+<%=link_to school.name, details_path(school.id), method: :post, class: 'school_details', remote: true %>
 
-<% content_for :modals do %>
-  <div class="modal fade" id="show_school_<%=school.id%>" tabindex="-1" role="dialog"  aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5><%=school.name%></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-          <div class="modal-body">
-            <%#=school.url%>
-            <%=school.description%>
-          </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn_add" data-dismiss="modal" data-id="<%=school.id%>" data-name="<%=school.name%>">Ajouter cet établissement</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>

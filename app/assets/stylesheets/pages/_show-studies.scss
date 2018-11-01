@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.title {
+.show_title {
   color: $purple-invia;
   font-size: 30px;
   font-family: Raleway;
@@ -40,16 +40,23 @@
 }
 
 .formation {
-  display:flex;
-  flex-direction: column;
-  align-items:center ;
-  height: 100px;
-  color: $purple-invia;
-  background-color: white;
-  border: 1px solid $purple-invia;
-  z-index: 3;
-  width: 350px;
-  margin-bottom: 15px;
+  // display:flex;
+  // flex-direction: column;
+  // align-items:center ;
+  // height: 100px;
+  // color: $purple-invia;
+  // background-color: white;
+  // border: 1px solid $purple-invia;
+  // z-index: 3;
+  // width: 350px;
+  // margin-bottom: 15px;
+}
+
+.list-group{
+    max-height: 100px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .formation-description {
