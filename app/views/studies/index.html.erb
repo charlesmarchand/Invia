@@ -15,7 +15,7 @@
               <% study.difficulty.to_i.times do  %>
                 <i class="fas fa-star"></i>
               <% end %>
-              <h3> 3 années </h3
+              <h3> 3 années </h3>
             </div>
             <div class="card-vertical-description">
               <% study.diplomas.each do |diploma| %>
@@ -47,7 +47,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="popup-image" style="background-image: url(<%= study.url %>)"></div>
+          <div class="popup-image" style="background-image: url(/assets/datascientist.jpeg)"></div>
           <div class="popup-description"> <%= study.description %> </div>
 
         </div>
