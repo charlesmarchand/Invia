@@ -1,5 +1,5 @@
 <div class="titles"> <h1>Choisis le parcours qui te plaît</h1>
-<h2>Voici les propositions de parcours pour devenir Data-scientist !</h2></div>
+<h2>Voici les propositions de parcours pour devenir <%= @job.name %> !</h2></div>
 
 
 <div class="container-cards">
@@ -69,13 +69,13 @@
       <div class="item">
         <div class="card-vertical">
           <i class="far fa-heart heart"></i>
-          <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
+          <div class="img-vertical" style="background-image: url('<%= study.url %>')"></div>
           <div class="container-title-text">
             <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
             <div class="card-vertical-description"> <p><%= study.description %></p> </div>
           </div>
           <!-- Bouton pour lancer la modal -->
-          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a></div>
+          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= study.id %>" data-toggle="modal" >En savoir plus...</a></div>
           <!-- Fin du bouton pour lancer la modal -->
           <%= link_to "Les établissements", job_study_path(@job,study), class: "ctaButton" %>
         </div>
@@ -85,8 +85,8 @@
 </div>
 
 <!-- Modal -->
-<% @studies.each do |job| %>
-  <div class="modal fade" id="ModalLong<%= job.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<% @studies.each do |study| %>
+  <div class="modal fade" id="ModalLong<%= study.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

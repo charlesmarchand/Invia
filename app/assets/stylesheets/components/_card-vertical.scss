@@ -7,8 +7,8 @@
   border-radius: 3px;
   box-shadow: 2px 2px 4px #E6E6E6;
   padding: 1.5em;
-  margin-top: 10px;
-  margin-bottom: 27px;
+  margin-top: 18px;
+  margin-bottom: 40px;
 
 }
 .img-vertical {
@@ -24,11 +24,12 @@
   text-overflow: ellipsis;
 }
 
-.heart {
+.card-vertical .heart {
   position: absolute;
   color: $purple-invia;
-  right: -10px;
-  top: -10px;
+  right: -18px;
+  top: -18px;
+  font-size: 36px;
 }
 .card-vertical-category {
   font-size: 15px;
@@ -53,8 +54,9 @@
 
 
 .card-vertical .ctaButton{
-  bottom: -30px;
-  right: 115px;
+  position: relative;
+  bottom: -50px;
+  right: -50px;
   font-size: 15px;
 }
 
