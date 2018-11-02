@@ -1,24 +1,34 @@
 
 .card-vertical {
-  width: 18em;
+  position: relative;
+  width: 300px;
+  height: 500px;
   background-color: white;
-  background-position: center;
-  color: black;
   border-radius: 3px;
   box-shadow: 2px 2px 4px #E6E6E6;
-  margin: 1em 2em;
+  padding: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 27px;
+
 }
 .img-vertical {
-  width: 15em;
-  margin-left: 1.5em;
-  margin-top: 0em;
+  height: 180px;
   border-radius: 2px;
-  text-align: center;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.container-title-text {
+  height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .heart {
+  position: absolute;
   color: $purple-invia;
-  margin-left: 17.5em;
+  right: -10px;
+  top: -10px;
 }
 .card-vertical-category {
   font-size: 15px;
@@ -26,21 +36,28 @@
 }
 
 .card-vertical-category h2 {
-  margin-left: 1.5em;
   letter-spacing: 1px;
   font-size: 18px;
   color: $purple-invia;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
 }
 .card-vertical-description p {
-  margin-left: 1em;
   color: $grey-invia;
   font-weight: lighter;
   letter-spacing: -0.5px;
   opacity: 0.6;
   font-size: 12px;
   text-align: justify;
-  padding: 0em 1.5em 0em 1.5em;
+
+}
+
+
+.ctaButton{
+  bottom: -30px;
+  right: 115px;
+  position: absolute;
+  display: block;
+  font-size: 15px;
 }
 
 .buttoncenter {

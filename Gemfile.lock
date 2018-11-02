@@ -57,6 +57,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    csv (3.0.0)
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -80,6 +81,8 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jquery-slick-rails (1.9.0)
+      railties (>= 3.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -206,11 +209,13 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
+  csv
   devise
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
   geocoder
   jbuilder (~> 2.0)
+  jquery-slick-rails
   listen (~> 3.0.5)
   pg (~> 0.21)
   pry-byebug
@@ -230,4 +235,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.4
+   1.16.5
