@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get 'dashboard', to: 'pages#dashboard'
-
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
+  post 'details/:id', to: 'studies#details', as: :details
   resources :keywords, only: [:index]
 
   resources :jobs, only: [:index] do

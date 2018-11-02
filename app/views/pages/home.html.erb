@@ -1,21 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('assets/banner.png')">
 
   <div class="banner-content">
-    <!-- Button trigger modal -->
-    <button type="button" class="go_back_Button" data-toggle="modal" data-target="#seConnecter">
+    <!-- Ancien Button trigger modal -->
+    <!-- <button type="button" class="go_back_Button" data-toggle="modal" data-target="#seConnecter">
       Se connecter
-    </button>
+    </button> -->
+    <%= link_to "Se connecter", new_user_session_path, class: "loginButton" %>
 
     <h1>Fais de ta passion, ton métier</h1>
     <h2>Invia se base sur tes passions et te propose les métiers qui te correspondent.</h2>
+    <button type="button" class="ctaButton" href="#ancre" title="Comment ça marche ?">Comment ça marche ?</button>
   </div>
-  <button type="button" class="ctaButton" href="#ancre" title="Comment ça marche ?">Comment ça marche ?</button>
 </div>
 
 <div class="container-content">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-
       <div class="card">
         <div class="card-title">
           <i class="fas fa-heart"></i>
@@ -31,7 +31,6 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-
       <div class="card">
         <div class="card-title">
           <i class="fas fa-magic"></i>
@@ -46,7 +45,6 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-
       <div class="card">
         <div class="card-title">
           <i class="fas fa-stream"></i>
@@ -85,7 +83,11 @@
     </div>
   </div>
 
-  <button type="button" class="ctaButton" id="creerCompteBtn" title="Créer un compte" data-toggle="modal" data-target="#creerCompte">Créer un compte</button>
+  <!-- Ancien bouton pour créer un compte via modal
+  <button type="button" class="ctaButton" id="creerCompteBtn" title="Créer un compte" data-toggle="modal" data-target="#creerCompte">Créer un compte</button> -->
+
+  <%= link_to "Créer un compte", new_user_registration_path, class: "ctaButton", id: "creerCompteBtn" %>
+  <%= link_to "Faire une recherche", jobs_path, class: "ctaButton" %>
 
 
 

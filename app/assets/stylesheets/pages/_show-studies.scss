@@ -1,0 +1,114 @@
+.header {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.show_title {
+  color: $purple-invia;
+  font-size: 30px;
+  font-family: Raleway;
+  padding: 15px;
+}
+
+.description {
+  color: $grey-invia;
+  font-size: 20px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.formation-map-parcours {
+  margin-top: 35px;
+}
+
+.formations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -60px;
+}
+
+.formation ul {
+  height: 0px;
+}
+
+.formation.open ul {
+  height: 100px;
+}
+
+.formation.open diplomaButtons {
+  background: white;
+  border: 1px solid $purple-invia;
+}
+
+.diplomaButtons {
+  color: white;
+  width: 200px;
+  height: 40px;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 30px 0px;
+  background: $purple-invia;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
+  border:none;
+  outline: none;
+}
+
+.map {
+  width: 450px;
+  height: 380px;
+}
+
+.parcours {
+  display:flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.parcours-diplomas {
+  font-size: 20px;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-left: 5px;
+
+}
+
+.parcours-diplomas-schools{
+  border-left: 1px solid gray;
+  height: 100px;
+}
+
+
+
+.list-group{
+    max-height: 100px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.formation-description {
+  font-size: 20px;
+}
+
+
+
+.school_details {
+  text-decoration: none;
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 25px;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
