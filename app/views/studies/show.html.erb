@@ -1,11 +1,10 @@
 <div class="container">
 
-<button type="button" class="go_back_Button">Retour</button>
-
-
+<div class="row">
     <div class= "header">
-      <div class="title"> Choisis les établissement qui te plaisent</div>
+      <div class="show-title"> Choisis les établissement qui te plaisent</div>
 
+      <button type="button" class="go_back_Button">Retour</button>
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
         <div class="inputs">
@@ -14,11 +13,15 @@
           <input type="text" placeholder="Coût de la formation">
         </div>
       </div>
+    </div>
 
-    <div class="formation-map">
-      <div class="formations">
+  <div class="row">
+    <div class="formation-map-parcours">
+
+ <!-- SCHOOL BUTTONS & MARKERS  -->
+      <div class="col-md-3 col-lg-3">
+        <div class="formations">
         <%@study.diplomas.each do |diploma|%>
-
           <% markers = diploma.schools.map do |school|
             {
               lat: school.latitude,
@@ -37,45 +40,42 @@
           </div>
         <% end %>
       </div>
+    </div>
 
-      <div id="map" class="map" >
-      </div>
+ <!-- MAP  -->
+    <div class="col-md-5 col-lg-5">
+      <div id="map" class="map" ></div>
+    </div>
+
 
  <!-- MON PARCOURS  -->
-        <button type="button" class="ctaButton" data-toggle="modal" data-target="#recap_schools">
-          Voir mon parcours
-        </button>
-        <div id="recap_schools" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="show_title">Mon parcours pour devenir <%=@job.name%></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <%@study.diplomas.each do |diploma|%>
-                <div class="show_title">Ma liste des <%=diploma.name%>s sauvegardées</div>
-                <div class="recap-body">
-                </div>
-              <% end %>
-              <div class="modal-footer">
-              </div>
-            </div>
-          </div>
-        </div>
 
+      <div class="col-md-4 col-lg-4">
+        <div class="parcours">
+          <%@study.diplomas.each do |diploma|%>
+          <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
+            <div class="parcours-diplomas-schools"></div>
+          <% end %>
+        </div>
+      </div>
 
     </div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sauvegarder mon parcours</button>
-    <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
+  </div>
+
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <button id="save_button" type="button" class="btn btn-secondary" data-dismiss="modal">Sauvegarder mon parcours</button>
+         <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
+      </div>
+    </div>
 
 
- <!-- VOIR DETAILS ECOLE  -->
-           <!-- Hidden button  -->
+           <!-- Hidden button to trigger show schools  -->
       <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details">
       </button>
 
+
+ <!-- VOIR DETAILS ECOLE  -->
         <!-- Modal partial   -->
       <div id="school_details" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

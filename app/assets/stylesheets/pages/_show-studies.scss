@@ -26,31 +26,42 @@
   margin-top: 10px;
 }
 
-.formation-map {
+.formation-map-parcours {
   margin-top: 35px;
-  display: flex;
-  justify-content: space-around;
 }
 
 .formations {
-  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.formation {
-  // display:flex;
-  // flex-direction: column;
-  // align-items:center ;
-  // height: 100px;
-  // color: $purple-invia;
-  // background-color: white;
-  // border: 1px solid $purple-invia;
-  // z-index: 3;
-  // width: 350px;
-  // margin-bottom: 15px;
+.map {
+  width: 500px;
+  margin-left: 50px;
+  height: 380px;
 }
+
+.parcours {
+  display:flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+
+.parcours-diplomas {
+  font-size: 20px;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-left: 5px;
+
+}
+
+.parcours-diplomas-schools{
+  border-left: 1px solid gray;
+  height: 100px;
+}
+
+
 
 .list-group{
     max-height: 100px;
@@ -65,26 +76,13 @@
 
 .ctaButton {
   font-weight: bold;
-  width: 150px;
+  width: 200px;
+  height: 40px;
   font-size: 13px;
   padding: 7px 5px;
-  margin-bottom: 30px;
+  margin: 30px 0px;
 }
 
-.map {
-  width: 40%;
-  height: 400px;
-}
-
-.choisis {
-  border: 1px solid $purple-invia;
-  font-size: 15px;
-  text-align: center;
-  margin-top: -15px;
-  z-index: 1;
-  padding: 5px 5px;
-  background-color:white;
-}
 
 .school_details {
   text-decoration: none;
@@ -93,4 +91,8 @@
   border-radius: 25px;
   padding: 5px 10px;
   font-size: 15px;
+}
+
+.actions {
+  display: flex;
 }
