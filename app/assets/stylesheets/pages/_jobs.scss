@@ -17,18 +17,25 @@
     color: $purple-invia;
     font-size: 50px;
     opacity: 0.2;
- }
+}
 
- .slick-next:before {
+.slick-next:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f101";
     color: $purple-invia;
     font-size: 50px;
     opacity: 0.2;
- }
-
+}
 
 .slick-prev {
-    left: -70px;
-  }
+    left: -90px;
+}
+
+.slick-dots li button:before {
+    color: $purple-invia;
+}
+
+.slick-dots li.slick-active button:before {
+  color: $purple-invia;
+}

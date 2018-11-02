@@ -1,7 +1,7 @@
 
 .card-vertical {
   position: relative;
-  width: 350px;
+  width: 300px;
   height: 500px;
   background-color: white;
   border-radius: 3px;
@@ -36,7 +36,6 @@
 }
 
 .card-vertical-category h2 {
-  margin-left: 1.5em;
   letter-spacing: 1px;
   font-size: 18px;
   color: $purple-invia;
@@ -54,9 +53,11 @@
 
 
 .ctaButton{
-  bottom: -27px;
+  bottom: -30px;
+  right: 115px;
   position: absolute;
   display: block;
+  font-size: 15px;
 }
 
 .buttoncenter {
