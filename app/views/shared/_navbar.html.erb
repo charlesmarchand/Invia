@@ -18,7 +18,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-invia-dropdown-menu">
           <li><a href="#">Modifier le profil</a></li>
           <li><a href="#">Paramètres du compte</a></li>
-          <li><a href="#">Déconnexion</a></li>
+          <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
