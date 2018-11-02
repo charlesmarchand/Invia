@@ -1,8 +1,6 @@
 <div class="titles"> <h1>Choisis le métier qui te plaît</h1>
 <h2>Voici les propositions de métiers qui correspondent à tes passions !</h2></div>
-
 <%= render "shared/form-jobs" %>
-
 <div class="container">
   <div class="responsive">
     <% @jobs.each do |job| %>
@@ -23,7 +21,6 @@
     <% end %>
   </div>
 </div>
-
 <!-- Modal -->
 <% @jobs.each do |job| %>
   <div class="modal fade" id="ModalLong<%= job.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -45,10 +42,4 @@
   </div>
 <% end %>
 <!-- Fin de la modal -->
-
-
-
-
-
-
 
