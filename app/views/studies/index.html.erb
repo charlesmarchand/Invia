@@ -59,4 +59,49 @@
   <div class="arrow" >  <a href=""></a> <i class="fas fa-angle-double-right"></i> </div>
 
 </div>
->>>>>>> master
+
+
+
+
+<div class="container">
+  <div class="responsive">
+    <% @studies.each do |study| %>
+      <div class="item">
+        <div class="card-vertical">
+          <i class="far fa-heart heart"></i>
+          <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
+          <div class="container-title-text">
+            <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
+            <div class="card-vertical-description"> <p><%= study.description %></p> </div>
+          </div>
+          <!-- Bouton pour lancer la modal -->
+          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a></div>
+          <!-- Fin du bouton pour lancer la modal -->
+          <%= link_to "Les établissements", job_study_path(@job,study), class: "ctaButton" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Modal -->
+<% @studies.each do |job| %>
+  <div class="modal fade" id="ModalLong<%= job.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="popup-titre"> <h2><%= study.name %></h2></div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="popup-image" style="background-image: url(<%= study.url %>)"></div>
+          <div class="popup-description"> <%= study.description %> </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- Fin de la modal -->
