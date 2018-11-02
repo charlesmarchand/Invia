@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'dashboard', to: 'pages#dashboard'
-
+  post 'details/:id', to: 'studies#details', as: :details
   resources :keywords, only: [:index]
 
   resources :jobs, only: [:index] do

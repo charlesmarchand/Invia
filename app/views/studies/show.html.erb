@@ -1,2 +1,94 @@
-<h1>Studies#show</h1>
-<p>Find me in app/views/studies/show.html.erb</p>
+<div class="container">
+
+<div class="row">
+    <div class= "header">
+      <div class="show-title"> Choisis les établissement qui te plaisent</div>
+
+      <button type="button" class="go_back_Button">Retour</button>
+      <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
+
+        <div class="inputs">
+          <input id="school_address"type="text" placeholder="Ville">
+          <input type="text" placeholder="Selectivité">
+          <input type="text" placeholder="Coût de la formation">
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="formation-map-parcours">
+
+ <!-- SCHOOL BUTTONS & MARKERS  -->
+      <div class="col-md-3 col-lg-3">
+        <div class="formations">
+        <%@study.diplomas.each do |diploma|%>
+          <% markers = diploma.schools.map do |school|
+            {
+              lat: school.latitude,
+              lng: school.longitude,
+              infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school })) }
+            } %>
+          <% end %>
+          <div class="formation">
+            <button class="ctaButton show_schools" data-markers="<%= markers.to_json %>">Choisis tes <%=diploma.name.capitalize%>s</button>
+
+            <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush invisible">
+            <% diploma.schools.each do |school| %>
+               <li class="list-group-item"><%=school.name%></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+ <!-- MAP  -->
+    <div class="col-md-5 col-lg-5">
+      <div id="map" class="map" ></div>
+    </div>
+
+
+ <!-- MON PARCOURS  -->
+
+      <div class="col-md-4 col-lg-4">
+        <div class="parcours">
+          <%@study.diplomas.each do |diploma|%>
+          <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
+            <div class="parcours-diplomas-schools"></div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+        <button id="save_button" type="button" class="btn btn-secondary" data-dismiss="modal">Sauvegarder mon parcours</button>
+         <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+
+           <!-- Hidden button to trigger show schools  -->
+      <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details">
+      </button>
+
+
+ <!-- VOIR DETAILS ECOLE  -->
+        <!-- Modal partial   -->
+      <div id="school_details" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+              </div>
+          </div>
+        </div>
+      </div>
