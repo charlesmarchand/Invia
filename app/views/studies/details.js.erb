@@ -1,11 +1,10 @@
 console.log("llo");
 
+
+console.log(document.getElementById("school_details"))
+
 //Ajout sur la modal descriptive
 document.getElementById("school_details").querySelector('.modal-header h5').innerText = "<%=@school.name%>"
-
-//Ajout sur la modal RECAP PARCOURS
-document.getElementById("recap_schools").querySelector('.recap-body').innerText = "<%=@school.name%>"
-
 document.getElementById("school_details").querySelector('.modal-body').innerText = "Allez stp faut que ça marche"
 document.getElementById("school_details").querySelector('.modal-footer').insertAdjacentHTML('afterbegin', `<button type="button" class="btn btn-secondary btn_add" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>">Ajouter cet établissement</button>`)
 document.getElementById("sd_button").click()
