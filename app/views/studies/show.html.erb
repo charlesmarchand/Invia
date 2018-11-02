@@ -2,9 +2,7 @@
 
 <div class="row">
     <div class= "header">
-      <div class="show-title"> Choisis les établissement qui te plaisent</div>
-
-      <button type="button" class="go_back_Button">Retour</button>
+      <div class="show_title"> Choisis les établissement qui te plaisent</div>
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
         <div class="inputs">
@@ -13,7 +11,7 @@
           <input type="text" placeholder="Coût de la formation">
         </div>
       </div>
-    </div>
+</div>
 
   <div class="row">
     <div class="formation-map-parcours">
@@ -30,9 +28,9 @@
             } %>
           <% end %>
           <div class="formation">
-            <button class="ctaButton show_schools" data-markers="<%= markers.to_json %>">Choisis tes <%=diploma.name.capitalize%>s</button>
 
-            <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush invisible">
+            <button class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>">Choisis tes <%=diploma.name.capitalize%>s</button>
+            <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
             <% diploma.schools.each do |school| %>
                <li class="list-group-item"><%=school.name%></li>
             <% end %>
@@ -64,8 +62,11 @@
 
     <div class="row">
       <div class="col-md-4 col-lg-4">
-        <button id="save_button" type="button" class="btn btn-secondary" data-dismiss="modal">Sauvegarder mon parcours</button>
+        <div class="actions">
+          <button id="save_button" type="button" class="ctaButton" data-dismiss="modal">Sauvegarder mon parcours</button>
+          <button type="button" class="ctaButton">Retour</button>
          <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
 
@@ -74,6 +75,7 @@
       <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details">
       </button>
 
+</div>
 
  <!-- VOIR DETAILS ECOLE  -->
         <!-- Modal partial   -->
@@ -92,3 +94,4 @@
           </div>
         </div>
       </div>
+
