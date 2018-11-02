@@ -17,11 +17,13 @@
             <% study.difficulty.to_i.times do  %>
              <i class="fas fa-star"></i>
             <% end %>
-            <h3> 3 années d'étude </h3>
+            <h3> 3 années </h3
           </div>
 
           <div class="card-vertical-description">
-            <p><%= study.description %></p>
+            <% study.diplomas.each do |diploma| %>
+            <p><%= diploma.description %></p>
+            <% end %>
           </div>
           <!-- Bouton pour lancer la modal -->
           <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= study.id %>" data-toggle="modal" >En savoir plus...</a></div>
