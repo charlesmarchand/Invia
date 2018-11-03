@@ -31,8 +31,12 @@
   font-size: 36px;
 }
 
-.heartsaved {
-  color: $purple-invia;
+.card-vertical .heartsaved {
+  position: absolute;
+  color: red;
+  right: -18px;
+  top: -18px;
+  font-size: 36px;
 }
 
 .card-vertical-category {

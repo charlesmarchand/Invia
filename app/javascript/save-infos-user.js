@@ -1,10 +1,8 @@
-let save = document.querySelector(".heart");
+let save = document.querySelectorAll(".heart");
 
-
-save.addEventListener("click", (event) => {
-  let save1 = document.querySelector(".heart");
-  save1.remove()
-  save1.insertAdjacentHTML('beforeend', `<div class="heartsaved" > <i class="fas fa-heart"></i> </div>`);
-  ;
-
+save.forEach((heart) => {
+  heart.addEventListener("click", (event) => {
+    event.currentTarget.classList[2].replace("heart","heartsaved");
+    });
  });
+
