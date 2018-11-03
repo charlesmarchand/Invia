@@ -6,7 +6,7 @@
     <% @jobs.each do |job| %>
       <div class="item">
         <div class="card-vertical">
-          <a href="#"><i class="far fa-heart heart"></i></a>
+          <i class='far fa-heart heart'></i>
           <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
           <div class="container-title-text">
             <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
@@ -42,4 +42,31 @@
   </div>
 <% end %>
 <!-- Fin de la modal -->
+
+
+
+<!-- <html>
+<head>
+<title>Save</title>
+<script language="javascript" type="text/javascript">
+
+function save()
+{
+val = document.myform.text_area.value;
+mydoc = document.open();
+mydoc.write(val);
+mydoc.execCommand("saveAs",true,".txt"); //you can change the .txt to your extention
+history.go(-1);
+}
+
+</script>
+</head>
+</body>
+<form name="myform">
+<input type="button" onClick="save();" value="Save">
+<br>
+<textarea name="text_area" id="text_area_id" rows="14" cols="40"></textarea>
+</form>
+</body>
+</html> -->
 
