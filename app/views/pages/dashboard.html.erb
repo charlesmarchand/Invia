@@ -9,16 +9,40 @@
 
 
 
+  <div class="dashboard-jobs-container">
+    <% ["Développeur", "Trader", "Coiffeur"].each do |job|%>
+    <div class="dashboard-jobs-card"><%=job%> en card airbnblike</div>
+    <% end %>
 
-  <div class="row">
-      <div class="col-md-5 col-lg-5">
-        <div class="dashboard-jobs" style="display: flex">
-          <% ["Développeur", "Trader", "Coiffeur"].each do |job|%>
-          <div><%=job%> en card airbnblike</div>
-          <% end %>
+  </div>
 
-        </div>
-       </div>
+
+  <div class="flip">
+      <div class="front" style="background-image: url(/assets/datascientist.jpeg)">
+         <h1 class="text-shadow">DEVELOPPEUR</hi>
+      </div>
+      <div class="back">
+         <h2>Clique sur le parcours de ton choix</h2>
+         <p><a href="#">Ecole post-bac</a> | <a href="#">Prépa</a></p>
+      </div>
+  </div>
+  <div class="flip">
+      <div class="front" style="background-image: url(/assets/datascientist.jpeg)">
+         <h1 class="text-shadow">TRADER</hi>
+      </div>
+       <div class="back">
+         <h2>Clique sur le parcours de ton choix</h2>
+         <p><a href="#">Ecole post-bac</a> | <a href="#">Prépa</a></p>
+      </div>
+  </div>
+  <div class="flip">
+      <div class="front" style="background-image: url(/assets/datascientist.jpeg)">
+         <h1 class="text-shadow">COIFFEUR</hi>
+      </div>
+       <div class="back">
+         <h2>Clique sur le parcours de ton choix</h2>
+         <p><a href="#">Ecole post-bac</a> | <a href="#">Prépa</a></p>
+      </div>
   </div>
 
 
