@@ -7,4 +7,5 @@ import { showSchools } from '../components/show_schools';
 
 autocomplete();
 import "bouton-home";
+import "save-infos-user";
 
