@@ -7,11 +7,12 @@ class StudiesController < ApplicationController
   def show
     @job = Job.find(params[:job_id])
     @study = Study.find(params[:id])
-    @edhec = School.find(1)
   end
 
   def details
     @school = School.find(params[:id])
+    # @diplomas = @school.diplomas
+    # @diploma = diploma
   end
 
 

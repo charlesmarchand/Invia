@@ -1,10 +1,27 @@
-console.log("llo");
+console.log("Apparition de la modale");
+
+const modal = document.getElementById("school_details")
 
 
-console.log(document.getElementById("school_details"))
+
+let linkToDetails = document.querySelectorAll('.link-to-details');
+linkToDetails.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const diploma = event.currentTarget.dataset.diploma.name;
+
+
 
 //Ajout sur la modal descriptive
-document.getElementById("school_details").querySelector('.modal-header h5').innerText = "<%=@school.name%>"
-document.getElementById("school_details").querySelector('.modal-body').innerText = "Allez stp faut que ça marche"
-document.getElementById("school_details").querySelector('.modal-footer').insertAdjacentHTML('afterbegin', `<button type="button" class="btn btn-secondary btn_add" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>">Ajouter cet établissement</button>`)
-document.getElementById("sd_button").click()
+modal.querySelector('.modal-header h5').innerText = "<%=@school.name%>"
+modal.querySelector('.modal-body').innerText = "<%=@school.description%>"
+modal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', `<button type="button" class="btn btn-secondary btn_add"
+                                                          data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>"
+                                                          data-diploma =${diploma} >Ajouter cet établissement</button>`);
+document.getElementById("sd_button").click();
+
+  });
+});
+
+
+
+

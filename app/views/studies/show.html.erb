@@ -1,20 +1,39 @@
 <div class="container">
 
 <div class="row">
+      <button type="button" class="back"><< Retour aux parcours</button>
     <div class= "header">
-      <div class="show_title"> Choisis les établissement qui te plaisent</div>
+        <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
+      <div class="show_title">Choisis les établissement qui te plaisent</div>
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
         <div class="inputs">
           <input id="school_address"type="text" placeholder="Ville">
-          <input type="text" placeholder="Selectivité">
-          <input type="text" placeholder="Coût de la formation">
+
+          <form class="form-inline">
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+              <option selected>Coût</option>
+              <option value="1">Gratuit</option>
+              <option value="2">1€ - 1 000€</option>
+              <option value="3">1 000€ - 10 000€</option>
+              <option value="3">10 000€ - 50 000€</option>
+            </select>
+          </form>
+
+          <form class="form-inline">
+               <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Selectivité...</option>
+                  <option value="1">Peu selectif</option>
+                  <option value="2">Assez sélectif</option>
+                  <option value="3">Très sélectif</option>
+                </select>
+            </form>
+
         </div>
       </div>
 </div>
 
-  <div class="row">
-    <div class="formation-map-parcours">
+  <div class="row extended">
 
  <!-- SCHOOL BUTTONS & MARKERS  -->
       <div class="col-md-3 col-lg-3">
@@ -24,15 +43,16 @@
             {
               lat: school.latitude,
               lng: school.longitude,
-              infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school })) }
+              diploma: diploma,
+              infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
             } %>
           <% end %>
           <div class="formation">
 
-            <button class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>">Choisis tes <%=diploma.name.capitalize%>s</button>
+            <button class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</button>
             <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
-            <% diploma.schools.each do |school| %>
-               <li class="list-group-item"><%=school.name%></li>
+            <% diploma.schools.each_with_index do |school, index| %>
+               <li class="list-group-item" data-marker="<%=markers[index]%>"><%=school.name%></li>
             <% end %>
             </ul>
           </div>
@@ -41,35 +61,25 @@
     </div>
 
  <!-- MAP  -->
-    <div class="col-md-5 col-lg-5">
+    <div class="col-md-6 col-lg-6 map-container">
       <div id="map" class="map" ></div>
     </div>
 
 
  <!-- MON PARCOURS  -->
 
-      <div class="col-md-4 col-lg-4">
+      <div class="col-md-3 col-lg-3">
         <div class="parcours">
           <%@study.diplomas.each do |diploma|%>
           <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
-            <div class="parcours-diplomas-schools"></div>
+            <div class="parcours-<%=diploma.name%>-schools"></div>
           <% end %>
+          <div><button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button></div>
+
         </div>
       </div>
 
-    </div>
   </div>
-
-    <div class="row">
-      <div class="col-md-4 col-lg-4">
-        <div class="actions">
-          <button id="save_button" type="button" class="ctaButton" data-dismiss="modal">Sauvegarder mon parcours</button>
-          <button type="button" class="ctaButton">Retour</button>
-         <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-
 
            <!-- Hidden button to trigger show schools  -->
       <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details">
@@ -94,4 +104,7 @@
           </div>
         </div>
       </div>
+
+ <!-- A faire   les pages erreurs, ajout sur le mon parcours, lier le nom de la liste au marker (bounce), flèche ordre, filtres
+  -->
 
