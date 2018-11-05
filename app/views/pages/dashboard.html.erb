@@ -6,29 +6,7 @@
     </div>
   </div>
 
-
-
-<article>
-  <% @jobs.each do |job|%>
-    <section>
-      <div class="flip">
-        <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
-          <h1 class="text-shadow"><%= job.name %></h1>
-        </div>
-        <div class="back">
-          <p>Clique sur le parcours de ton choix
-          <% job.studies.each do |study| %>
-          <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %></p>
-          <% end %>
-        </div>
-      </div>
-    </section>
-  <% end %>
-</article>
-
-
-
-
+<div class="container-cards-dashboard">
   <% @jobs.each do |job|%>
 
       <div class="flip">
@@ -36,15 +14,14 @@
           <h1 class="text-shadow"><%= job.name %></h1>
         </div>
         <div class="back">
-          <p>Clique sur le parcours de ton choix
-          <% job.studies.each do |study| %>
-          <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %></p>
+          <% job.studies.first(3).each do |study| %>
+          <p> <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %> </p>
           <% end %>
         </div>
       </div>
 
   <% end %>
-
+</div>
 
 
 </div>
