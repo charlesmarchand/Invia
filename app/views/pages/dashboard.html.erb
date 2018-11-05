@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="row">
       <div class= "header">
         <h1>Tes élements sauvegardés</h1>
@@ -8,26 +7,100 @@
   </div>
 
 
+
+<article>
+  <% @jobs.each do |job|%>
+    <section>
+      <div class="flip">
+        <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
+          <h1 class="text-shadow"><%= job.name %></h1>
+        </div>
+        <div class="back">
+          <p>Clique sur le parcours de ton choix
+          <% job.studies.each do |study| %>
+          <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %></p>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+</article>
+
+
+
+
   <% @jobs.each do |job|%>
 
-    <div class="flip">
-      <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
-        <h1 class="text-shadow"><%= job.name %></h1>
+      <div class="flip">
+        <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
+          <h1 class="text-shadow"><%= job.name %></h1>
+        </div>
+        <div class="back">
+          <p>Clique sur le parcours de ton choix
+          <% job.studies.each do |study| %>
+          <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="back">
-        <p>Clique sur le parcours de ton choix</p>
-        <% job.studies.each do |study| %>
-        <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %>
-        <% end %>
-      </div>
-
-    </div>
-
 
   <% end %>
 
 
 
-
-
 </div>
+
+
+
+<!-- <article>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, conssqdlkqslkdnqs kndqskndlqsknd qskndqsnd;qs,nd;,sqndsknhk ezhrlezhnlrkne zectetur.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aliquid reprehenderit expedita odio beatae est.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aliquid reprehenderit expedita odio beatae est</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quaerat suscipit ad.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem nihil alias amet dolores fuga totam sequi a cupiditate ipsa voluptas id facilis nobis.</p>
+  </section>
+
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ut debitis dolorum earum expedita eveniet voluptatem quibusdam facere eos numquam commodi ad iusto laboriosam rerum aliquam.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat  architecto quis tenetur fugiat veniam iste molestiae fuga labore!</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit accusamus tempore at porro officia rerum est impedit ea ipsa tenetur. Labore libero hic error sunt laborum expedita.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima asperiores eveniet vero velit eligendi aliquid in.</p>
+  </section>
+
+  <section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorem maxime minima animi cum.</p>
+  </section>
+
+</article> -->
+
