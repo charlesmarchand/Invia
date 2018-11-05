@@ -35,5 +35,3 @@ CSV.foreach('seed-studies.csv', csv_options) do |row|
   end
 end
 
-
-School.create(name: "Edhec", description:"La meilleure école de commerce du monde", address:'Roubaix')

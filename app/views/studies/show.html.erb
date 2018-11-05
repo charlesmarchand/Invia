@@ -48,11 +48,10 @@
             } %>
           <% end %>
           <div class="formation">
-
-            <button class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</button>
+            <div class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</div>
             <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
             <% diploma.schools.each_with_index do |school, index| %>
-               <li class="list-group-item" data-marker="<%=markers[index]%>"><%=school.name%></li>
+               <li class="list-group-item" data-marker="<%=markers[index].to_json%>"><%=school.name%></li>
             <% end %>
             </ul>
           </div>
@@ -72,7 +71,7 @@
         <div class="parcours">
           <%@study.diplomas.each do |diploma|%>
           <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
-            <div class="parcours-<%=diploma.name%>-schools"></div>
+            <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex;"></div>
           <% end %>
           <div><button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button></div>
 
