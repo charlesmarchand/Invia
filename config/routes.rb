@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :keywords, only: [:index]
 
   resources :jobs, only: [:index] do
+    resources :profile_saved_infos, only: [:create, :destroy]
     resources :professionals, only: [:index]
     resources :studies, only: [:index, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+

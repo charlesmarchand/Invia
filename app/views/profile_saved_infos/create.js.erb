@@ -1,0 +1,23 @@
+
+function addProfileSavedInfo() {
+  let save = document.querySelector(".fa-heart")
+  save.forEach((heart) => {
+  heart.addEventListener("click", (event) => {
+    event.currentTarget.classList.remove("far");
+    event.currentTarget.classList.toggle("fas");
+    });
+ });
+}
+
+
+function deleteProfileSavedInfo(innerHTML) {
+  const newProfileSavedInfoForm = document.getElementById('new_review');
+  newProfileSavedInfoForm.innerHTML = innerHTML;
+}
+
+
+<% if @profile_saved_info.errors.any? %>
+  deleteProfileSavedInfo('<%= j render "jobs/index" %>');
+<% else %>
+  addProfileSavedInfo();
+<% end %>
