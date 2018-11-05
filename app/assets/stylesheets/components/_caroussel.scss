@@ -1,43 +1,41 @@
-.MultiCarousel {
-  float: left;
-  overflow: hidden;
-  width: 100%;
-  position:relative;
-}
- .MultiCarousel .MultiCarousel-inner {
-  transition: 1s ease all;
-  float: left;
-}
-.MultiCarousel .MultiCarousel-inner .item {
-  float: left;
+.titles {
+  text-align: center;
+    & h1 {
+    color: $purple-invia;
+    font-size: 20px;
+    }
+    & h2 {
+    color: $grey-invia;
+    font-size: 12px
+    }
 }
 
-.MultiCarousel .leftLst{
-  left:0;
-  position:absolute;
-  top:calc(50% - 20px);
-  color: $purple-invia;
-  border: none;
-  background: none;
-  font-size: 50px;
-  outline: none;
-  &.over {
-    pointer-events: none;
-    color: $grey-invia-button-go-back;
-  }
+.slick-prev:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f100";
+    color: $purple-invia;
+    font-size: 50px;
+    opacity: 0.2;
 }
 
-.MultiCarousel .rightLst {
-  right:0;
-  position:absolute;
-  top:calc(50% - 20px);
+.slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f101";
+    color: $purple-invia;
+    font-size: 50px;
+    opacity: 0.2;
+}
+
+.slick-prev {
+    left: -90px;
+}
+
+.slick-dots li button:before {
+    color: $purple-invia;
+}
+
+.slick-dots li.slick-active button:before {
   color: $purple-invia;
-  border: none;
-  background: none;
-  font-size: 50px;
-  outline: none;
-  &.over {
-    pointer-events: none;
-    color: $grey-invia-button-go-back;
-  }
 }
