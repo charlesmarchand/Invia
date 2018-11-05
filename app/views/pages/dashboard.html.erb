@@ -17,7 +17,7 @@
       <div class="back">
         <p>Clique sur le parcours de ton choix</p>
         <% job.studies.each do |study| %>
-         <p><a href="#"><%= "#{job.studies.index(study) +1} - #{study.name}" %></a>
+        <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %>
         <% end %>
       </div>
 

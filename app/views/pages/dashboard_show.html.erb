@@ -1,0 +1,10 @@
+<%= @study.name %>
+
+<% @study.diplomas.each do |diploma| %>
+  <%= diploma.name %>
+  <% ProfileSavedInfo.where(user_id: current_user[:id], study_id: params[:id], diploma_id: diploma.id, ).each do |instance| %>
+    <%= School.find(instance.school_id).name %>
+  <% end %>
+<% end %>
+
+
