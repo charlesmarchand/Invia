@@ -1,12 +1,12 @@
 
 function addProfileSavedInfo() {
   let save = document.querySelector(".fa-heart")
-  save.forEach((heart) => {
-  heart.addEventListener("click", (event) => {
+  save.addEventListener("click", (event) => {
     event.currentTarget.classList.remove("far");
-    event.currentTarget.classList.toggle("fas");
+    event.currentTarget.classList.remove("fa-heart");
+    event.currentTarget.classList.add("fas");
+    event.currentTarget.classList.add("fa-heart");
     });
- });
 }
 
 
@@ -15,9 +15,5 @@ function deleteProfileSavedInfo(innerHTML) {
   newProfileSavedInfoForm.innerHTML = innerHTML;
 }
 
+addProfileSavedInfo();
 
-<% if @profile_saved_info.errors.any? %>
-  deleteProfileSavedInfo('<%= j render "jobs/index" %>');
-<% else %>
-  addProfileSavedInfo();
-<% end %>
