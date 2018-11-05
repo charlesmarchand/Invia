@@ -1,2 +1,3 @@
-<%=link_to school.name, details_path(school.id), method: :post, class: 'school_details', remote: true %>
+<%=link_to school.name, details_path(school.id), method: :post, class: 'link-to-details', data: {diploma: diploma} , remote: true %>
+<%=school.description%>
 
