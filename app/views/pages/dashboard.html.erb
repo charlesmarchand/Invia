@@ -8,45 +8,23 @@
   </div>
 
 
+  <% @jobs.each do |job|%>
 
-  <div class="dashboard-jobs-container">
-    <% ["Développeur", "Trader", "Coiffeur"].each do |job|%>
-    <div class="dashboard-jobs-card"><%=job%> en card airbnblike</div>
-    <% end %>
-
-  </div>
-
-
-  <div class="flip">
-      <div class="front" style="background-image: url(/assets/datascientist.jpeg)">
-         <h1 class="text-shadow">DEVELOPPEUR</hi>
+    <div class="flip">
+      <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
+        <h1 class="text-shadow"><%= job.name %></h1>
       </div>
       <div class="back">
-         <h2>Clique sur le parcours de ton choix</h2>
-         <p><a href="#">Ecole post-bac</a> | <a href="#">Prépa</a></p>
+        <p>Clique sur le parcours de ton choix</p>
+        <% job.studies.each do |study| %>
+         <p><a href="#"><%= "#{job.studies.index(study) +1} - #{study.name}" %></a>
+        <% end %>
       </div>
-  </div>
-  <div class="flip">
-      <div class="front" style="background-image: url(/assets/datascientist.jpeg)">
-         <h1 class="text-shadow">TRADER</hi>
-      </div>
-       <div class="back">
-         <h2>Clique sur le parcours de ton choix</h2>
-         <p><a href="#">Ecole post-bac</a> | <a href="#">Prépa</a></p>
-      </div>
-  </div>
-  <div class="flip">
-      <div class="front" style="background-image: url(/assets/datascientist.jpeg)">
-         <h1 class="text-shadow">COIFFEUR</hi>
-      </div>
-       <div class="back">
-         <h2>Clique sur le parcours de ton choix</h2>
-         <p><a href="#">Ecole post-bac</a> | <a href="#">Prépa</a></p>
-      </div>
-  </div>
+
+    </div>
 
 
-
+  <% end %>
 
 
 

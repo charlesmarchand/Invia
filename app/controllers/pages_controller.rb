@@ -5,7 +5,11 @@ class PagesController < ApplicationController
     render layout: 'application-homepage'
   end
 
+
   def dashboard
+
+
+    @jobs = current_user.jobs
     render layout: 'application'
 
   end
