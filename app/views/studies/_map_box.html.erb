@@ -1,3 +1,3 @@
-<%=link_to school.name, details_path(school.id), method: :post, class: 'link-to-details', data: {diploma: diploma} , remote: true %>
-<%=school.description%>
-
+<div class="infoWindow">
+<%=link_to school.name, details_path(school.id, diploma.id), method: :post, class: 'link-to-details' , remote: true %>
+</div>

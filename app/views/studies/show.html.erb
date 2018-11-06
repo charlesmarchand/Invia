@@ -48,11 +48,10 @@
             } %>
           <% end %>
           <div class="formation">
-
-            <button class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</button>
+            <div class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</div>
             <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
             <% diploma.schools.each_with_index do |school, index| %>
-               <li class="list-group-item" data-marker="<%=markers[index]%>"><%=school.name%></li>
+               <li class="list-group-item" data-marker="<%=markers[index].to_json%>"><%=school.name%></li>
             <% end %>
             </ul>
           </div>
@@ -72,7 +71,7 @@
         <div class="parcours">
           <%@study.diplomas.each do |diploma|%>
           <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
-            <div class="parcours-<%=diploma.name%>-schools"></div>
+            <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex;"></div>
           <% end %>
           <div><button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button></div>
 
@@ -92,11 +91,14 @@
       <div id="school_details" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+            <div class="modal-photo"></div>
+            <div class="modal-header">
+              <h3></h3>
+              <h4></h4>
+              <h5></h5>
             </div>
               <div class="modal-body"></div>
               <div class="modal-footer">
