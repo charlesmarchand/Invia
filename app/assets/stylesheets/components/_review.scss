@@ -1,8 +1,8 @@
 .reviews-container {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
   flex-wrap: wrap;
+  margin-top: 2em;
 }
 
 .one-review {
@@ -15,8 +15,7 @@
 .one-review-description {
   color: $grey-invia;
   font-weight: lighter;
-  font-size: 17px;
-  text-align: justify;
+
   margin: 1em;
   line-height: 1em;
 }
