@@ -80,9 +80,8 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.diplomaButtons {
+.diploma-bt {
   color: white;
-  width: 200px;
   font-size: 15px;
   padding: 5px 5px;
   background: $purple-invia;
@@ -146,3 +145,16 @@
   background:none ;
 }
 
+.infoWindow{
+  height: 50px;
+  font-family: Raleway;
+  font-size: 20px;
+  border: 2px solid $purple-invia;
+}
+
+.link-to-details {
+  height: 50px;
+  font-family: Raleway;
+  font-size: 20px;
+  border: 2px solid $purple-invia;
+}

@@ -11,7 +11,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     button.addEventListener('click', (event) => {
       map.removeMarkers();
       const markers = JSON.parse(event.currentTarget.dataset.markers);
-      map.addMarkers(markers);
 
         if (markers.length === 0) {
           map.setZoom(2);
@@ -21,19 +20,32 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         } else {
           map.fitLatLngBounds(markers);
         }
+        console.dir(event.currentTarget.closest(".formation").classList)
+        document.querySelectorAll('.formation').forEach((card) => {
+          if (card === event.currentTarget.closest(".formation")) {
+            event.currentTarget.closest(".formation").classList.toggle('open');
+              if (Array.from(event.currentTarget.closest(".formation").classList).includes('open')) {
+                  map.addMarkers(markers);
+              };
+          } else {
+            card.classList.remove('open');
+          }
+        });
+
 
     google.maps.event.trigger(markers[index], 'click');
-      });
+
+    });
   });
+
+
 
   const schools = document.querySelectorAll('.list-group-item');
   schools.forEach((school, index) => {
     school.addEventListener('click', (event) => {
       console.log(school);
-      const marker = event.currentTarget.dataset.marker;
+      const marker = JSON.parse(event.currentTarget.dataset.marker);
       console.log(marker);
-      //google.maps.Animation(marker, 'BOUNCE');
-      google.maps.event.trigger(marker, 'click');
     });
   });
 
