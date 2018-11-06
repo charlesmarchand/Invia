@@ -1,59 +1,10 @@
-
-<%= link_to "Retour", jobs_path, class: "go_back_Button" %>
-
-<div class="titles"> <h1>Développe ton réseau !</h1>
-<h2>Retrouve les personnes qui ont suivi ce parcours </h2></div>
-
-
-
-
-<!-- require 'csv'
-require 'nokogiri'
-require 'open-uri'
-
-
-def write_csv(nom)
-  metiers = []
-
-  url = "https://www.cidj.com/metiers/#{nom}"
-  html_file = open(url).read
-  html_doc = Nokogiri::HTML(html_file)
-
-  item = html_doc.css("div[itemprop='articleBody']").text
-  imageurl = html_doc.search(".header-wrapper-content @style")
-
-  title = nom
-  description = item
-  metiers << {
-  name: title,
-  description: description,
-  url: imageurl
-  }
-
-  CSV.open('metiers.csv','a') do |csv|
-    csv << ["name", "description", "url"]
-    metiers.each do |metier|
-      csv << [
-        metier[:name],
-        metier[:description],
-        metier[:url]
-      ]
-    end
-  end
-end
-
-arraymetiers =
-
-arraymetiers.each do |metier|
-  write_csv(metier)
-end
-
-
-
-
- -->
-
 <div class="container">
+  <%= link_to "Retour", jobs_path, class: "go_back_Button" %>
+
+  <div class="titles"> <h1>Développe ton réseau !</h1>
+  <h2>Retrouve les personnes qui ont suivi ce parcours </h2></div>
+
+
 
   <div class="row">
     <div class="col-xs-12">
