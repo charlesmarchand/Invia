@@ -1,19 +1,25 @@
 // Specific CSS for your home-page
+.row {
+  height: 25vh;
+}
+
 .container-content {
   display: flex;
-  justify-content: space-around;
-  margin-top: 10%;
+  justify-content: space-evenly;
+  margin-top: 6vh;
+  margin-bottom: 4vh;
   flex-wrap: wrap;
+  min-height: 25vh;
 }
 
 .card {
-  width: 400px;
-  padding: 15px;
-  margin-left: 35px;
+  width: 30%;
+  min-width: 305px;
+  padding: 1em;
+
 }
 
 .card-title {
-  font-size: 14px;
   color: $purple-invia;
   display: flex;
 
@@ -41,28 +47,32 @@
   text-justify: inter-word;
 }
 
+.functions-container-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 4em;
+}
 
 .functions-container {
   display: flex;
-  justify-content: space-around;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-bottom: 2em;
 
   & .one-function {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: $purple-invia;
-    width: 250px;
+    width: 300px;
+    padding: 1em;
     & .description {
       color: $grey-invia;
       font-weight: lighter;
-      font-size: 17px;
     }
-    & h3 {
-      font-size: 22px;
-    }
+
     & i {
        font-size: 54px;
     }
@@ -71,5 +81,5 @@
 
 .different-background {
   background-color: white;
-  padding-top: 2em;
+  padding-top: 1em;
 }

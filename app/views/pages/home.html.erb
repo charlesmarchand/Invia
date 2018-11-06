@@ -1,10 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('/assets/banner.png')">
 
   <div class="banner-content">
-    <!-- Ancien Button trigger modal -->
-    <!-- <button type="button" class="go_back_Button" data-toggle="modal" data-target="#seConnecter">
-      Se connecter
-    </button> -->
     <%= link_to "Se connecter", new_user_session_path, class: "loginButton" %>
 
     <h1>Fais de ta passion, ton métier</h1>
@@ -14,195 +10,95 @@
 </div>
 
 <div class="container-content">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <div class="card-title">
-          <i class="fas fa-heart"></i>
-          <h3>Trouve un métier passion</h3>
-        </div>
-        <div class="card-description">
-          <p>Découvre le métier de tes rêves qui correspond à tes passions, fini les choix scolaires par défaut. Reprend le contrôle de ton orientation !</p>
-        </div>
-      </div>
-
+  <div class="card">
+    <div class="card-title">
+      <i class="fas fa-heart"></i>
+      <h4>Trouve un métier passion</h4>
+    </div>
+    <div class="card-description">
+      <p>Nous sommes partis d'un constat simple : tu t'épanouies dans ton métier lorsque tu aimes ce que tu fais. Et quoi de mieux que de lever le matin en voulant aller travailler ?</p>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <div class="card-title">
-          <i class="fas fa-magic"></i>
-          <h3>Créé ton parcours sur-mesure</h3>
-        </div>
-        <div class="card-description">
-          <p>Découvre le métier de tes rêves qui correspond à tes passions, fini les choix scolaires par défaut. Reprend le contrôle de ton orientation !</p>
-        </div>
-      </div>
+  <div class="card">
+    <div class="card-title">
+      <i class="fas fa-magic"></i>
+      <h4>Eclaircie tes idées</h4>
+    </div>
+    <div class="card-description">
+      <p>En l'absence d'information claire, tu as tendance à faire des choix scolaires par défaut ? Reprend le contrôle de ton orientation et aborde cette période sereinement !</p>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <div class="card-title">
-          <i class="fas fa-stream"></i>
-          <h3>Compose ton parcours</h3>
-        </div>
-          <div class="card-description">
-          <p>Découvre le métier de tes rêves qui correspond à tes passions, fini les choix scolaires par défaut. Reprend le contrôle de ton orientation !</p>
-        </div>
-      </div>
+  <div class="card">
+    <div class="card-title">
+      <i class="fas fa-stream"></i>
+      <h4>Choisis ton parcours</h4>
+    </div>
+      <div class="card-description">
+      <p>Les parcours pour accéder à un métier sont nombreux et offrent des opportunités parfois insoupçonnées alors n'attends plus et découvre ton futur maintenant !</p>
     </div>
   </div>
 </div>
 
-<div class="different-background">
-  <div class="title" id="ancre">Comment ça marche ?</div>
+<div class="different-background" id="ancre">
 
+
+
+  <div class="title"><h3>Comment ça marche ?</h3></div>
+
+<div class="functions-container-button">
 
   <div class="functions-container">
     <div class="one-function">
       <i class="far fa-file-alt"></i>
-      <h3>1</h3>
-      <h3>Inscris-toi</h3>
-      <div class="description">Indique-nous tes matières favorites et tes centres d’intêret.</div>
+      <h2>1</h2>
+      <h4>Inscris-toi</h4>
+      <div class="description">C'est simple et rapide! Il te suffit ensuite de nous indiquer tes matières favorites et tes passions.</div>
     </div>
     <div class="one-function">
       <i class="fas fa-graduation-cap"></i>
-      <h3>2</h3>
-      <h3>Choisis ton métier</h3>
-      <div class="description">Nous te proposons une liste de métiers, formations et établissements qui correspondent à tes passions.</div>
+      <h2>2</h2>
+      <h4>Choisis ton métier</h4>
+      <div class="description">Nous te proposons une liste de métiers qui te correspondent. Tu n'auras plus qu'à te laisser guider pour découvrir les parcours possible y accéder.</div>
     </div>
     <div class="one-function">
       <i class="fas fa-cubes"></i>
-      <h3>3</h3>
-      <h3>Compose ton parcours</h3>
-      <div class="description">Construis ton dashboard pour retrouver et affiner la liste des métiers qui te plaisent.</div>
+      <h2>3</h2>
+      <h4>Compose ton parcours</h4>
+      <div class="description">Au fur et à mesure de ta visite, tu peux sauvegarder tes résultats pour pouvoir les consulter plus tard.</div>
     </div>
   </div>
 
+  <div class="ctaButtonHome"><%= link_to "Créer un compte", new_user_registration_path, class: "ctaButton" %></div>
 
-  <%= link_to "Créer un compte", new_user_registration_path, class: "ctaButton" %>
+</div>
 
-  <div class="title">Ce que nos utilisateurs en pensent</div>
+
+
+  <div class="title"><h3>Ce qu'ils en pensent</h3></div>
   <div class="reviews-container">
     <div class="one-review">
-      <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
+      <img src='/assets/rachid.png' class="avatar-large"/>
       <div class="one-review-description">Je ne savais pas ce que je voulais faire dans la vie donc j'ai voulu surfer sur le net pour trouver l'inspiration. J'ai vite été confrontée à un manque d'information claire jusqu'à ce que je tombe sur votre site. Je pense enfin avoir trouvé ma voie, merci Invia !
         <div class="one-review-author">Rachid Bjork, élève de Terminale L</div>
       </div>
     </div>
     <div class="one-review">
-      <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
+      <img src='/assets/mario.png' class="avatar-large"/>
       <div class="one-review-description">J'ai toujours su que je voulais faire médecine mais j'avoue que le parcours restait flou pour moi. Grâce à Invia, j'ai pu en apprendre un peu plus sur mes possibilités. Je suis maintenant décidé à devenir neurologue !
         <div class="one-review-author">Mario Tournier, élève de Terminale S</div>
       </div>
     </div>
     <div class="one-review">
-      <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
+      <img src='/assets/mathieu.png' class="avatar-large"/>
       <div class="one-review-description">L'orientation était vraiment une source de stress pour moi. D'autant que dans ma filière, le manque d'information est encore plus flagrant qu'ailleurs. Je suis contente d'avoir pu faire appel à Invia pour avoir les idées plus claires.
-        <div class="one-review-author">Mathilde Géboulin, élève de Terminale STMG</div>
+        <div class="one-review-author">Mathieu Géboulin, élève de Terminale STMG</div>
       </div>
     </div>
     <div class="one-review">
-      <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar-large"/>
-      <div class="one-review-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        <div class="one-review-author">Martin Dys, élève de Terminale S</div>
+      <img src='/assets/martine.png' class="avatar-large"/>
+      <div class="one-review-description">Je voulais faire un métier hors du commun mais j'étais un peu perdu parmi toutes les possiblités qui s'offraient à moi. Maintenant j'ai enfin trouvé ma voie : la ferronerie.
+        <div class="one-review-author">Martine Dys, élève de Terminale ST2I</div>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- Modal pour se connecter-->
-<!-- <div class="modal fade" id="seConnecter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Continuez pour vous connecter</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Adresse email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Nous ne communiquerons pas votre adresse email sans votre accord.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="ctaButton">Connexion</button>
-          <p><a href="#" class="blue-text ml-1"> Mot de passe oublié ?</a></p>
-          <p>ou continuer avec</p>
-          <div class="row my-3 d-flex justify-content-center"> -->
-            <!--Facebook-->
-<!--             <button type="button" class="go_back_Button">Facebook</button>
- -->            <!--Google +-->
-           <!--  <button type="button" class="go_back_Button">Gmail</button>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <p>Vous n'avez pas de compte ? <a href="#" class="blue-text ml-1"> Inscription</a></p>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- Modal pour créer son compte-->
-<!-- <div class="modal fade" id="creerCompte" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Inscrivez-vous avec Facebook ou Google</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form group">
-            <label data-error="wrong" data-success="right" for="form3">Your name</label>
-            <input type="text" id="form3" class="form-control validate">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Adresse email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Nous ne communiquerons pas votre adresse email sans votre accord.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="ctaButton">Connexion</button>
-          <p><a href="#" class="blue-text ml-1"> Mot de passe oublié ?</a></p>
-          <p>ou continuer avec</p>
-          <div class="row my-3 d-flex justify-content-center"> -->
-            <!--Facebook-->
-            <!-- <button type="button" class="go_back_Button">Facebook</button> -->
-            <!--Google +-->
-            <!-- <button type="button" class="go_back_Button">Gmail</button>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <p>Vous n'avez pas de compte ? <a href="#" class="blue-text ml-1"> Inscription</a></p>
-      </div>
-    </div>
-  </div>
-</div>
- -->
