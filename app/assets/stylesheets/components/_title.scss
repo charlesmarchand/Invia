@@ -1,27 +1,19 @@
 .title {
-  color: $purple-invia;
-  text-align:center;
-}
-
-.title:before, .title:after {
-  content:'';
+  height:0.2em;
   width:100%;
-  border-bottom: $purple-invia solid;
-  display:inline-block;
-  vertical-align:middle;
+  padding:0px;
+  background:$purple-invia;
+  overflow:visible;
+  position:relative;
+  color:$purple-invia;
 }
+.title h3 {
 
-.title:before {
-  margin-left:-100%;
-  margin-right:0.5em
-}
-
-.title:after {
-  margin-right:-100%;
-  margin-left:0.5em;
-}
-
-h1 {
-  font-size: 36px;
-
+  background-color:#FFFFFF;
+  top:-1.2em;
+  margin-left:50%;
+  transform: translateX(-50%);
+  padding: 0 8px 0 8px;
+  display:inline;
+  position:absolute;
 }
