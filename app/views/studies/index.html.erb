@@ -7,6 +7,7 @@
     <% @studies.each do |study| %>
       <div class="item">
         <div class="card-vertical">
+
           <%= form_for([@job, study,  ProfileSavedInfo.new]) do |form| %>
             <%= button_tag type: 'submit' do %>
               <i class="far fa-heart"></i>
@@ -16,9 +17,6 @@
           <div class="container-title-text">
             <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
             <div class="details">
-              <% study.difficulty.to_i.times do  %>
-                <i class="fas fa-star"></i>
-              <% end %>
               <h3> 3 années </h3>
             </div>
             <div class="card-vertical-description">
@@ -54,8 +52,6 @@
           <% study.diplomas.each do |diploma| %>
             <div class="popup-description">
               <h2> <%= diploma.name  %></h3>
-              <h3> <%= diploma.cost  %></h3>
-              <h3><%= diploma.length %></h3>
               <p> <%= diploma.description %> </p> </div>
           <% end %>
         </div>

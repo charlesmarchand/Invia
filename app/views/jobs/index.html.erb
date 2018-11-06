@@ -6,10 +6,14 @@
     <% @jobs.each do |job| %>
       <div class="item">
         <div class="card-vertical">
-         <%= form_for([job, ProfileSavedInfo.new]) do |form| %>
-            <%= button_tag type: 'submit' do %>
-              <i class="far fa-heart"></i>
-            <% end %>
+          <% if  ProfileSavedInfo.where(user_id: current_user,job_id: job ).empty? %>
+           <%= form_for([job, ProfileSavedInfo.new]) do |form| %>
+              <%= button_tag type: 'submit' do %>
+                <i class="far fa-heart"></i>
+              <% end %>
+           <% end %>
+          <% else %>
+            <i class="fas fa-heart"></i>
           <% end %>
           <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
           <div class="container-title-text">
