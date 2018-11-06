@@ -1,10 +1,45 @@
-console.log("llo");
+console.log("Apparition de la modale");
 
-
-console.log(document.getElementById("school_details"))
-
+function updateDetails() {
+let maModal = document.getElementById("school_details");
 //Ajout sur la modal descriptive
-document.getElementById("school_details").querySelector('.modal-header h5').innerText = "<%=@school.name%>"
-document.getElementById("school_details").querySelector('.modal-body').innerText = "Allez stp faut que ça marche"
-document.getElementById("school_details").querySelector('.modal-footer').insertAdjacentHTML('afterbegin', `<button type="button" class="btn btn-secondary btn_add" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>">Ajouter cet établissement</button>`)
-document.getElementById("sd_button").click()
+maModal.querySelector('.modal-photo').style.backgroundImage = "url('<%=@school.url%>')";
+maModal.querySelector('.modal-header h3').innerText = "<%=@school.name%>";
+maModal.querySelector('.modal-header h4').innerText = "<%=@school.address%>";
+maModal.querySelector('.modal-header h5').innerText = "<%=@school.difficulty%><%=@school.cost%>";
+maModal.querySelector('.modal-body').innerText = "<%=@school.description%><%=@school.url%>";
+maModal.querySelector('.modal-footer').innerHTML = "";
+maModal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', '<button type="button" class="save_button btn_add" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>" data-diploma ="<%=@diploma_id%>">Ajouter cet établissement</button>');
+
+let add_button = document.querySelector('.btn_add');
+  add_button.addEventListener('click', (event) => {
+      console.log("<%=@diploma_id%>");
+      const choices = document.querySelector(".parcours-<%=@diploma_id%>-schools");
+      console.log(choices);
+      choices.insertAdjacentHTML("afterbegin", '<a class="school_details added-element"><%=@school.name%></a>');
+
+
+      const addedElement = document.querySelector('.added-element')
+      addedElement.addEventListener('click', (event) => {
+        maModal.querySelector('.modal-footer').innerHTML = "";
+        maModal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', '<button type="button" class="save_button btn_remove" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>" data-diploma ="<%=@diploma_id%>">Retirer cet établissement</button>');
+        document.getElementById("sd_button").click();
+
+            const buttonRemove = document.querySelector('.btn_remove')
+            buttonRemove.addEventListener('click', (event) => {
+              addedElement.remove();
+            });
+        });
+  });
+
+
+document.getElementById("sd_button").click();
+
+}
+
+updateDetails();
+
+
+
+
+

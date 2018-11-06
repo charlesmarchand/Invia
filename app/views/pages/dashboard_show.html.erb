@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class= "header">
+      <h2>Tu as selectionné le parcours <%= @study.name %>.</h2>
+      <h3>Voici les écoles que tu as sauvegardées pour ce parcours.</h3>
+    </div>
+  </div>
+
+
+  <div class="container-cards-dashboard">
+    <% @study.diplomas.each do |diploma| %>
+      <div class="flip">
+
+        <div class="front">
+          <%= diploma.name %> :
+          <ul>
+            <% ProfileSavedInfo.where(user_id: current_user[:id], study_id: params[:id], diploma_id: diploma.id, ).each do |instance| %>
+              <li><%= School.find(instance.school_id).name %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="back">
+          La carte des écoles
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>

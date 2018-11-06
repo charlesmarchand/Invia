@@ -1,49 +1,51 @@
 <div class="container">
 
 <div class="row">
+        <%= link_to "<< Retour aux parcours", job_studies_path(@job), class: "back" %>
     <div class= "header">
-      <div class="show_title"> Choisis les établissement qui te plaisent</div>
+      <div class="show_title">Choisis les établissement qui te plaisent</div>
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
-        <div class="inputs">
-          <input id="school_address"type="text" placeholder="Ville">
-          <input type="text" placeholder="Selectivité">
-          <input type="text" placeholder="Coût de la formation">
+        <div class="inputs-place">
+          <%= render "shared/form-schools" %>
         </div>
       </div>
 </div>
 
-  <div class="row">
-    <div class="formation-map-parcours">
+  <div class="row extended">
 
+ <!-- MAP  -->
+    <div class="col-md-4 col-lg-4 map-container">
+      <div id="map" class="map" ></div>
+    </div>
  <!-- SCHOOL BUTTONS & MARKERS  -->
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-4 col-lg-4">
         <div class="formations">
         <%@study.diplomas.each do |diploma|%>
-          <% markers = diploma.schools.map do |school|
+          <% markers = @schools[diploma.id].map do |school|
             {
               lat: school.latitude,
               lng: school.longitude,
-              infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school })) }
+              diploma: diploma,
+              infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
             } %>
           <% end %>
           <div class="formation">
-
-            <button class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>">Choisis tes <%=diploma.name.capitalize%>s</button>
+            <div class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</div>
             <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
-            <% diploma.schools.each do |school| %>
-               <li class="list-group-item"><%=school.name%></li>
+            <%@schools[diploma.id].each_with_index do |school, index| %>
+               <li class="list-group-item" data-marker="<%=markers[index].to_json%>"><%=school.name%></li>
             <% end %>
             </ul>
           </div>
+          <i class="fas fa-angle-double-down"></i>
         <% end %>
+        <div>
+          <button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button>
+        </div>
       </div>
     </div>
 
- <!-- MAP  -->
-    <div class="col-md-5 col-lg-5">
-      <div id="map" class="map" ></div>
-    </div>
 
 
  <!-- MON PARCOURS  -->
@@ -52,24 +54,12 @@
         <div class="parcours">
           <%@study.diplomas.each do |diploma|%>
           <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
-            <div class="parcours-diplomas-schools"></div>
+            <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex;"></div>
           <% end %>
         </div>
       </div>
 
-    </div>
   </div>
-
-    <div class="row">
-      <div class="col-md-4 col-lg-4">
-        <div class="actions">
-          <button id="save_button" type="button" class="ctaButton" data-dismiss="modal">Sauvegarder mon parcours</button>
-          <button type="button" class="ctaButton">Retour</button>
-         <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-
 
            <!-- Hidden button to trigger show schools  -->
       <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details">
@@ -82,11 +72,14 @@
       <div id="school_details" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+            <div class="modal-photo"></div>
+            <div class="modal-header">
+              <h3></h3>
+              <h4></h4>
+              <h5></h5>
             </div>
               <div class="modal-body"></div>
               <div class="modal-footer">
@@ -94,4 +87,7 @@
           </div>
         </div>
       </div>
+
+ <!-- A faire   les pages erreurs, ajout sur le mon parcours, lier le nom de la liste au marker (bounce), flèche ordre, filtres
+  -->
 

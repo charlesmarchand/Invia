@@ -12,7 +12,6 @@
             <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
             <div class="details">
               <h3> 3 années </h3>
-            </div>
             <div class="card-vertical-description">
               <% study.diplomas.each do |diploma| %>
                 <p><%= diploma.description %></p>
@@ -46,6 +45,12 @@
           <% study.diplomas.each do |diploma| %>
             <div class="popup-description">
               <h2> <%= diploma.name  %></h3>
+              <div class="details">
+                <% diploma.difficulty.to_i.times do  %>
+                <i class="fas fa-star"></i>
+                <% end %>
+              </div>
+              <h3><%= diploma.length %></h3>
               <p> <%= diploma.description %> </p> </div>
           <% end %>
         </div>

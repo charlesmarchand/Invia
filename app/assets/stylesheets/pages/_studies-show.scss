@@ -4,33 +4,71 @@
   text-align: center;
 }
 
+
 .show_title {
   color: $purple-invia;
   font-size: 30px;
-  font-family: Raleway;
-  padding: 15px;
+  padding: 5px 0px;
+  text-align:center;
+  }
+
+.back {
+  color: $purple-invia;
+  font-size: 15px;
+  padding: 10px 0px;
+  border:none;
+  outline: none;
+  background: none;
 }
 
-.description {
+.header .description {
   color: $grey-invia;
   font-size: 20px;
+  padding: 10px 0px;
+  margin-bottom: 10px;
 }
 
 .inputs {
-  display: flex;
-  justify-content: space-between;
   margin-top: 10px;
+  padding: 10px 0px;
+  background-color: $purple-invia;
 }
 
+.search-input {
+  width: 20%;
+  background-color:white;
+  color: $purple-invia;
+  font-family: Raleway;
+  border: none;
+  padding: none;
+}
+
+.search-inputBtn {
+  width: 25%;
+  background-color:$purple-invia;
+  color: white ;
+  font-family: Raleway;
+  border: none;
+  padding: none;
+}
+
+.row {
+  margin-left: -100px;
+  margin-right: -100px;
+}
+
+
 .formation-map-parcours {
-  margin-top: 35px;
+  display:flex;
+  align-items: center;
 }
 
 .formations {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: -60px;
+  justify-content: center;
+  height: 430px;
 }
 
 .formation ul {
@@ -38,66 +76,59 @@
 }
 
 .formation.open ul {
-  height: 100px;
+  height: 150px;
+  width: 230px;
 }
 
-.formation.open diplomaButtons {
+.formation.open.diplomaButtons {
   background: white;
   border: 1px solid $purple-invia;
 }
+.list-group{
+    max-height: 150px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    overflow-y: scroll;
+}
 
 .diplomaButtons {
-  color: white;
-  width: 200px;
-  height: 40px;
-  font-size: 15px;
-  padding: 5px 5px;
-  margin: 30px 0px;
-  background: $purple-invia;
+  color: $purple-invia;
+  font-size: 16px;
+  padding: 10px 5px;
   border-radius: 7px;
-  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
-  border:none;
+  border: 1px solid $purple-invia;
   outline: none;
+  background:none ;
+  text-align: center;
+  cursor: pointer;
+}
+
+.map-container {
+  height: 500px;
 }
 
 .map {
   width: 450px;
-  height: 380px;
+  height: 450px;
 }
 
 .parcours {
   display:flex;
   flex-direction: column;
-  margin-left: 100px;
+  justify-content: space-around;
+  align-items:center;
+  height: 450px;
 }
 
 .parcours-diplomas {
-  font-size: 20px;
-  border-left: 1px solid gray;
+  font-size: 17px;
   border-bottom: 1px solid gray;
   padding-left: 5px;
 
 }
 
 .parcours-diplomas-schools{
-  border-left: 1px solid gray;
-  height: 100px;
 }
-
-
-
-.list-group{
-    max-height: 100px;
-    margin-bottom: 10px;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
-.formation-description {
-  font-size: 20px;
-}
-
-
 
 .school_details {
   text-decoration: none;
@@ -108,7 +139,35 @@
   font-size: 15px;
 }
 
-.actions {
-  display: flex;
-  justify-content: space-between;
+.save_button {
+  color: white;
+  width: 200px;
+  font-size: 15px;
+  padding: 7px 10px;
+  background: $purple-invia;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
+  border:none;
+  outline: none;
+}
+
+.fa-angle-double-down {
+  color: $purple-invia;
+  font-size: 30px;
+  text-align: center;
+  margin: 15px;
+}
+
+.infoWindow{
+  height: 50px;
+  font-family: Raleway;
+  font-size: 20px;
+  border: 2px solid $purple-invia;
+}
+
+.link-to-details {
+  height: 50px;
+  font-family: Raleway;
+  font-size: 20px;
+  border: 2px solid $purple-invia;
 }
