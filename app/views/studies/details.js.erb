@@ -12,10 +12,9 @@ maModal.querySelector('.modal-footer').innerHTML = "";
 maModal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', '<button type="button" class="save_button btn_add" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>" data-diploma ="<%=@diploma_id%>">Ajouter cet établissement</button>');
 
 let add_button = document.querySelector('.btn_add');
+  console.log(add_button);
   add_button.addEventListener('click', (event) => {
-      console.log("<%=@diploma_id%>");
       const choices = document.querySelector(".parcours-<%=@diploma_id%>-schools");
-      console.log(choices);
       choices.insertAdjacentHTML("afterbegin", '<a class="school_details added-element"><%=@school.name%></a>');
 
 
