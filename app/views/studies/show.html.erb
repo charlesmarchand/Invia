@@ -1,45 +1,28 @@
 <div class="container">
 
 <div class="row">
-      <button type="button" class="back"><< Retour aux parcours</button>
+        <%= link_to "<< Retour aux parcours", job_studies_path(@job), class: "back" %>
     <div class= "header">
-        <%#= link_to "Découvrir d'autres parcours", study_path, class: "btn btn-primary" %>
       <div class="show_title">Choisis les établissement qui te plaisent</div>
       <div class="description">Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation ! </div>
 
-        <div class="inputs">
-          <input id="school_address"type="text" placeholder="Ville">
-
-          <form class="form-inline">
-            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-              <option selected>Coût</option>
-              <option value="1">Gratuit</option>
-              <option value="2">1€ - 1 000€</option>
-              <option value="3">1 000€ - 10 000€</option>
-              <option value="3">10 000€ - 50 000€</option>
-            </select>
-          </form>
-
-          <form class="form-inline">
-               <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option selected>Selectivité...</option>
-                  <option value="1">Peu selectif</option>
-                  <option value="2">Assez sélectif</option>
-                  <option value="3">Très sélectif</option>
-                </select>
-            </form>
-
+        <div class="inputs-place">
+          <%= render "shared/form-schools" %>
         </div>
       </div>
 </div>
 
   <div class="row extended">
 
+ <!-- MAP  -->
+    <div class="col-md-4 col-lg-4 map-container">
+      <div id="map" class="map" ></div>
+    </div>
  <!-- SCHOOL BUTTONS & MARKERS  -->
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-4 col-lg-4">
         <div class="formations">
         <%@study.diplomas.each do |diploma|%>
-          <% markers = diploma.schools.map do |school|
+          <% markers = @schools[diploma.id].map do |school|
             {
               lat: school.latitude,
               lng: school.longitude,
@@ -50,31 +33,29 @@
           <div class="formation">
             <div class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</div>
             <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
-            <% diploma.schools.each_with_index do |school, index| %>
+            <%@schools[diploma.id].each_with_index do |school, index| %>
                <li class="list-group-item" data-marker="<%=markers[index].to_json%>"><%=school.name%></li>
             <% end %>
             </ul>
           </div>
+          <i class="fas fa-angle-double-down"></i>
         <% end %>
+        <div>
+          <button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button>
+        </div>
       </div>
     </div>
 
- <!-- MAP  -->
-    <div class="col-md-6 col-lg-6 map-container">
-      <div id="map" class="map" ></div>
-    </div>
 
 
  <!-- MON PARCOURS  -->
 
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-4 col-lg-4">
         <div class="parcours">
           <%@study.diplomas.each do |diploma|%>
           <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
             <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex;"></div>
           <% end %>
-          <div><button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button></div>
-
         </div>
       </div>
 
