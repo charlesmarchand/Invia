@@ -35,5 +35,19 @@ CSV.foreach('seed-studies.csv', csv_options) do |row|
   end
 end
 
+CSV.foreach('seed-schools.csv', csv_options) do |row|
+  school = School.create(name: "#{row[0]}", address: "#{row[1]}", cost: "#{row[2]}", url: "#{row[3]}", link: "#{row[4]}", difficulty: "#{row[5], description: "#{row[6]}"}"
+end
 
-School.create(name: "Edhec", description:"La meilleure école de commerce du monde", address:'Roubaix')
+CSV.foreach('seed-studies_schools.csv', csv_options) do |row|
+  diploma = Diploma.find_by_name(row[0])
+  row[1].split(",").each do |school|
+    if ! School.find_by_name("#{school}").nil?
+     diploma.schools << School.find_by_name("#{school}")
+    else
+      diploma.schools << School.create(name: "#{school}")
+    end
+  end
+end
+
+
