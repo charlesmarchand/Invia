@@ -41,7 +41,12 @@
           <i class="fas fa-angle-double-down"></i>
         <% end %>
         <div>
-          <button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button>
+
+
+           <%= form_for([@job, ProfileSavedInfo.new]) do |form| %>
+              <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
+           <% end %>
+
         </div>
       </div>
     </div>

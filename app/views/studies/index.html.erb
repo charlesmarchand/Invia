@@ -1,5 +1,4 @@
 <div class="titles"> <h1>Choisis le parcours qui te plaît</h1>
-
 <h2>Voici les propositions de parcours pour devenir <%= @job.name %> !</h2></div>
 
 <div class="container">
@@ -12,6 +11,7 @@
             <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
             <div class="details">
               <h3> 3 années </h3>
+            </div>
             <div class="card-vertical-description">
               <% study.diplomas.each do |diploma| %>
                 <p><%= diploma.description %></p>
@@ -22,6 +22,7 @@
           <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= study.id %>" data-toggle="modal" >En savoir plus...</a></div>
           <!-- Fin du bouton pour lancer la modal -->
           <%= link_to "Les établissements", job_study_path(@job,study), class: "ctaButton" %>
+          </div>
         </div>
       </div>
     <% end %>
