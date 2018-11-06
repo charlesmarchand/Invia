@@ -52,47 +52,19 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 }
 
 
-      // let shownMarkers = map.markers;
-      // if (isInclude(shownMarkers, markers)) {
-      //   console.log('DELETE')
-
-      //   const newShownMarkers = shownMarkers.flatMap((marker) => {
-
-      //   let bool = false;
-      //   markers.forEach((mark) => {
-      //     if ((marker.position.lat().toFixed(7) == mark.lat && marker.position.lng().toFixed(7) == mark.lng)) {
-      //       bool = true;
-      //     }
-      //   });
-
-      //     if (bool) {
-      //       console.log('marker to delete');
-      //       return [];
-      //     } else {
-      //       return [{lat: marker.position.lat().toFixed(7), lng: marker.position.lng().toFixed(7) }];
-      //     }
-      //   });
-      //   console.log(newShownMarkers);
-      //   map.addMarkers(newShownMarkers);
-
-      // } else {
-      //   console.log('ADD')
-      //   map.addMarkers(markers);
-
-      // };
+// map dashboard
+const mapElement2 = document.getElementById('map2');
+if (mapElement2) { // don't try to build a map if there's no div#map to inject in
+  const map2 = new GMaps({ el: '#map2', lat: 46.227638, lng: 2.213749 });
+  map2.setZoom(5);
 
 
-// function isInclude(shownMarkers, markers) {
-//   if (shownMarkers.length !== 0) {
-//     let bool = false;
-//     shownMarkers.forEach((marker) => {
-//       console.log('MARKER => ' + (marker.position.lat().toFixed(7) == markers[0].lat && marker.position.lng().toFixed(7) == markers[0].lng));
+const markers2 = JSON.parse(mapElement2.dataset.markers);
 
-//       if ((marker.position.lat().toFixed(7) == markers[0].lat && marker.position.lng().toFixed(7) == markers[0].lng)) {
-//         bool = true;
-//       }
-//     });
-
-//     return bool;
-//   }
-// }
+const map2Markers = [];
+  markers2.forEach((marker) => {
+    const mapMarker = map2.createMarker(marker);
+    map2Markers.push(map2Marker);
+    map2.addMarker(map2Marker);
+  });
+};
