@@ -29,15 +29,27 @@
 }
 
 .inputs {
-  display: flex;
-  justify-content: space-even;
   margin-top: 10px;
   padding: 10px 0px;
   background-color: $purple-invia;
 }
 
-.input {
+.search-input {
+  width: 20%;
+  background-color:white;
+  color: $purple-invia;
+  font-family: Raleway;
+  border: none;
+  padding: none;
+}
 
+.search-inputBtn {
+  width: 25%;
+  background-color:$purple-invia;
+  color: white ;
+  font-family: Raleway;
+  border: none;
+  padding: none;
 }
 
 .row {

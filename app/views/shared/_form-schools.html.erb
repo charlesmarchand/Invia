@@ -4,16 +4,16 @@
 
    <%= text_field_tag :address,
      params[:address],
-     class: "form-input",
+     class: "search-input",
       id: "school_address",
      placeholder: "Adresse"
    %>
 
-<%= select_tag(:cost_id, options_for_select([['Gratuit', 1], ['1€ - 1000€', 2], ['1 000€ - 10 000€', 3], ['10 000€ - 50 000€', 4]]), class: "input") %>
+<%= select_tag(:cost_id, options_for_select([['Gratuit', 1], ['1€ - 1000€', 2], ['1 000€ - 10 000€', 3], ['10 000€ - 50 000€', 4]]), class: "search-input") %>
 
-   <%= select_tag(:difficulty_id, options_for_select([['Très peu sélectif', 1], ['Peu selectif', 2], ['Assez selectif', 3], ['Très sélectif', 4]]), class: "input") %>
+   <%= select_tag(:difficulty_id, options_for_select([['Très peu sélectif', 1], ['Peu selectif', 2], ['Assez selectif', 3], ['Très sélectif', 4]]), class: "search-input") %>
 
-  <%= submit_tag "Trouve ton école !", class: 'input-button'%>
+  <%= submit_tag "Trouve ton école !", class: 'search-inputB'%>
 
   <% end %>
 
