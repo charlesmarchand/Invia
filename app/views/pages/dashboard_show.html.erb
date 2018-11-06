@@ -44,12 +44,12 @@
               infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
             } %>
 
-             <!-- MAP  -->
+
+          <% end %>
+<!-- MAP  -->
     <div class="col-md-6 col-lg-6 map-container">
       <div id="map2" class="map" data-markers="<%= markers.to_json %>"></div>
     </div>
-          <% end %>
-
         <% end %>
       </div>
     </div>

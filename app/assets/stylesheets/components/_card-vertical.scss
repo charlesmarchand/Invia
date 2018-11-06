@@ -1,7 +1,6 @@
 .card-vertical {
   position: relative;
   width: 300px;
-  height: 500px;
   background-color: white;
   border-radius: 3px;
   box-shadow: 2px 2px 4px #E6E6E6;
@@ -54,18 +53,18 @@
 
 .card-vertical .ctaButton{
   position: relative;
-  bottom: -120px;
+  bottom: -1.5em;
   right: -60px;
 }
 
 .buttoncenter {
   text-align: center;
+  margin-top: 0.7em;
 }
 
 .ensavoirplus {
 
   color: $purple-invia;
-  margin-top: 1em;
 }
 
 .ensavoirplus:visited {
