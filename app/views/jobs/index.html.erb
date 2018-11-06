@@ -13,7 +13,11 @@
               <% end %>
            <% end %>
           <% else %>
-            <i class="fas fa-heart"></i>
+            <%= form_for(job) do |form| %>
+              <%= button_tag type: 'submit' do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            <% end %>
           <% end %>
           <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
           <div class="container-title-text">
