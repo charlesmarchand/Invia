@@ -6,17 +6,16 @@
     <% @jobs.each do |job| %>
       <div class="item">
         <div class="card-vertical">
-          <% if  ProfileSavedInfo.where(user_id: current_user,job_id: job ).empty? %>
+          <% profile_saved_info = ProfileSavedInfo.where(user: current_user,job: job)%>
+          <% if  ProfileSavedInfo.where(user: current_user,job: job).empty? %>
            <%= form_for([job, ProfileSavedInfo.new]) do |form| %>
               <%= button_tag type: 'submit' do %>
                 <i class="far fa-heart"></i>
               <% end %>
            <% end %>
           <% else %>
-            <%= form_for(job) do |form| %>
-              <%= button_tag type: 'submit' do %>
-                <i class="fas fa-heart"></i>
-              <% end %>
+            <%= link_to profile_saved_info_path(profile_saved_info.ids), method: :delete do%>
+                 <i class="fas fa-heart new_profile_saved_info"> </i>
             <% end %>
           <% end %>
           <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>

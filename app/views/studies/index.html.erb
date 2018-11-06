@@ -7,12 +7,6 @@
     <% @studies.each do |study| %>
       <div class="item">
         <div class="card-vertical">
-
-          <%= form_for([@job, study,  ProfileSavedInfo.new]) do |form| %>
-            <%= button_tag type: 'submit' do %>
-              <i class="far fa-heart"></i>
-            <% end %>
-          <% end %>
           <div class="img-vertical" style="background-image: url(/assets/datascientist.jpeg)"></div>
           <div class="container-title-text">
             <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>

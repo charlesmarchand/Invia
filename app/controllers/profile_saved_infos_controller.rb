@@ -28,12 +28,14 @@ class ProfileSavedInfosController < ApplicationController
 
 
   def destroy
-    @job = Job.find(params[:job_id])
-    ProfileSavedInfo.where(user_id: current_use,job_id: @job ).each do |profile|
-      destroy(profile.id)
+    @profil_saved_info = ProfileSavedInfo.find(params[:id])
+    if ! @profil_saved_info.nil?
+      @profil_saved_info.destroy
+      redirect_to jobs_path
+    else
+        redirect_to jobs_path
     end
   end
-
 
 
   private
