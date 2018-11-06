@@ -10,33 +10,31 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   buttons.forEach((button, index) => {
     button.addEventListener('click', (event) => {
       map.removeMarkers();
+
+
       const markers = JSON.parse(event.currentTarget.dataset.markers);
+      const mapMarkers = [];
 
         if (markers.length === 0) {
-          map.setZoom(2);
+          map.setZoom(3);
         } else if (markers.length === 1) {
           map.setCenter(markers[0].lat, markers[0].lng);
-          map.setZoom(13);
+          map.setZoom(10);
         } else {
           map.fitLatLngBounds(markers);
         }
+
         console.dir(event.currentTarget.closest(".formation").classList)
         document.querySelectorAll('.formation').forEach((card) => {
           if (card === event.currentTarget.closest(".formation")) {
             event.currentTarget.closest(".formation").classList.toggle('open');
               if (Array.from(event.currentTarget.closest(".formation").classList).includes('open')) {
-                  map.addMarkers(markers);
-              };
-          } else {
-            card.classList.remove('open');
-          }
-        });
-
-
-    google.maps.event.trigger(markers[index], 'click');
-
-    });
-  });
+                markers.forEach((marker) => {
+                    const mapMarker = map.createMarker(marker);
+                    mapMarkers.push(mapMarker);
+                    map.addMarker(mapMarker);
+                  });
+                map.addMarkers(markers);
 
 
 
@@ -46,53 +44,19 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       console.log(school);
       const marker = JSON.parse(event.currentTarget.dataset.marker);
       console.log(marker);
+      google.maps.event.trigger(mapMarkers[index], 'click');
     });
   });
 
+
+              };
+          } else {
+            card.classList.remove('open');
+          }
+        });
+
+    });
+  });
+
+
 }
-
-
-      // let shownMarkers = map.markers;
-      // if (isInclude(shownMarkers, markers)) {
-      //   console.log('DELETE')
-
-      //   const newShownMarkers = shownMarkers.flatMap((marker) => {
-
-      //   let bool = false;
-      //   markers.forEach((mark) => {
-      //     if ((marker.position.lat().toFixed(7) == mark.lat && marker.position.lng().toFixed(7) == mark.lng)) {
-      //       bool = true;
-      //     }
-      //   });
-
-      //     if (bool) {
-      //       console.log('marker to delete');
-      //       return [];
-      //     } else {
-      //       return [{lat: marker.position.lat().toFixed(7), lng: marker.position.lng().toFixed(7) }];
-      //     }
-      //   });
-      //   console.log(newShownMarkers);
-      //   map.addMarkers(newShownMarkers);
-
-      // } else {
-      //   console.log('ADD')
-      //   map.addMarkers(markers);
-
-      // };
-
-
-// function isInclude(shownMarkers, markers) {
-//   if (shownMarkers.length !== 0) {
-//     let bool = false;
-//     shownMarkers.forEach((marker) => {
-//       console.log('MARKER => ' + (marker.position.lat().toFixed(7) == markers[0].lat && marker.position.lng().toFixed(7) == markers[0].lng));
-
-//       if ((marker.position.lat().toFixed(7) == markers[0].lat && marker.position.lng().toFixed(7) == markers[0].lng)) {
-//         bool = true;
-//       }
-//     });
-
-//     return bool;
-//   }
-// }
