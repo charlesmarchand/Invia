@@ -5,6 +5,7 @@ let maModal = document.getElementById("school_details");
 
 //Ajout sur la modal descriptive
 maModal.querySelector('.modal-header h5').innerText = "<%=@school.name%>";
+maModal.querySelector('.modal-header .school-characteristics').innerText = "<%=@school.name%>";
 maModal.querySelector('.modal-body').innerText = "<%=@school.description%>";
 maModal.querySelector('.modal-footer').innerHTML = "";
 maModal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', '<button type="button" class="btn btn-secondary btn_add" data-dismiss="modal" data-id="<%=@school.id%>" data-name="<%=@school.name%>" data-diploma ="<%=@diploma_id%>">Ajouter cet établissement</button>');

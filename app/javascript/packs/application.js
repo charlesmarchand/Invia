@@ -7,4 +7,3 @@ import { showSchools } from '../components/show_schools';
 import "bouton-home";
 
 autocomplete();
-addSchools();
