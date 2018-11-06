@@ -41,7 +41,7 @@ end
 
 CSV.foreach('seed-studies_schools.csv', csv_options) do |row|
   p row[0]
-  diploma = Diploma.find_by_name(row[0])
+  diploma = Diploma.find_by_name("#{row[0]}")
   p diploma
   row[1].split(",").each do |school|
     if ! School.find_by_name("#{school}").nil?
