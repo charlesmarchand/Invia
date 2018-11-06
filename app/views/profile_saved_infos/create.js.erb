@@ -1,0 +1,19 @@
+
+function addProfileSavedInfo() {
+  let save = document.querySelector(".fa-heart")
+  save.addEventListener("click", (event) => {
+    event.currentTarget.classList.remove("far");
+    event.currentTarget.classList.remove("fa-heart");
+    event.currentTarget.classList.add("fas");
+    event.currentTarget.classList.add("fa-heart");
+    });
+}
+
+
+function deleteProfileSavedInfo(innerHTML) {
+  const newProfileSavedInfoForm = document.getElementById('new_review');
+  newProfileSavedInfoForm.innerHTML = innerHTML;
+}
+
+addProfileSavedInfo();
+

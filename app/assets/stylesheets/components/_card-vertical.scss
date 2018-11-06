@@ -23,15 +23,18 @@
   text-overflow: ellipsis;
 }
 
-.card-vertical .heart {
+.card-vertical .new_profile_saved_info {
   position: absolute;
-  color: $purple-invia;
+  background-color: transparent;
   right: -18px;
   top: -18px;
-  font-size: 36px;
+  font-size: 26px;
+  border-color: transparent;
+  color: $purple-invia;
 }
-
-.heartsaved {
+.card-vertical button {
+  background-color: transparent;
+  border-color: transparent;
   color: $purple-invia;
 }
 
