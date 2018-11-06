@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
+  get 'dashboard/study/:id', to: 'pages#dashboard_show', as: :dashboard_study
+
   post 'details/:id', to: 'studies#details', as: :details
   resources :keywords, only: [:index]
 
