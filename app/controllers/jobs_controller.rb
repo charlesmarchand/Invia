@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
   def index
-
     if (params[:interests].present?) || (params[:subjects].present?)
       allparams = []
 
