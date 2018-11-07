@@ -37,6 +37,10 @@ class ProfileSavedInfosController < ApplicationController
     end
   end
 
+  def schools_scrap
+
+  end
+
 
   private
 
