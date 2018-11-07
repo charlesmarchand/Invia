@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
     render layout: 'application'
 
+
   end
 
   def dashboard_show
