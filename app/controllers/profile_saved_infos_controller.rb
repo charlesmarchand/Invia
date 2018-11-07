@@ -43,11 +43,13 @@ class ProfileSavedInfosController < ApplicationController
 
 
   def destroy
-    @profil_saved_info = ProfileSavedInfo.find(params[:id])
-    @profil_saved_infos = ProfileSavedInfo.where(jobs_id: @profil_saved_info.job_id, user_id: current_user)
+    @profile_saved_info = ProfileSavedInfo.find(params[:id])
+    job = @profile_saved_info.job_id
+    currentuser = current_user.id
+    @profile = ProfileSavedInfo.where(jobs_id: job, user_id: currentuser)
     raise
-    if ! @profil_saved_info.nil?
-      @profil_saved_infos.destroy_all
+    if ! @profile.nil?
+      @profile_saved_info.destroy
       redirect_to jobs_path
     else
       redirect_to jobs_path

@@ -13,6 +13,7 @@ maModal.querySelector('.modal-footer').innerHTML = "";
 maModal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', "<%= j(link_to 'Ajouter cet établissement', add_path(@school.id, @diploma_id), method: :post, class: 'save_button fas fa-plus', 'data-dismiss': 'modal', remote: true) %>");
 
 
+
 document.getElementById("sd_button").click();
 };
 
