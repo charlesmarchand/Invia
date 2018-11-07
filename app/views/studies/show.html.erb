@@ -1,22 +1,22 @@
 <div class="container">
 
 <%= link_to "Retour", job_studies_path(@job), class: "go_back_Button" %>
-  
+
 <div class="row">
     <div class= "header">
       <h2>Choisis les établissements qui te plaisent</h2>
       <h3>Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation !</h3>
+
     </div>
   </div>
 
-
-
-        <div class="inputs-place">
-          <%= render "shared/form-schools" %>
-        </div>
+<div class="row-extended">
+  <div class="inputs-place">
+    <%= render "shared/form-schools" %>
+  </div>
 </div>
 
-  <div class="row extended">
+  <div class="row-extended">
 
  <!-- MAP  -->
     <div class="col-md-4 col-lg-4 map-container">
@@ -63,7 +63,7 @@
         <div class="parcours">
           <%@study.diplomas.each do |diploma|%>
           <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
-            <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex;"></div>
+            <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex, height: auto;"></div>
           <% end %>
         </div>
       </div>
