@@ -6,23 +6,33 @@
     </div>
   </div>
 
-
   <div class="container-cards-dashboard">
     <% @study.diplomas.each do |diploma| %>
       <div class="flip">
         <div class="front">
           <%= diploma.name %> :
-          <ul>
-            <% ProfileSavedInfo.where(user_id: current_user[:id], study_id: params[:id], diploma_id: diploma.id, ).each do |instance| %>
-              <li><%= School.find(instance.school_id).name %></li>
+
+          <!-- Sélectionner les instances de ProfileSavedInfo qui correspondent à ce diploma -->
+          <% parcours_match = ProfileSavedInfo.where(user_id: current_user[:id], study_id: params[:id], diploma_id: diploma.id) %>
+
+          <!-- S'il n'y a aucune instance, alors ne liste aucune et les markers sont vides -->
+          <% if parcours_match.blank? %>
+            <p> Pas d'écoles sauvegardées</p>
+            <% markers = [] %>
+
+          <!-- Sinon, lister les écoles sauvegardés puis créer les markers correspondants pour la map -->
+          <% else %>
+            <ul>
+              <% parcours_match.each do |instance| %>
+                <li><%= School.find(instance.school_id).name %></li>
+              <% end %>
+            </ul>
+            <% schools_save = [] %>
+            <% parcours_match.each do |un_parcours| %>
+              <% schools_save << School.find(un_parcours.school_id) %>
             <% end %>
-          </ul>
-        </div>
-        <div class="back">
 
-
-            <% markers = diploma.schools.map do |school|
-
+            <% markers = schools_save.map do |school|
               {
                 lat: school.latitude,
                 lng: school.longitude,
@@ -30,14 +40,11 @@
                 infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
               } %>
             <% end %>
-
-              <!-- MAP  -->
-
-              <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
-
-
-
-
+          <% end %>
+        </div>
+        <div class="back">
+          <!-- Afficher les markers sur la map  -->
+          <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
         </div>
       </div>
     <% end %>
