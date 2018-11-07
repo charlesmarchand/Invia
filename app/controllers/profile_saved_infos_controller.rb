@@ -1,6 +1,5 @@
 class ProfileSavedInfosController < ApplicationController
   def create
-    raise
     @job = Job.find(params[:job_id])
     @study = Study.find(params[:study_id]) if ! @study.nil?
     @profile_saved_info = ProfileSavedInfo.new

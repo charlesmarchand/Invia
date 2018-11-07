@@ -9,12 +9,15 @@
           <div class="img-vertical" style="background-image: url(/assets/datascientist.jpeg)"></div>
           <div class="container-title-text">
             <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
-            <div class="details">
-              <h3> 3 années </h3>
-            </div>
             <div class="card-vertical-description">
               <% study.diplomas.each do |diploma| %>
-                <p><%= diploma.description %></p>
+              <div class="details">
+                <% diploma.difficulty.to_i.times do  %>
+                <i class="fas fa-star"></i>
+                <% end %>
+              </div>
+              <h3><%= diploma.length %> années</h3>
+              <p><%= diploma.description %></p>
               <% end %>
             </div>
           </div>
@@ -22,7 +25,6 @@
           <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= study.id %>" data-toggle="modal" >En savoir plus...</a></div>
           <!-- Fin du bouton pour lancer la modal -->
           <%= link_to "Les établissements", job_study_path(@job,study), class: "ctaButton" %>
-          </div>
         </div>
       </div>
     <% end %>
@@ -51,8 +53,9 @@
                 <i class="fas fa-star"></i>
                 <% end %>
               </div>
-              <h3><%= diploma.length %></h3>
-              <p> <%= diploma.description %> </p> </div>
+              <h3><%= diploma.length %> années</h3>
+              <p> <%= diploma.description %> </p>
+            </div>
           <% end %>
         </div>
       </div>
