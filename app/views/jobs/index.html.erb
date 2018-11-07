@@ -20,8 +20,8 @@
               <% end %>
            <% end %>
           <% else %>
-            <%= link_to profile_saved_info_path(profile_saved_info.ids), method: :delete do%>
-                 <i class="fas fa-heart new_profile_saved_info"> </i>
+            <%= link_to profile_saved_info_path(profile_saved_info.ids), class:"new_profile_saved_info", method: :delete do%>
+                 <i class="fas fa-heart "> </i>
             <% end %>
           <% end %>
           <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
@@ -52,7 +52,6 @@
         <div class="modal-body">
           <div class="popup-image" style="background-image: url(<%= job.url %>)"></div>
           <div class="popup-description"> <%= job.description %> </div>
-          <%= link_to "Développe ton réseau", job_professionals_path(job), class: "ctaButton" %>
         </div>
       </div>
     </div>
