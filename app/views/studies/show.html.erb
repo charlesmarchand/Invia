@@ -26,7 +26,6 @@
             {
               lat: school.latitude,
               lng: school.longitude,
-              diploma: diploma,
               infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
             } %>
           <% end %>

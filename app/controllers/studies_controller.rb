@@ -61,7 +61,7 @@ class StudiesController < ApplicationController
 
   def details
     @school = School.find(params[:id])
-    @diploma_id = params[:diploma_id]
+    @diploma_id = params[:format]
   end
 
 

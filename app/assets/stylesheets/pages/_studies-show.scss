@@ -41,12 +41,14 @@
   background-color: $purple-invia;
   display:flex;
   justify-content: space-evenly;
-  height: 50px;
+  align-items: center;
+  height: 60px;
 }
 
 
 .search-input {
   width: 25%;
+  height: 25px;
   background-color:white;
   color: $purple-invia;
   border: none;
@@ -61,6 +63,7 @@
   border: 1px solid white ;
   border-radius: 5px;
   padding: none;
+  height: 25px;
 }
 
 .row {
@@ -111,7 +114,6 @@
   text-align: center;
   cursor: pointer;
   max-width: 250px;
-
 }
 
 .map-container {
@@ -122,7 +124,7 @@
   width: 440px;
   height: 420px;
   margin-left: -15px;
-  margin-top: -8px;
+  margin-top: 1px;
 }
 
 .parcours {
@@ -188,4 +190,13 @@
   display:flex;
   align-items: center;
   height: 400px;
+}
+
+.modal-photo {
+  height: 200px;
+}
+
+.photo-school {
+  background-size: cover !important;
+  background-position: center;
 }

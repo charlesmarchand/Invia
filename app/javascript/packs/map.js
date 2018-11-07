@@ -34,25 +34,24 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
                     map.addMarker(mapMarker);
                   });
                 map.addMarkers(markers);
-
-  const schools = document.querySelectorAll('.list-group-item');
-  schools.forEach((school, index) => {
-    school.addEventListener('click', (event) => {
-      const marker = JSON.parse(event.currentTarget.dataset.marker);
-      google.maps.event.trigger(mapMarkers[index], 'click');
-    });
-    school.addEventListener('mouseover', (event) => {
-      const marker = JSON.parse(event.currentTarget.dataset.marker);
-    marker.setAnimation(google.maps.Animation.BOUNCE);
-  });
-    });
-
-
               };
+    const schools = document.querySelectorAll('.list-group-item');
+    schools.forEach((school, index) => {
+      school.addEventListener('click', (event) => {
+        const marker = JSON.parse(event.currentTarget.dataset.marker);
+        google.maps.event.trigger(mapMarkers[index], 'click');
+        });
+      });
           } else {
             card.classList.remove('open');
           }
         });
+
+    //school.addEventListener('mouseover', (event) => {
+      //const marker = JSON.parse(event.currentTarget.dataset.marker);
+    //marker.setAnimation(google.maps.Animation.BOUNCE);
+  //});
+
 
     });
   });
