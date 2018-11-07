@@ -10,8 +10,10 @@ Rails.application.routes.draw do
 
   resources :keywords, only: [:index]
 
-  resources :jobs, only: [:index] do
-    resources :profile_saved_infos, only: [:create, :destroy]
+   resources :profile_saved_infos, only: :destroy
+
+    resources :jobs, only: [:index] do
+    resources :profile_saved_infos, only: :create
     resources :professionals, only: [:index]
     resources :studies, only: [:index, :show] do
       resources :profile_saved_infos, only: [:create, :destroy]
