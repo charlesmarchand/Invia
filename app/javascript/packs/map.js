@@ -69,7 +69,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
 
 
-const maps = document.querySelectorAll(".map");
+const maps = document.querySelectorAll(".map-dashboard");
 console.log(maps);
 maps.forEach((uneMap) => {
   console.log(uneMap);
@@ -93,8 +93,3 @@ maps.forEach((uneMap) => {
   };
 
 });
-
-
-
-
-
