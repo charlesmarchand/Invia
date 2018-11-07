@@ -19,7 +19,25 @@
           </ul>
         </div>
         <div class="back">
-          La carte des écoles
+
+
+            <% markers = diploma.schools.map do |school|
+
+              {
+                lat: school.latitude,
+                lng: school.longitude,
+
+                infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
+              } %>
+            <% end %>
+
+              <!-- MAP  -->
+            <div class="col-md-6 col-lg-6 map-container">
+              <div id= "map<%= diploma.id %>" class="map" data-markers="<%= markers.to_json %>"></div>
+            </div>
+
+
+
         </div>
       </div>
     <% end %>
@@ -31,20 +49,7 @@
 <!-- SCHOOL BUTTONS & MARKERS  -->
   <div class="col-md-3 col-lg-3">
     <div class="formations">
-      <%@study.diplomas.each do |diploma|%>
-        <% markers = diploma.schools.map do |school|
-          {
-            lat: school.latitude,
-            lng: school.longitude,
-            diploma: diploma,
-            infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
-          } %>
-        <% end %>
-        <!-- MAP  -->
-        <div class="col-md-6 col-lg-6 map-container">
-          <div id="map2" class="map" data-markers="<%= markers.to_json %>"></div>
-        </div>
-      <% end %>
+
     </div>
   </div>
 </div>

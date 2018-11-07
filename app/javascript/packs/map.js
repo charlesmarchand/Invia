@@ -65,26 +65,35 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
     });
   });
-
-
 }
 
 
 
-// map dashboard
-const mapElement2 = document.getElementById('map2');
-if (mapElement2) { // don't try to build a map if there's no div#map to inject in
-  const map2 = new GMaps({ el: '#map2', lat: 46.227638, lng: 2.213749 });
-  map2.setZoom(5);
+const maps = document.querySelectorAll(".map");
+console.log(maps);
+maps.forEach((uneMap) => {
+  console.log(uneMap);
+  const uneMapId = uneMap.attributes.id.value;
+  console.log(uneMapId);
+
+  if (uneMap) { // don't try to build a map if there's no div#map to inject in
+    const newMap = new GMaps({ el: `#${uneMapId}`, lat: 46.227638, lng: 2.213749 });
+    newMap.setZoom(5);
 
 
-const markers2 = JSON.parse(mapElement2.dataset.markers);
+    const markers2 = JSON.parse(uneMap.dataset.markers);
+    console.log(markers2);
 
-const map2Markers = [];
-  markers2.forEach((marker) => {
-    const mapMarker = map2.createMarker(marker);
-    map2Markers.push(map2Marker);
-    map2.addMarker(map2Marker);
-  });
-};
+   /* const map2Markers = [];
+    markers2.forEach((marker) => {
+      const mapMarker = newMap.createMarker(marker);
+      map2Markers.push(map2Marker);
+      newMap.addMarker(map2Marker);
+    });*/
+  };
+
+});
+
+
+
 
