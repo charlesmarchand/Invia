@@ -84,15 +84,16 @@ maps.forEach((uneMap) => {
     const markers2 = JSON.parse(uneMap.dataset.markers);
     console.log(markers2);
 
-   /* const map2Markers = [];
+    const mapMarkers = [];
     markers2.forEach((marker) => {
       const mapMarker = newMap.createMarker(marker);
-      map2Markers.push(map2Marker);
-      newMap.addMarker(map2Marker);
-    });*/
+      mapMarkers.push(mapMarker);
+      newMap.addMarker(mapMarker);
+    });
   };
 
 });
+
 
 
 
