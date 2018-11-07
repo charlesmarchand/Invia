@@ -19,7 +19,9 @@ let add_button = document.querySelector('.btn_add');
   console.log(add_button);
   add_button.addEventListener('click', (event) => {
       const choices = document.querySelector(".parcours-<%=@diploma_id%>-schools");
-      choices.insertAdjacentHTML("afterbegin", '<a class="school_details added-element" data-school_id=<%=@school.id%> ><%=@school.name%></a>');
+        choices.insertAdjacentHTML("afterbegin", '<a class="school_details added-element" data-school_id=<%=@school.id%> ><%=@school.name%></a>');
+      // const choices = document.querySelectorAll(".parcours-<%=@diploma_id%>-schools")
+        choices.insertAdjacentHTML("afterbegin", '<input type="hidden" name="studies[]diploma" value="<%=@diploma_id%>" /> <input type="hidden" name="studies[]school" value="<%=@school.id%>" />');
 
 
       const addedElement = document.querySelector('.added-element')
