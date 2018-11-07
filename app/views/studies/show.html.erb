@@ -1,12 +1,8 @@
 <div class="container">
 
-
-
-  <button type="button" class="back"><< Retour aux parcours</button>
-
-    <%= link_to "<< Retour aux parcours", job_studies_path(@job), class: "back" %>
-
-  <div class="row">
+<%= link_to "Retour", job_studies_path(@job), class: "go_back_Button" %>
+  
+<div class="row">
     <div class= "header">
       <h2>Choisis les établissements qui te plaisent</h2>
       <h3>Ce parcours se déroule en <%= @study.diplomas.length%> étapes, choisis tes établissements pour chaque formation !</h3>
@@ -49,7 +45,12 @@
           <i class="fas fa-angle-double-down"></i>
         <% end %>
         <div>
-          <button id="save_button" type="button" class="save_button" data-dismiss="modal">Sauvegarder mon parcours</button>
+
+
+           <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
+              <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
+           <% end %>
+
         </div>
       </div>
     </div>

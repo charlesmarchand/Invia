@@ -12,9 +12,18 @@
       <% @studies.each do |study| %>
         <div class="item">
           <div class="card-vertical">
-            <%= form_for([@job, study,  ProfileSavedInfo.new]) do |form| %>
-              <%= button_tag type: 'submit' do %>
-                <i class="far fa-heart"></i>
+            <div class="img-vertical" style="background-image: url(/assets/datascientist.jpeg)"></div>
+            <div class="container-title-text">
+              <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
+              <div class="card-vertical-description">
+                <% study.diplomas.each do |diploma| %>
+                <div class="details">
+                  <% diploma.difficulty.to_i.times do  %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                </div>
+                <h3><%= diploma.length %> années</h3>
+                <p><%= diploma.description %></p>
               <% end %>
             <% end %>
             <div class="img-vertical" style="background-image: url(/assets/datascientist.jpeg)"></div>
@@ -38,6 +47,7 @@
     </div>
   </div>
 
+
   <!-- Modal -->
   <% @studies.each do |study| %>
     <div class="modal fade" id="ModalLong<%= study.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -60,7 +70,8 @@
                   <% end %>
                 </div>
                 <h3><%= diploma.length %></h3>
-                <p> <%= diploma.description %> </p> </div>
+                <p> <%= diploma.description %> </p> 
+              </div>
             <% end %>
           </div>
         </div>
