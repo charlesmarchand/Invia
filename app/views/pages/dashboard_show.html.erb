@@ -47,8 +47,9 @@
           <!-- Afficher les markers sur la map s'il y a des écoles sauvegardées -->
           <% if parcours_match.blank? %>
             <p>Clique ici pour sauvegarder des écoles pour ce parcours</p>
-            <%= link_to "Ici", job_study_path(@job, @study ) %>
+            <%= link_to "Rajouter des écoles", job_study_path(@job, @study ) %>
           <% else %>
+            <%= link_to "Modifier les écoles", job_study_path(@job, @study ) %>
             <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
           <% end %>
         </div>
@@ -58,14 +59,7 @@
 </div>
 
 
-<div class="row extended">
-<!-- SCHOOL BUTTONS & MARKERS  -->
-  <div class="col-md-3 col-lg-3">
-    <div class="formations">
 
-    </div>
-  </div>
-</div>
 
 <!-- Hidden button to trigger show schools  -->
 <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details"></button>
