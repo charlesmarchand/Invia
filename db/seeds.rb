@@ -3,10 +3,14 @@ require 'csv'
 csv_options = { col_sep: ';'}
 
 puts 'Cleaning'
-
+ProfileSavedInfo.destroy_all
+User.destroy_all
 Job.destroy_all
 Diploma.destroy_all
 Study.destroy_all
+Category.destroy_all
+Keyword.destroy_all
+Professional.destroy_all
 School.destroy_all
 
 CSV.foreach('seed-jobs.csv', csv_options) do |row|

@@ -10,33 +10,31 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   buttons.forEach((button, index) => {
     button.addEventListener('click', (event) => {
       map.removeMarkers();
+
+
       const markers = JSON.parse(event.currentTarget.dataset.markers);
+      const mapMarkers = [];
 
         if (markers.length === 0) {
-          map.setZoom(2);
+          map.setZoom(3);
         } else if (markers.length === 1) {
           map.setCenter(markers[0].lat, markers[0].lng);
-          map.setZoom(13);
+          map.setZoom(10);
         } else {
           map.fitLatLngBounds(markers);
         }
+
         console.dir(event.currentTarget.closest(".formation").classList)
         document.querySelectorAll('.formation').forEach((card) => {
           if (card === event.currentTarget.closest(".formation")) {
             event.currentTarget.closest(".formation").classList.toggle('open');
               if (Array.from(event.currentTarget.closest(".formation").classList).includes('open')) {
-                  map.addMarkers(markers);
-              };
-          } else {
-            card.classList.remove('open');
-          }
-        });
-
-
-    google.maps.event.trigger(markers[index], 'click');
-
-    });
-  });
+                markers.forEach((marker) => {
+                    const mapMarker = map.createMarker(marker);
+                    mapMarkers.push(mapMarker);
+                    map.addMarker(mapMarker);
+                  });
+                map.addMarkers(markers);
 
 
 
@@ -46,10 +44,22 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       console.log(school);
       const marker = JSON.parse(event.currentTarget.dataset.marker);
       console.log(marker);
+      google.maps.event.trigger(mapMarkers[index], 'click');
     });
   });
 
+              };
+          } else {
+            card.classList.remove('open');
+          }
+        });
+
+    });
+  });
+
+
 }
+
 
 
 // map dashboard
@@ -68,3 +78,4 @@ const map2Markers = [];
     map2.addMarker(map2Marker);
   });
 };
+
