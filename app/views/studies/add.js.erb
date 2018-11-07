@@ -1,0 +1,4 @@
+
+document.querySelector(".parcours-<%=@diploma_id%>-schools").insertAdjacentHTML("afterbegin", '<div class="added-<%=@diploma_id%>-<%=@school.id%>"><%=link_to @school.name, remove_path(@school.id, @diploma_id), method: :post, class: "fas fa-times", remote: true %></div>');
+
+document.getElementById('choice-<%=@diploma_id%>-<%=@school.id%>').lastChild.disabled = true;
