@@ -13,7 +13,6 @@ Keyword.destroy_all
 School.destroy_all
 
 CSV.foreach('seed-jobs.csv', csv_options) do |row|
-  p row[0]
   job = Job.create(name: "#{row[0]}", description: "#{row[2]}", url: "#{row[3]}")
   row[1].split(",").each do |keyword|
     if ! Keyword.find_by_name("#{keyword}").nil?
@@ -29,10 +28,8 @@ CSV.foreach('seed-diplomasUTF8.csv', csv_options) do |row|
 end
 
 
-CSV.foreach('seed-studies+url.csv', csv_options) do |row|
-  p row[0]
+CSV.foreach('seed-studiesurl.csv', { col_sep: ';', headers: true} ) do |row|
   job = Job.find_by_name(row[0])
-  p job
   row[1].split(",").each do |study|
     row[2].split("§§").each do |url|
       stu = Study.create(name: "#{study}", url: "#{url}")

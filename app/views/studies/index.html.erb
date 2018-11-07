@@ -12,7 +12,7 @@
       <% @studies.each do |study| %>
         <div class="item">
           <div class="card-vertical">
-            <div class="img-vertical" style="background-image: url(/assets/datascientist.jpeg)"></div>
+            <div class="img-vertical" style="background-image: url('<%= study.url %>')"></div>
             <div class="container-title-text">
               <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
               <div class="card-vertical-description">
