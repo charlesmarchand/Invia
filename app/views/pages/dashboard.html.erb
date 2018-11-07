@@ -14,22 +14,20 @@
           <h1 class="text-shadow"><%= job.name %></h1>
         </div>
         <div class="back">
-          <% parcours = ProfileSavedInfo.where(user_id: current_user, job_id: job.id).uniq %>
-
-          <% parcours.each do |study| %>
-            <% if !study.school_id.nil? %>
-              <p> <%= link_to "#{parcours.index(study) +1} - #{Study.find(study.id).name}", dashboard_study_path(job,Study.find(study.id)) %> </p>
-            <% else %>
-            <p>choisis un parcours</p>
-
+          <% profiles_dashboard = ProfileSavedInfo.where(user_id: current_user, job_id: job.id) %>
+          <% if profiles_dashboard.all? {|profile| profile.school_id.nil? } %>
+            <p>Choisis ton parcours</p>
+          <% else %>
+            <% profiles_dashboard.each do |profile| %>
+              <% if !profile.study_id.nil? %>
+                <p> <%= link_to "#{profiles_dashboard.index(profile) +1} - #{Study.find(profile.study_id).name}", dashboard_study_path(job,Study.find(profile.study_id)) %> </p>
+              <% end %>
             <% end %>
-
           <% end %>
         </div>
       </div>
-
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
 
 </div>
