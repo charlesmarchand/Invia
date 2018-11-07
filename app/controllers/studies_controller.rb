@@ -61,7 +61,17 @@ class StudiesController < ApplicationController
 
   def details
     @school = School.find(params[:id])
-    @diploma_id = params[:format]
+    @diploma_id = params[:diploma_id]
+  end
+
+  def add
+    @school = School.find(params[:id])
+    @diploma_id = params[:diploma_id]
+  end
+
+  def remove
+    @school = School.find(params[:id])
+    @diploma_id = params[:diploma_id]
   end
 
 
