@@ -6,20 +6,52 @@
     </div>
   </div>
 
-
   <div class="container-cards-dashboard">
     <% @study.diplomas.each do |diploma| %>
       <div class="flip">
         <div class="front">
           <%= diploma.name %> :
-          <ul>
-            <% ProfileSavedInfo.where(user_id: current_user[:id], study_id: params[:id], diploma_id: diploma.id, ).each do |instance| %>
-              <li><%= School.find(instance.school_id).name %></li>
+
+          <!-- Sélectionner les instances de ProfileSavedInfo qui correspondent à ce diploma -->
+          <% parcours_match = ProfileSavedInfo.where(user_id: current_user[:id], job_id: params[:job_id], study_id: params[:id], diploma_id: diploma.id) %>
+
+          <!-- S'il n'y a aucune instance, alors ne liste aucune et les markers sont vides -->
+          <% if parcours_match.blank? %>
+            <p> Pas d'écoles sauvegardées</p>
+
+
+          <!-- Sinon, lister les écoles sauvegardées seulement -->
+          <% else %>
+            <ul>
+              <% parcours_match.each do |instance| %>
+                <li><%= School.find(instance.school_id).name %></li>
+              <% end %>
+            </ul>
+            <!-- créer les markers uniquemment pour les écoles sauvegardées -->
+            <% schools_save = [] %>
+            <% parcours_match.each do |un_parcours| %>
+              <% schools_save << School.find(un_parcours.school_id) %>
             <% end %>
-          </ul>
+
+            <% markers = schools_save.map do |school|
+              {
+                lat: school.latitude,
+                lng: school.longitude,
+
+                infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
+              } %>
+            <% end %>
+          <% end %>
         </div>
         <div class="back">
-          La carte des écoles
+          <!-- Afficher les markers sur la map s'il y a des écoles sauvegardées -->
+          <% if parcours_match.blank? %>
+            <p>Clique ici pour sauvegarder des écoles pour ce parcours</p>
+            <%= link_to "Rajouter des écoles", job_study_path(@job, @study ) %>
+          <% else %>
+            <%= link_to "Modifier les écoles", job_study_path(@job, @study ) %>
+            <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -27,27 +59,7 @@
 </div>
 
 
-<div class="row extended">
-<!-- SCHOOL BUTTONS & MARKERS  -->
-  <div class="col-md-3 col-lg-3">
-    <div class="formations">
-      <%@study.diplomas.each do |diploma|%>
-        <% markers = diploma.schools.map do |school|
-          {
-            lat: school.latitude,
-            lng: school.longitude,
-            diploma: diploma,
-            infoWindow: { content: raw(render(partial: "/studies/map_box", locals: { school: school, diploma: diploma })) }
-          } %>
-        <% end %>
-        <!-- MAP  -->
-        <div class="col-md-6 col-lg-6 map-container">
-          <div id="map2" class="map" data-markers="<%= markers.to_json %>"></div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
 
 <!-- Hidden button to trigger show schools  -->
 <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details"></button>

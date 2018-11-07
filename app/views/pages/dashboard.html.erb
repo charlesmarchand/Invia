@@ -15,7 +15,7 @@
         </div>
         <div class="back">
           <% job.studies.first(3).each do |study| %>
-          <p> <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(study) %> </p>
+          <p> <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(job,study) %> </p>
           <% end %>
         </div>
       </div>

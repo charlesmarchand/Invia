@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 
-  get 'dashboard/study/:id', to: 'pages#dashboard_show', as: :dashboard_study
+  get 'dashboard/job/:job_id/study/:id', to: 'pages#dashboard_show', as: :dashboard_study
 
   post 'details/:id', to: 'studies#details', as: :details
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
    resources :profile_saved_infos, only: :destroy
 
-    resources :jobs, only: [:index] do
+  resources :jobs, only: [:index] do
     resources :profile_saved_infos, only: :create
     resources :professionals, only: [:index]
     resources :studies, only: [:index, :show] do

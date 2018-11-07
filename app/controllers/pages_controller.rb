@@ -15,6 +15,6 @@ class PagesController < ApplicationController
 
   def dashboard_show
     @study = Study.find(params[:id])
-    @schools = current_user.schools
+    @job = Job.find(params[:job_id])
   end
 end
