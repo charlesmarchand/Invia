@@ -37,7 +37,10 @@
             <div class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>">Choisis tes <%=diploma.name.capitalize%>s</div>
             <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
             <%@schools[diploma.id].each_with_index do |school, index| %>
-               <li class="list-group-item" data-marker="<%=markers[index].to_json%>"><%=school.name%></li>
+               <li id="choice-<%=diploma.id%>-<%=school.id%>" class="list-group-item" data-marker="<%=markers[index].to_json%>"><%=school.name%>
+              <%=link_to "", details_path(school.id, diploma.id), method: :post, class: 'fas fa-question', remote: true %>
+              <%=link_to "", add_path(school.id, diploma.id), method: :post, class: 'fas fa-plus', remote: true %>
+              </li>
             <% end %>
             </ul>
           </div>
@@ -55,6 +58,7 @@
 
       <div class="col-md-3 col-lg-3 flex">
         <div class="parcours">
+
           <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
             <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
             <%@study.diplomas.each do |diploma|%>
