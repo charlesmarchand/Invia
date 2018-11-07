@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def dashboard
 
-    @jobs = current_user.jobs
+    @jobs = current_user.jobs.uniq
 
     render layout: 'application'
 

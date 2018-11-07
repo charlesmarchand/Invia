@@ -9,11 +9,18 @@
 <div class="container-cards-dashboard">
   <% @jobs.each do |job|%>
 
+
+
       <div class="flip">
         <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
+
           <h1 class="text-shadow"><%= job.name %></h1>
         </div>
         <div class="back">
+          <% profile_saved_info = ProfileSavedInfo.where(user: current_user,job: job)%>
+          <%= link_to profile_saved_info_path(profile_saved_info.ids), class:"new_profile_saved_info", method: :delete do%>
+                 <i class="far fa-times-circle"></i>
+            <% end %>
           <% job.studies.first(3).each do |study| %>
           <p> <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(job,study) %> </p>
           <% end %>
