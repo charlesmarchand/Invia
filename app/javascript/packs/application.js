@@ -7,3 +7,4 @@ import "bouton-home";
 import "save-infos-user";
 
 autocomplete();
+addSchools();
