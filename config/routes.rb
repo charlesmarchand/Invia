@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'dashboard/study/:id', to: 'pages#dashboard_show', as: :dashboard_study
 
-  post 'details/:id', to: 'studies#details', as: :details
+  post 'details/:id/:diploma_id', to: 'studies#details', as: :details
+  post 'add/:id/:diploma_id', to: 'studies#add', as: :add
+  post 'remove/:id/:diploma_id', to: 'studies#remove', as: :remove
 
   resources :keywords, only: [:index]
 

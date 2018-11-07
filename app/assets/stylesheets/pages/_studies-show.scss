@@ -82,7 +82,7 @@
 
 .formation.open ul {
   height: 120px;
-  width: 190px;
+  width: auto;
 }
 
 .formation.open.diplomaButtons {
@@ -137,13 +137,13 @@
 .parcours-diplomas-schools{
 }
 
-.school_details {
+.added-school {
   text-decoration: none;
   color: gray;
   border: 1px solid gray;
-  border-radius: 25px;
-  padding: 5px 10px;
-  font-size: 15px;
+  border-radius: 20px;
+  padding: 5px 5px;
+  font-size: 13px;
 }
 
 .save_button {
