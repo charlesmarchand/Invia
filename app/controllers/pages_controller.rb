@@ -7,14 +7,14 @@ class PagesController < ApplicationController
 
   def dashboard
 
-    @jobs = current_user.jobs
+    @jobs = current_user.jobs.uniq
 
     render layout: 'application'
 
   end
 
   def dashboard_show
-    @study = Study.find(params[:id])
     @job = Job.find(params[:job_id])
+    @study = Study.find(params[:id])
   end
 end
