@@ -10,21 +10,21 @@
     <% @study.diplomas.each do |diploma| %>
       <div class="flip">
         <div class="front">
-          <%= diploma.name %> :
+          <p> <%= diploma.name %> :</p>
 
           <!-- Sélectionner les instances de ProfileSavedInfo qui correspondent à ce diploma -->
           <% parcours_match = ProfileSavedInfo.where(user_id: current_user[:id], job_id: params[:job_id], study_id: params[:id], diploma_id: diploma.id) %>
 
           <!-- S'il n'y a aucune instance, alors ne liste aucune école et les markers sont vides -->
           <% if parcours_match.blank? %>
-            <h3> Aucune école sauvegardée !</h3>
+            <h3> Oups, tu n'as pas fini ta recherche !</h3>
 
 
           <!-- Sinon, lister les écoles sauvegardées seulement -->
           <% else %>
             <ul>
               <% parcours_match.each do |instance| %>
-                <li><%= School.find(instance.school_id).name %></li>
+                <li>  <%= School.find(instance.school_id).name %></li>
               <% end %>
             </ul>
             <!-- créer les markers uniquemment pour les écoles sauvegardées -->
@@ -46,11 +46,11 @@
         <div class="back">
           <!-- Afficher les markers sur la map s'il y a des écoles sauvegardées -->
           <% if parcours_match.blank? %>
-            <h3>Tu n'as pas encore choisi d'écoles pour cette formation !</h3>
-            <%= link_to "Ajoute des écoles", job_study_path(@job, @study ), class: "ctaButton unfinished" %>
+            <h3>Clique ci-dessous :</h3>
+            <%= link_to "Ajouter des écoles", job_study_path(@job, @study ), class: "ctaButton unfinished" %>
           <% else %>
             <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
-            <%= link_to '<i class="fas fa-edit"></i>'.html_safe, job_study_path(@job, @study ), class: "editButton" %>
+            <%= link_to '<i class="fas fa-edit"></i>'.html_safe, job_study_path(@job, @study ) %>
           <% end %>
         </div>
       </div>
