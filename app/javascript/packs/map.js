@@ -157,12 +157,12 @@ map.setStyle('map_style');
           const schools = document.querySelectorAll('.open .list-group-item');
           schools.forEach((school, index) => {
             school.addEventListener('mouseover', () => {
-                if (mapMarkers[index].getAnimation() !== null) {
-                  mapMarkers[index].setAnimation(null);
-                } else {
+                // if (mapMarkers[index].getAnimation() !== null) {
+                //   mapMarkers[index].setAnimation(null);
+                // } else {
                   mapMarkers[index].setAnimation(google.maps.Animation.BOUNCE, );
                   setTimeout(function(){ mapMarkers[index].setAnimation(null); }, 1500);
-                }
+                // }
             });
             school.addEventListener('click', () => {
               google.maps.event.trigger(mapMarkers[index], 'click');
@@ -170,27 +170,10 @@ map.setStyle('map_style');
           });
 
 
-
-        if (markers.length === 0) {
-          map.setZoom(3);
-        } else if (markers.length === 1) {
-          map.setCenter(markers[0].lat, markers[0].lng);
-          map.setZoom(10);
-        } else {
           map.fitLatLngBounds(markers);
-        }
+
     });
   });
-
-
-//JE GERE LES ZOOMS -------------------------------------
-//----------------------------------------------------------
-
-
-    //school.addEventListener('mouseover', (event) => {
-      //const marker = JSON.parse(event.currentTarget.dataset.marker);
-    //marker.setAnimation(google.maps.Animation.BOUNCE);
-  //});
 
 }
 
