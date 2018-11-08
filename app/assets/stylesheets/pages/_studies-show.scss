@@ -48,7 +48,7 @@
   width: 25%;
   height: 25px;
   background-color:white;
-  color: #E9E9E9;
+  color: gray;
   border: none;
   padding: none;
 }
@@ -68,6 +68,25 @@
   margin-left: 60px;
   margin-right: 60px;
   font-family: Raleway;
+}
+
+.extended h4 {
+  font-size: 17px;
+  background-color: $purple-invia;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.filtered {
+  font-size: 16px;
+  color: #333333;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+  font-style: italic;
+  margin-top: 10px;
 }
 
 .extended h4 {
@@ -150,15 +169,19 @@
   flex-direction: column;
   align-items:center;
   height: 100%;
-    padding: 0px;
+  padding: 0px;
 }
 
 .parcours-diplomas {
-  font-size: 17px;
-  padding-left: 5px;
   text-align:center;
-  height: 150px;
+  height: 100px;
 }
+
+.diploma-name {
+  font-size: 16px;
+  text-align: center;
+}
+
 
 
 a.disabled {
@@ -174,11 +197,14 @@ a.fas {
 .added-element {
   text-decoration: none;
   color: gray;
-  border: 1px solid $grey-invia;
   border-radius: 20px;
   padding: 5px 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Raleway;
+}
+
+.fa-times {
+  color: gray;
 }
 
 .save_button {

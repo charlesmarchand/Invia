@@ -30,7 +30,8 @@
             <div class="card-vertical-description"> <p><%= job.description %></p> </div>
           </div>
           <!-- Bouton pour lancer la modal -->
-          <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a></div>
+          <div class="buttoncenter"> <%=link_to "En savoir plus...", modal_path(job.id), method: :post, class: 'ensavoirplus underlined', remote: true %>
+          </div>
           <!-- Fin du bouton pour lancer la modal -->
           <%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %>
         </div>
@@ -38,27 +39,10 @@
     <% end %>
   </div>
 </div>
-<!-- Modal -->
-<% @jobs.each do |job| %>
-  <div class="modal fade" id="ModalLong<%= job.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="popup-titre"> <h2><%= job.name %></h2></div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="popup-image" style="background-image: url(<%= job.url %>)"></div>
-          <div class="popup-description"> <%= job.description %> </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-</div>
-<!-- Fin de la modal -->
+
+<button id="job-modal-trigger" type="hidden" href="#ModalLong" data-toggle="modal" ></button>
+<%= render 'shared/modal_for_jobs' %>
+
 
 
 
