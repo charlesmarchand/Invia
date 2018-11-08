@@ -1,9 +1,10 @@
 .details {
-  margin-left: 1.6em;
-  margin-top: -0.5em;
-  h3 {
-    font-size: 10px;
+  margin-left: 0em;
+  margin-top: 0em;
+  p {
+    font-size: 12px;
     margin-top: 0.08em;
+    color: $purple-invia;
   }
 }
 
@@ -12,3 +13,24 @@
   font-size: 10px;
 }
 
+#studyname {
+  font-size: 16px;
+}
+
+.header-study {
+  margin-left: 2.3em;
+  margin-bottom: 0em;
+  margin-top: 3em;
+  h4 {
+    color: $grey-invia;
+    font-weight: bold;
+  }
+}
+
+.longue {
+  padding-bottom: 3em
+}
+
+.lower {
+  margin-top: 7em;
+}

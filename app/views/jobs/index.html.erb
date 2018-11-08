@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class= "header">
-      <h2>Choisis le métier qui te plaît</h2>
-      <h3>Voici les propositions de métiers qui correspondent à tes passions !</h3>
+    <div class="container-header">
+      <h4>Choisis le métier qui te plaît</h4>
+      <%= render "shared/form-jobs" %>
     </div>
   </div>
 
-<%= render "shared/form-jobs" %>
 <div class="container">
   <div class="responsive">
     <% @jobs.each do |job| %>
@@ -26,15 +25,16 @@
           <% end %>
           <div class="img-vertical" style="background-image: url('<%= job.url %>')"></div>
           <div class="container-title-text">
-            <div class="card-vertical-category"> <h2><%= job.name %></h2> </div>
+            <div class="card-vertical-category"> <h4><%= job.name %></h4> </div>
             <div class="card-vertical-description"> <p><%= job.description %></p> </div>
           </div>
           <!-- Bouton pour lancer la modal -->
           <div class="buttoncenter"> <%=link_to "En savoir plus...", modal_path(job.id), method: :post, class: 'ensavoirplus underlined', remote: true %>
           </div>
           <!-- Fin du bouton pour lancer la modal -->
-          <%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %>
+          </div>
         </div>
+        <div class="buttoncentercenter"><%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %></div>
       </div>
     <% end %>
   </div>
