@@ -22,9 +22,9 @@ $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
 $color-p: $grey-invia;
-$color-h1: $purple-invia;
-$color-h2: $purple-invia;
-$color-h3: $purple-invia;
+$color-h1: $grey-invia;
+$color-h2: $grey-invia;
+$color-h3: $grey-invia;
 $color-h4: $purple-invia;
 
 // Buttons & inputs' radius
@@ -65,11 +65,10 @@ $border-radius-small: 2px;
 body {
   font-family: $headers-font;
   p {
-  text-align: justify;
-  font-family: $font-size-p;
-  color: $color-p;
-  text-justify: inter-word;
-  font-weight: lighter;
+    text-align: justify;
+    font-family: $font-size-p;
+    color: $color-p;
+    text-justify: inter-word;
   }
   h1 {
     font-size: $font-size-h1;

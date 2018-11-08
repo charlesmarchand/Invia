@@ -6,7 +6,7 @@
   box-shadow: 2px 2px 4px #E6E6E6;
   padding: 1.5em;
   margin-top: 18px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 
 }
 .img-vertical {
@@ -45,32 +45,27 @@
 }
 
 .card-vertical-category {
-  font-size: 15px;
   text-transform: uppercase;
 }
 
-.card-vertical-category h2 {
-  letter-spacing: 1px;
-  font-size: 18px;
-  color: $purple-invia;
+.card-vertical-category h4 {
+  margin-top: 1em;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .card-vertical .ctaButton{
   position: relative;
-  bottom: -1.5em;
-  right: -60px;
+  bottom: -2.8em;
 }
 
 .buttoncenter {
-  text-align: center;
-  margin-top: 0.7em;
+  margin-top: 2.3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ensavoirplus {
-
   color: $purple-invia;
 }
 
@@ -92,7 +87,3 @@
   text-decoration: none;
 }
 
-.down {
-  margin-top: 2em;
-  font-size: 12px;
-}
