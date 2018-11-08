@@ -137,13 +137,25 @@
 .parcours-diplomas-schools{
 }
 
-.added-school {
+a.disabled {
+    pointer-events: none;
+    color: $light-purple-invia;
+}
+
+a.fas {
+  color: $purple-invia;
+  padding-left: 10px;
+}
+
+.added-element {
   text-decoration: none;
   color: gray;
-  border: 1px solid gray;
+  border: 1px solid $grey-invia;
   border-radius: 20px;
   padding: 5px 5px;
-  font-size: 13px;
+  font-size: 14px;
+  font-family: Raleway;
+
 }
 
 .save_button {

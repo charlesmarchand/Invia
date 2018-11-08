@@ -72,14 +72,9 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
 }
 
-
-
 const maps = document.querySelectorAll(".map-dashboard");
-console.log(maps);
 maps.forEach((uneMap) => {
-  console.log(uneMap);
   const uneMapId = uneMap.attributes.id.value;
-  console.log(uneMapId);
 
   if (uneMap) { // don't try to build a map if there's no div#map to inject in
     const newMap = new GMaps({ el: `#${uneMapId}`, lat: 46.227638, lng: 2.213749 });
@@ -87,7 +82,6 @@ maps.forEach((uneMap) => {
 
 
     const markers2 = JSON.parse(uneMap.dataset.markers);
-    console.log(markers2);
 
     const mapMarkers = [];
     markers2.forEach((marker) => {

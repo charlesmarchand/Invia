@@ -25,7 +25,7 @@
  <!-- SCHOOL BUTTONS & MARKERS  -->
       <div class="col-md-4 col-lg-4">
         <div class="formations">
-        <%@study.diplomas.each do |diploma|%>
+        <%@study.diplomas.each_with_index do |diploma, i|%>
           <% markers = @schools[diploma.id].map do |school|
             {
               lat: school.latitude,
@@ -44,10 +44,10 @@
             <% end %>
             </ul>
           </div>
-          <i class="fas fa-angle-double-down"></i>
+          <% if i < @study.diplomas.size - 1 %>
+            <i class="fas fa-angle-double-down"></i>
+          <% end %>
         <% end %>
-        <div>
-        </div>
       </div>
     </div>
 
@@ -60,11 +60,11 @@
         <div class="parcours">
 
           <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
-            <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
             <%@study.diplomas.each do |diploma|%>
               <div class="parcours-diplomas">Mes <%=diploma.name%>s</div>
               <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex, height: auto;"></div>
             <% end %>
+            <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
           <% end %>
         </div>
       </div>
