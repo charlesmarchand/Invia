@@ -1,25 +1,9 @@
-function updateDetails() {
 let maModal = document.getElementById("school_details");
-//Ajout sur la modal descriptive
-console.log(maModal.querySelector('.modal-photo'))
 maModal.querySelector('.modal-photo').style.backgroundImage = "url('<%=@school.url%>')";
 maModal.querySelector('.modal-photo').classList.add('photo-school');
 maModal.querySelector('.modal-header h3').innerText = "<%=@school.name%>";
 maModal.querySelector('.modal-header h4').innerText = "<%=@school.address%>";
 
-//maModal.querySelector('.modal-header h5').innerText = "<%=@school.difficulty%><%=@school.cost%>";
+maModal.querySelector('.modal-header h5').innerHTML = '<%@school.difficulty.times do%><i class="fas fa-star"></i>)<% end %><%=@school.cost%>';
 maModal.querySelector('.modal-body').innerText = "<%=@school.description%><%=@school.web_site%>";
-maModal.querySelector('.modal-footer').innerHTML = "";
-maModal.querySelector('.modal-footer').insertAdjacentHTML('afterbegin', "<%= j(link_to 'Ajouter cet établissement', add_path(@school.id, @diploma_id), method: :post, class: 'save_button fas fa-plus', 'data-dismiss': 'modal', remote: true) %>");
-
-
-
 document.getElementById("sd_button").click();
-};
-
-updateDetails();
-
-
-
-
-

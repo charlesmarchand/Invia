@@ -11,53 +11,40 @@ class StudiesController < ApplicationController
     @diplomas = @study.diplomas
     @schools = {}
 
+    condition = {}
+    @count = 0
+    condition[:difficulty] = params[:difficulty_id] if params[:difficulty_id].present?
+
     @diplomas.each do |diploma|
-      @schools[diploma.id] = diploma.schools
 
+      f = diploma.schools
 
-        if (params[:address].present?)
-          @filtered_by_address = School.near(params[:address], 50)
-          @schools[diploma.id] = @filtered_by_address & diploma.schools
-        end
+      if params[:address].present?
+        f = f.near(params[:address], 50)
+      end
 
-        if (params[:cost_id].present?)
-          case params[:cost_id]
+       if params[:difficulty_id].present?
+        f = f.where(condition)
+      end
+
+       if params[:cost_id].present?
+         case params[:cost_id]
           when 1
-            @filtered_by_cost = School.where(cost: 0)
-            @schools[diploma.id] =@filtered_by_cost & diploma.schools
+            f = f.where(cost: 0)
           when 2
-            @filtered_by_cost = School.where("cost >?", 0).where("cost <?", 1000)
-            @schools[diploma.id] =@filtered_by_cost & diploma.schools
+            f = f.where("cost >?", 0).where("cost <?", 1000)
           when 3
-            @filtered_by_cost = School.where("cost >?", 1000).where("cost <?", 10000)
-            @schools[diploma.id] =@filtered_by_cost & diploma.schools
+            f = f.where("cost >?", 1000).where("cost <?", 10000)
           when 4
-            @filtered_by_cost = School.where("cost >?", 10000)
-            @schools[diploma.id] =@filtered_by_cost & diploma.schools
-          end
-        end
+            f = f.where("cost >?", 10000)
+         end
+       end
 
-
-        if (params[:difficulty_id].present?)
-          case :difficulty_id
-          when 1
-            @filtered_by_difficulty = School.where(difficulty = 1)
-            @schools[diploma.id] =@filtered_by_difficulty && diploma.schools
-          when 2
-            @filtered_by_difficulty = School.where(difficulty = 2)
-            @schools[diploma.id] =@filtered_by_difficulty && diploma.schools
-          when 3
-            @filtered_by_difficulty = School.where(difficulty = 3)
-            @schools[diploma.id] =@filtered_by_difficulty && diploma.schools
-          when 4
-            @filtered_by_diffculty = School.where(difficulty = 4)
-            @schools[diploma.id] =@filtered_by_difficulty && diploma.schools
-          end
-        end
+        @schools[diploma.id] = f
+        @count = @count+ f.length
     end
+
   end
-
-
 
   def details
     @school = School.find(params[:id])
@@ -73,6 +60,7 @@ class StudiesController < ApplicationController
     @school = School.find(params[:id])
     @diploma_id = params[:diploma_id]
   end
+
 
 
 end

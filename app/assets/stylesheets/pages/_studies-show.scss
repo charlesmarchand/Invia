@@ -48,7 +48,7 @@
   width: 25%;
   height: 25px;
   background-color:white;
-  color: #E9E9E9;
+  color: gray;
   border: none;
   padding: none;
 }
@@ -77,8 +77,16 @@
   width: 100%;
   padding: 10px;
   text-align: center;
+}
+
+.filtered {
+  font-size: 15px;
+  color: #333333;
+  width: 100%;
+  text-align: center;
   margin-bottom: 25px;
 }
+
 
 .formation-map-parcours {
   display:flex;
@@ -174,11 +182,14 @@ a.fas {
 .added-element {
   text-decoration: none;
   color: gray;
-  border: 1px solid $grey-invia;
   border-radius: 20px;
   padding: 5px 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Raleway;
+}
+
+.fa-times {
+  color: gray;
 }
 
 .save_button {

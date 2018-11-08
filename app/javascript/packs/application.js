@@ -7,4 +7,3 @@ import "save-infos-user";
 
 autocomplete();
 document.querySelector('.diplomaButtons').click();
-console.dir(document.querySelector('.formations'))
