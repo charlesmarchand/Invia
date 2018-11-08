@@ -6,4 +6,8 @@ import "bouton-home";
 import "save-infos-user";
 
 autocomplete();
-document.querySelector('.diplomaButtons').click();
+if (document.querySelector('.diplomaButtons')) {
+  document.querySelector('.diplomaButtons').click()
+
+};
+
