@@ -26,10 +26,10 @@
   </head>
   <body>
 
-    <% if current_user.nil? %>
-     <%= yield %>
+    <% if user_signed_in? %>
+        <%= render 'shared/navbar' unless current_page?('/')%>
+        <%= yield %>
     <% else %>
-      <%= render 'shared/navbar' %>
       <%= yield %>
     <% end %>
 

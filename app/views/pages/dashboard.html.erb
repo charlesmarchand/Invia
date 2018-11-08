@@ -23,7 +23,8 @@
           <% end %>
           <% if profiles_dashboard.all? {|profile| profile.school_id.nil? } %>
             <h3>Oups, tu n'as pas fini ta recherche !</h3>
-            <p><%= link_to "Choisir un parcours", job_studies_path(job), class: "ctaButton" %></p>
+            <p>Retourne sur la page des parcours et ajoute au moins un établissement.</p>
+            <%= link_to "C'est parti !", job_studies_path(job), class: "ctaButton unfinished" %>
 
           <% else %>
 
@@ -33,6 +34,7 @@
 
                 <% if !profile.study_id.nil? %>
                   <li> <%= link_to "#{Study.find(profile.study_id).name}", dashboard_study_path(job,Study.find(profile.study_id)) %> </li>
+                  <%= link_to "Retour aux parcours", job_studies_path(job), class: "ctaButton finished" %>
                 <% end %>
 
             <% end %>

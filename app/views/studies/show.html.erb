@@ -4,7 +4,7 @@
 
 <div class="extended">
     <div class= "header">
-      <h2>Ajoute tes établissements pour les <%=@study.diplomas.size%> étapes de ce parcours</h2>
+      <h3>Ajoute tes établissements pour les <%=@study.diplomas.size%> étapes de ce parcours</h3>
     </div>
 </div>
 
@@ -24,7 +24,9 @@
       <div class="col-md-4 col-lg-4">
         <div class="formations">
           <h4>Ajoute des établissements à ton parcours </h4>
+
           <div class="filtered" >Choisis parmi <%=@count%> établissements</div>
+
         <%@study.diplomas.each_with_index do |diploma, i|%>
           <% markers = @schools[diploma.id].map do |school|
             {
@@ -84,6 +86,5 @@
       <%= render  '/shared/modal_for_schools'%>
  <!-- VOIR DETAILS ECOLE  -->
         <!-- Modal partial   -->
-
 
 </div>

@@ -6,8 +6,10 @@ import "bouton-home";
 import "save-infos-user";
 
 autocomplete();
+
 if (document.querySelector('.diplomaButtons')) {
   document.querySelector('.diplomaButtons').click()
 
 };
+
 
