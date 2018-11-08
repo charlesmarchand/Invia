@@ -17,4 +17,8 @@ class JobsController < ApplicationController
       @jobs = Job.all
     end
   end
+
+  def modal
+    @job = Job.find(params[:id])
+  end
 end

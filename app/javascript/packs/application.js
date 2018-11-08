@@ -6,5 +6,10 @@ import "bouton-home";
 import "save-infos-user";
 
 autocomplete();
-document.querySelector('.diplomaButtons').click();
-console.dir(document.querySelector('.formations'))
+
+if (document.querySelector('.diplomaButtons')) {
+  document.querySelector('.diplomaButtons').click()
+
+};
+
+

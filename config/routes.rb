@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'dashboard/job/:job_id/study/:id', to: 'pages#dashboard_show', as: :dashboard_study
 
   post 'details/:id/:diploma_id', to: 'studies#details', as: :details
+
+  post 'modal/:id', to: 'jobs#modal', as: :modal
+
+
+
   post 'add/:id/:diploma_id', to: 'studies#add', as: :add
   post 'remove/:id/:diploma_id', to: 'studies#remove', as: :remove
 

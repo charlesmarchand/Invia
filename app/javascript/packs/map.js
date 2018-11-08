@@ -88,8 +88,9 @@ maps.forEach((uneMap) => {
   const uneMapId = uneMap.attributes.id.value;
 
   if (uneMap) { // don't try to build a map if there's no div#map to inject in
-    const newMap = new GMaps({ el: `#${uneMapId}`, lat: 46.227638, lng: 2.213749 });
+    const newMap = new GMaps({ el: `#${uneMapId}`, lat: 46.227638, lng: 2.213749, disableDefaultUI: true });
     newMap.setZoom(5);
+
 
 
     const markers2 = JSON.parse(uneMap.dataset.markers);
