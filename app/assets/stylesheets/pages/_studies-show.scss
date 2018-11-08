@@ -17,6 +17,7 @@
 .header {
   display: block;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .show_title {
@@ -40,13 +41,13 @@
   display:flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 60px;
+  height: 70px;
 }
 
 
 .search-input {
   width: 25%;
-  height: 25px;
+  height: 30px;
   background-color:white;
   color: gray;
   border: none;
@@ -61,7 +62,7 @@
   border: 1px solid white ;
   border-radius: 5px;
   padding: none;
-  height: 25px;
+  height: 30px;
 }
 
 .extended {
@@ -165,7 +166,7 @@
 
 .parcours-diplomas {
   text-align:center;
-  height: 100px;
+  height: 130px;
 }
 
 .diploma-name {
@@ -228,4 +229,8 @@ a.fas {
 .photo-school {
   background-size: cover !important;
   background-position: center;
+}
+
+.modal-footer {
+  text-align: left;
 }

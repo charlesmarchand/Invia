@@ -1,10 +1,8 @@
-let modalJob = document.getElementById("ModalLong");
+;
 
-console.dir(modalJob.querySelector('.popup-titre'))
-
-modalJob.querySelector('.popup-titre').innerHTML= '<h2><%= @job.name %></h2>';
-modalJob.querySelector('.popup-image').style.backgroundImage = "url('<%= @job.url %>')";
-modalJob.querySelector('.popup-description').innerHTML = "<%= @job.description %>";
+document.getElementById("ModalLong").querySelector('.popup-titre').innerHTML= '<h2><%= @job.name %></h2>';
+document.getElementById("ModalLong").querySelector('.popup-image').style.backgroundImage = "url('<%= @job.url %>')";
+document.getElementById("ModalLong").querySelector('.popup-description').innerHTML = "<%= @job.description %>";
 
 document.getElementById("job-modal-trigger").click();
 
