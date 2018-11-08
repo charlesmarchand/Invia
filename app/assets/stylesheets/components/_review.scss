@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 2em;
+  margin-top: 4em;
+  align-items: flex-start;
 }
 
 .one-review {
@@ -10,20 +11,16 @@
   justify-content: space-between;
   align-items: center;
   width: 530px;
+  align-items: flex-start;
 }
 
 .one-review-description {
-  color: $grey-invia;
-  font-weight: lighter;
-
   margin: 1em;
-  line-height: 1em;
 }
 
-.one-review-author {
-  color: $purple-invia;
-  font-weight: lighter;
-  font-size: 14px;
-  opacity: 1;
+.one-review-author p {
+  font-weight: bold;
+  opacity: 0.7;
+  font-size: 12px;
   margin-top: 1em;
 }
