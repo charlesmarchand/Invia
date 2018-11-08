@@ -39,17 +39,18 @@ class ProfileSavedInfosController < ApplicationController
         end
       end
     end
-
   end
 
 
   def destroy
-    @profil_saved_info = ProfileSavedInfo.find(params[:id])
-    if ! @profil_saved_info.nil?
-      @profil_saved_info.destroy
+    @profile_saved_info = params[:id].split("/").to_a
+    if ! @profile_saved_info.empty?
+       @profile_saved_info.each do |profile|
+        ProfileSavedInfo.find(profile.to_i).destroy
+      end
       redirect_to jobs_path
     else
-        redirect_to jobs_path
+      redirect_to jobs_path
     end
   end
 
