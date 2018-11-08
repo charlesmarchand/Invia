@@ -81,19 +81,24 @@
 
 .ensavoirplus {
   color: $purple-invia;
+  outline: none;
 }
 
 .ensavoirplus:visited {
   color: $purple-invia;
   text-decoration: none;
+  outline: none;
 }
 
 .ensavoirplus.underlined {
-   text-decoration: none;
+  color: $purple-invia;
+  text-decoration: none;
+  outline: none;
 }
 
 .ensavoirplus:hover {
   color: $light-purple-invia;
+  outline: none;
 }
 
 .ctaButton:active {
