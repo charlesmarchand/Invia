@@ -14,7 +14,7 @@
       <div class="flip">
         <div class="front" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('<%= job.url %>')">
 
-          <h1 class="text-shadow"><%= job.name %></h1>
+          <h1 class="text-shadow"><%= job.name.capitalize %></h1>
         </div>
         <div class="back">
           <% profiles_dashboard = ProfileSavedInfo.where(user_id: current_user, job_id: job.id) %>
@@ -22,18 +22,21 @@
             <i class="far fa-times-circle"></i>
           <% end %>
           <% if profiles_dashboard.all? {|profile| profile.school_id.nil? } %>
-            <p><%= link_to "Va choisir des ecoles dans le parcours", job_studies_path(job) %></p>
+            <h3>Oups, tu n'as pas fini ta recherche !</h3>
+            <p><%= link_to "Clique ici pour choisir un parcours.", job_studies_path(job) %></p>
 
           <% else %>
 
             <% profiles_dashboard2 = profiles_dashboard.uniq {|profile| profile.study_id} %>
+            <ul>
             <% profiles_dashboard2.each do |profile| %>
-              <ul>
+
                 <% if !profile.study_id.nil? %>
                   <li> <%= link_to "#{Study.find(profile.study_id).name}", dashboard_study_path(job,Study.find(profile.study_id)) %> </li>
                 <% end %>
-              </ul>
+
             <% end %>
+            </ul>
 
 
           <% end %>

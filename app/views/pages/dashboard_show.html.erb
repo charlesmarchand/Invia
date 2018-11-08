@@ -15,9 +15,9 @@
           <!-- Sélectionner les instances de ProfileSavedInfo qui correspondent à ce diploma -->
           <% parcours_match = ProfileSavedInfo.where(user_id: current_user[:id], job_id: params[:job_id], study_id: params[:id], diploma_id: diploma.id) %>
 
-          <!-- S'il n'y a aucune instance, alors ne liste aucune et les markers sont vides -->
+          <!-- S'il n'y a aucune instance, alors ne liste aucune école et les markers sont vides -->
           <% if parcours_match.blank? %>
-            <p> Pas d'écoles sauvegardées</p>
+            <h3> Aucune école sauvegardée !</h3>
 
 
           <!-- Sinon, lister les écoles sauvegardées seulement -->
@@ -46,10 +46,10 @@
         <div class="back">
           <!-- Afficher les markers sur la map s'il y a des écoles sauvegardées -->
           <% if parcours_match.blank? %>
-            <p>Clique ici pour sauvegarder des écoles pour ce parcours</p>
-            <%= link_to "Rajouter des écoles", job_study_path(@job, @study ) %>
+            <h3>Tu n'as pas encore choisi d'écoles pour cette formation !</h3>
+            <%= link_to "Clique ici pour ajouter des écoles", job_study_path(@job, @study ) %>
           <% else %>
-            <%= link_to "Modifier les écoles", job_study_path(@job, @study ) %>
+            <%= link_to "Clique ici pour modifier tes écoles", job_study_path(@job, @study ) %>
             <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
           <% end %>
         </div>
