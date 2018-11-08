@@ -1,3 +1,19 @@
+.conteneur {
+  min-height: calc(100vh-50px);
+}
+
+.back {
+  color: $purple-invia;
+  font-size: 15px;
+  padding: 10px 0px;
+  border:none;
+  outline: none;
+  background: none;
+  font-family: Raleway;
+  margin-left: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
 .header {
   display: block;
   text-align: center;
@@ -10,15 +26,6 @@
   text-align:center;
   }
 
-.back {
-  color: $purple-invia;
-  font-size: 15px;
-  padding: 10px 0px;
-  border:none;
-  outline: none;
-  background: none;
-}
-
 .header .description {
   color: $grey-invia;
   font-size: 20px;
@@ -29,7 +36,7 @@
 .inputs {
   margin-top: 10px;
   padding: 10px 0px;
-  background-color: $purple-invia;
+  background-color: #E9E9E9;
   display:flex;
   justify-content: space-evenly;
   align-items: center;
@@ -41,7 +48,7 @@
   width: 25%;
   height: 25px;
   background-color:white;
-  color: $purple-invia;
+  color: #E9E9E9;
   border: none;
   padding: none;
 }
@@ -57,31 +64,52 @@
   height: 25px;
 }
 
-.row-extended {
-  margin-left: -100px;
-  margin-right: -100px;
+.extended {
+  margin-left: 60px;
+  margin-right: 60px;
+  font-family: Raleway;
 }
 
+.extended h4 {
+  font-size: 17px;
+  background-color: $purple-invia;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+}
 
 .formation-map-parcours {
   display:flex;
-  align-items: center;
+  height: 70vh;
 }
 
+.map-container {
+  padding: 0px;
+  height: 450px;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
 .formations {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 380px;
+  padding: 0px 5px;
 }
 
+.formation {
+  width: 100%;
+}
 .formation ul {
   height: 0px;
 }
 
 .formation.open ul {
-  height: 120px;
+  height: auto;
   width: auto;
 }
 
@@ -89,53 +117,49 @@
   border: 1px solid $grey-invia;
 }
 .list-group{
-    //max-height: 150px;
     margin-bottom: 10px;
     overflow-y: scroll;
+}
+
+.list-group-item {
+  background: none;
+  color: $purple-invia;
+  font-size: 14px;
+
+}
+.list-group-item:hover {
+  background-color: #E5E5E5;
 }
 
 .diplomaButtons {
   color: $purple-invia;
   font-size: 15px;
   padding: 5px 5px;
-  border-radius: 7px;
+  border-radius: 5px;
   border: 1px solid $purple-invia;
   outline: none;
   background:none ;
   text-align: center;
   cursor: pointer;
-  max-width: 250px;
-}
-
-.map-container {
-  height: 500px;
-}
-
-.map {
-  width: 440px;
-  height: 420px;
-  margin-left: -15px;
-  margin-top: 1px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .parcours {
   display:flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items:center;
-  height: 330px;
+  height: 100%;
+    padding: 0px;
 }
 
 .parcours-diplomas {
   font-size: 17px;
-  border-bottom: 1px solid gray;
   padding-left: 5px;
   text-align:center;
-
+  height: 150px;
 }
 
-.parcours-diplomas-schools{
-}
 
 a.disabled {
     pointer-events: none;
@@ -155,13 +179,12 @@ a.fas {
   padding: 5px 5px;
   font-size: 14px;
   font-family: Raleway;
-
 }
 
 .save_button {
   color: white;
-  width: 200px;
-  font-size: 15px;
+  width: 100%;
+  font-size: 20px;
   padding: 7px 10px;
   background: $purple-invia;
   border-radius: 7px;
@@ -170,29 +193,16 @@ a.fas {
   outline: none;
 }
 
-.fa-angle-double-down {
+.fa-angle-double-left {
   color: $purple-invia;
-  font-size: 30px;
-  text-align: center;
-  margin: 20px;
-}
-
-.fa-angle-right {
-  color: $purple-invia;
-  font-size: 80px;
-  text-align: center;
+  font-size: 15px;
+  margin-left: 80px;
 }
 
 .link-to-details {
   height: 25px;
   font-size: 16px;
   color: $purple-invia;
-}
-
-.arrow {
-  display:flex;
-  align-items: center;
-  height: 400px;
 }
 
 .modal-photo {

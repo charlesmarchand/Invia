@@ -1,5 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
 
+
+
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 46.227638, lng: 2.213749 });
@@ -44,10 +46,19 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
           const schools = document.querySelectorAll('.open .list-group-item');
           schools.forEach((school, index) => {
             school.addEventListener('mouseover', () => {
-              //mapMarkers[index].setAnimation(google.maps.Animation.BOUNCE);
+                if (mapMarkers[index].getAnimation() !== null) {
+                  mapMarkers[index].setAnimation(null);
+                } else {
+                  mapMarkers[index].setAnimation(google.maps.Animation.BOUNCE, );
+                  setTimeout(function(){ mapMarkers[index].setAnimation(null); }, 1500);
+                }
+            });
+            school.addEventListener('click', () => {
               google.maps.event.trigger(mapMarkers[index], 'click');
             });
           });
+
+
 
         if (markers.length === 0) {
           map.setZoom(3);
