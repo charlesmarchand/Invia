@@ -12,12 +12,20 @@
 .popup-titre {
   color: $purple-invia;
   text-transform: uppercase;
+  & h2 {
+    color: $purple-invia;
+  }
 }
 
-.popup-description {
-  color: $grey-invia;
-  text-align: justify;
-  font-weight: lighter;
-  font-size: 12px;
+
+.modal-header {
+  & span {
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
+  }
 }
 
+.modal-content {
+  padding: 1.5em;
+}
