@@ -17,18 +17,25 @@
           <h1 class="text-shadow"><%= job.name %></h1>
         </div>
         <div class="back">
-          <% profile_saved_info = ProfileSavedInfo.where(user: current_user,job: job)%>
-          <%= link_to profile_saved_info_path(profile_saved_info.ids), class:"new_profile_saved_info", method: :delete do%>
-                 <i class="far fa-times-circle"></i>
+          <% profiles_dashboard = ProfileSavedInfo.where(user_id: current_user, job_id: job.id) %>
+          <%= link_to profile_saved_info_path(profiles_dashboard.ids), class:"new_profile_saved_info", method: :delete do%>
+            <i class="far fa-times-circle"></i>
+          <% end %>
+          <% if profiles_dashboard.all? {|profile| profile.school_id.nil? } %>
+            <p><%= link_to "Va choisir des ecoles dans le parcours", job_studies_path(job) %></p>
+          <% else %>
+            <% profiles_dashboard.each do |profile| %>
+              <ul>
+              <% if !profile.study_id.nil? %>
+                <li> <%= link_to "#{Study.find(profile.study_id).name}", dashboard_study_path(job,Study.find(profile.study_id)) %> </li>
+              <% end %>
+              </ul>
             <% end %>
-          <% job.studies.first(3).each do |study| %>
-          <p> <%= link_to "#{job.studies.index(study) +1} - #{study.name}", dashboard_study_path(job,study) %> </p>
           <% end %>
         </div>
       </div>
-
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
 
 </div>
