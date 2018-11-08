@@ -13,3 +13,4 @@ class User < ApplicationRecord
   has_many :jobs, through: :profile_saved_infos
   has_many :diplomas, through: :profile_saved_infos
 end
+

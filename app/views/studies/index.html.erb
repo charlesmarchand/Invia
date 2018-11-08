@@ -1,9 +1,9 @@
 <div class="container">
 
   <div class="row">
-    <div class= "header">
-      <h2>Choisis le parcours qui te plaît</h2>
-      <h3>Voici les propositions de parcours pour devenir <%= @job.name %> !</h3>
+    <div class= "header-study">
+      <h4>Choisis le parcours qui te plaît</h4>
+      <p>Voici les propositions de parcours pour devenir <%= @job.name %> !</p>
     </div>
   </div>
 
@@ -11,27 +11,29 @@
     <div class="responsive">
       <% @studies.each do |study| %>
         <div class="item">
-          <div class="card-vertical">
-            <div class="img-vertical" style="background-image: url('<%= study.url %>')"></div>
-            <div class="container-title-text">
-              <div class="card-vertical-category"> <h2><%= study.name %></h2> </div>
-              <div class="card-vertical-description">
-                <% study.diplomas.each do |diploma| %>
-                  <div class="details">
-                    <% diploma.difficulty.to_i.times do  %>
-                      <i class="fas fa-star"></i>
-                    <% end %>
-                  </div>
-                  <h3><%= diploma.length %> années</h3>
-                  <p><%= diploma.description %></p>
-                <% end %>
-              </div>
+          <div class="card-vertical longue">
+            <div class="img-vertical" style="background-image: url('<%= study.url %>')">
             </div>
+            <div class="container-title-text">
+              <div class="card-vertical-category"> <h4 id="studyname"><%= study.name %></h4> </div>
+                <div class="card-vertical-description">
+                  <% study.diplomas.each do |diploma| %>
+                    <div class="details">
+                      <% diploma.difficulty.to_i.times do  %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                    <p><%= diploma.length %> années d'étude</p>
+                    </div>
+                    <p><%= diploma.description %></p>
+                  <% end %>
+                </div>
+              </div>
             <!-- Bouton pour lancer la modal -->
-            <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= study.id %>" data-toggle="modal" >En savoir plus...</a></div>
+            <div class="buttoncenter lower"> <a class="ensavoirplus underlined" href="#ModalLong<%= study.id %>" data-toggle="modal" >En savoir plus...</a>
+            </div>
+            </div>
             <!-- Fin du bouton pour lancer la modal -->
-            <%= link_to "Les établissements", job_study_path(@job,study), class: "ctaButton" %>
-          </div>
+          <div class="buttoncentercenter"><%= link_to "Les établissements", job_study_path(@job,study), class: "ctaButton" %> </div>
         </div>
       <% end %>
     </div>

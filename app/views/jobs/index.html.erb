@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="container-header">
-      <h3>Choisis le métier qui te plaît</h3>
+      <h4>Choisis le métier qui te plaît</h4>
       <%= render "shared/form-jobs" %>
     </div>
   </div>
@@ -31,9 +31,9 @@
           <!-- Bouton pour lancer la modal -->
           <div class="buttoncenter"> <a class="ensavoirplus underlined" href="#ModalLong<%= job.id %>" data-toggle="modal" >En savoir plus...</a>
           <!-- Fin du bouton pour lancer la modal -->
-          <%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %>
           </div>
         </div>
+        <div class="buttoncentercenter"><%= link_to "Les formations", job_studies_path(job), class: "ctaButton" %></div>
       </div>
     <% end %>
   </div>
