@@ -1,3 +1,3 @@
-document.querySelector(".parcours-<%=@diploma_id%>-schools").insertAdjacentHTML("beforebegin", '<div class="added-<%=@diploma_id%>-<%=@school.id%>"><i class="fas fa-times"></i><%=link_to @school.name, remove_path(@school.id, @diploma_id), method: :post, class: "added-element", remote: true %></div>');
+document.querySelector(".parcours-<%=@diploma_id%>-schools").insertAdjacentHTML("afterbegin", '<div class="added-<%=@diploma_id%>-<%=@school.id%>"><i class="fas fa-times"></i><%=link_to @school.name, remove_path(@school.id, @diploma_id), method: :post, class: "added-element", remote: true %></div>');
 document.getElementById('choice-<%=@diploma_id%>-<%=@school.id%>').lastElementChild.classList.add('disabled')
 document.querySelector(".parcours-<%=@diploma_id%>-schools").insertAdjacentHTML("afterbegin", '<input type="hidden" name="studies[]diploma" value="<%=@diploma_id%>" /> <input type="hidden" name="studies[]school" value="<%=@school.id%>" />')

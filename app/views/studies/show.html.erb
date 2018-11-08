@@ -4,7 +4,7 @@
 
 <div class="extended">
     <div class= "header">
-      <h3>Ajoute tes établissements pour les <%=@study.diplomas.size%> étapes de ce parcours</h3>
+      <h2>Ajoute tes établissements pour les <%=@study.diplomas.size%> étapes de ce parcours</h2>
     </div>
 </div>
 
@@ -65,8 +65,10 @@
 
           <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
             <%@study.diplomas.each do |diploma|%>
-              <div class="parcours-diplomas"><%=diploma.name%></div>
-              <div class="parcours-<%=diploma.id%>-schools" style="diplay:flex, height: auto;"></div>
+              <div class="diploma-name"><%=diploma.name%></div>
+              <div class="parcours-diplomas">
+              <div class="parcours-<%=diploma.id%>-schools"></div>
+              </div>
             <% end %>
             <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
           <% end %>
