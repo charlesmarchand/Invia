@@ -47,10 +47,10 @@
           <!-- Afficher les markers sur la map s'il y a des écoles sauvegardées -->
           <% if parcours_match.blank? %>
             <h3>Tu n'as pas encore choisi d'écoles pour cette formation !</h3>
-            <%= link_to "Clique ici pour ajouter des écoles", job_study_path(@job, @study ) %>
+            <%= link_to "Ajouter des écoles", job_study_path(@job, @study ), class: "ctaButton" %>
           <% else %>
-            <%= link_to "Clique ici pour modifier tes écoles", job_study_path(@job, @study ) %>
             <div id= "map<%= diploma.id %>" class="map-dashboard" data-markers="<%= markers.to_json %>"></div>
+            <%= link_to "Modifier mes écoles", job_study_path(@job, @study ), class: "ctaButton" %>
           <% end %>
         </div>
       </div>

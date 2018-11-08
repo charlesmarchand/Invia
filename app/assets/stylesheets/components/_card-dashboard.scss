@@ -42,7 +42,7 @@
     background-position: center!important;
     height: 340px;
     padding: 1em 2em;
-    background: #313131;
+    background: white;
     border-radius: 10px;
     & h3 {
       text-align: center;
@@ -53,7 +53,6 @@
   }
   .front {
     transform: rotateY(0deg);
-    color: white;
   }
   .back {
     position: absolute;
