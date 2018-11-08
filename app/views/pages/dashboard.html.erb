@@ -23,14 +23,19 @@
           <% end %>
           <% if profiles_dashboard.all? {|profile| profile.school_id.nil? } %>
             <p><%= link_to "Va choisir des ecoles dans le parcours", job_studies_path(job) %></p>
+
           <% else %>
-            <% profiles_dashboard.each do |profile| %>
+
+            <% profiles_dashboard2 = profiles_dashboard.uniq {|profile| profile.study_id} %>
+            <% profiles_dashboard2.each do |profile| %>
               <ul>
-              <% if !profile.study_id.nil? %>
-                <li> <%= link_to "#{Study.find(profile.study_id).name}", dashboard_study_path(job,Study.find(profile.study_id)) %> </li>
-              <% end %>
+                <% if !profile.study_id.nil? %>
+                  <li> <%= link_to "#{Study.find(profile.study_id).name}", dashboard_study_path(job,Study.find(profile.study_id)) %> </li>
+                <% end %>
               </ul>
             <% end %>
+
+
           <% end %>
         </div>
       </div>
