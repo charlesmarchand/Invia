@@ -1,4 +1,2 @@
 document.querySelector('.added-<%=@diploma_id%>-<%=@school.id%>').parentNode.removeChild(document.querySelector('.added-<%=@diploma_id%>-<%=@school.id%>'));
-
-document.getElementById('choice-<%=@diploma_id%>-<%=@school.id%>').lastChild.disabled = false;
-
+document.getElementById('choice-<%=@diploma_id%>-<%=@school.id%>').lastElementChild.classList.add('disabled')
