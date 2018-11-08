@@ -24,6 +24,7 @@
       <div class="col-md-4 col-lg-4">
         <div class="formations">
           <h4>Ajoute des établissements à ton parcours </h4>
+          <div class="filtered" >Choisis parmi <%=@count%> établissements</div>
         <%@study.diplomas.each_with_index do |diploma, i|%>
           <% markers = @schools[diploma.id].map do |school|
             {
@@ -75,30 +76,12 @@
 
 
 
-           <!-- Hidden button to trigger show schools  -->
+           <!-- Hidden button to trigger show modal  -->
       <button type="button" class="hidden" id="sd_button" data-toggle="modal" data-target="#school_details">
       </button>
-
-
+      <%= render  '/shared/modal_for_schools'%>
  <!-- VOIR DETAILS ECOLE  -->
         <!-- Modal partial   -->
-      <div id="school_details" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            <div class="modal-photo"></div>
-            <div class="modal-header">
-              <h3></h3>
-              <h4></h4>
-              <h5></h5>
-            </div>
-              <div class="modal-body"></div>
-              <div class="modal-footer">
-              </div>
-          </div>
-        </div>
-      </div>
+
 
 </div>
