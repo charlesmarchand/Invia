@@ -1,15 +1,20 @@
 // Specific CSS for your home-page
+
+body {
+  background-color: white;
+}
+
 .container-content {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 6vh;
+  margin-top: 7vh;
   margin-bottom: 4vh;
   flex-wrap: wrap;
   min-height: 25vh;
 }
 
 .card {
-  width: 30%;
+  width: 20%;
   min-width: 305px;
   padding: 1em;
 
@@ -22,37 +27,37 @@
 }
 
 .card-title i {
-  margin-top: 1em;
-  padding-right: 0.5em;
+  margin-top: 0.3em;
+  padding-right: 0.8em;
   font-size: 20px;
 
 }
 
 .card-title h3 {
-  font-size: 22px;
   font-weight: light;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
 .card-description {
-  color: $grey-invia;
   font-weight: lighter;
-  opacity: 0.6;
-  font-size: 17px;
   text-align: justify;
-  text-justify: inter-word;
+}
+
+.different-background {
+  padding-top: 1em;
 }
 
 .functions-container-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 2em;
-  margin-bottom: 4em;
+  margin-bottom: 6em;
+  display: flex;
+  justify-content: center;
 }
 
 .functions-container {
+  margin-top: 4em;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 2em;
@@ -70,12 +75,9 @@
     }
 
     & i {
-       font-size: 54px;
+       font-size: 44px;
     }
   }
 }
 
-.different-background {
-  background-color: white;
-  padding-top: 1em;
-}
+
