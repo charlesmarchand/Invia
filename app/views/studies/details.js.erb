@@ -1,9 +1,10 @@
-let maModal = document.getElementById("school_details");
-maModal.querySelector('.modal-photo').style.backgroundImage = "url('<%=@school.url%>')";
-maModal.querySelector('.modal-photo').classList.add('photo-school');
-maModal.querySelector('.modal-header h3').innerText = "<%=@school.name%>";
-maModal.querySelector('.modal-header h4').innerText = "<%=@school.address%>";
 
-maModal.querySelector('.modal-header h5').innerHTML = '<%@school.difficulty.times do%><i class="fas fa-star"></i>)<% end %><%=@school.cost%>';
-maModal.querySelector('.modal-body').innerText = "<%=@school.description%><%=@school.web_site%>";
+document.getElementById("school_details").querySelector('.modal-photo').style.backgroundImage = "url('<%=@school.url%>')";
+document.getElementById("school_details").querySelector('.modal-photo').classList.add('photo-school');
+document.getElementById("school_details").querySelector('.modal-header h3').innerHTML = "<%=@school.name%>";
+document.getElementById("school_details").querySelector('.modal-header h4').innerHTML = "<%=@school.address%>";
+
+document.getElementById("school_details").querySelector('.modal-header h5').innerHTML = '<%@school.difficulty.times do%><i class="fas fa-star"></i><% end %> ';
+document.getElementById("school_details").querySelector('.modal-body').innerHTML = "<%=@school.description%>";
+document.getElementById("school_details").querySelector('.modal-footer').innerHTML = "<h5>Site de l'établissement : <%=@school.web_site%></h5>";
 document.getElementById("sd_button").click();
