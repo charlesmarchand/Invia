@@ -6,5 +6,5 @@ document.getElementById("school_details").querySelector('.modal-header h4').inne
 
 document.getElementById("school_details").querySelector('.modal-header h5').innerHTML = '<%@school.difficulty.times do%><i class="fas fa-star"></i><% end %> ';
 document.getElementById("school_details").querySelector('.modal-body').innerHTML = "<%=@school.description%>";
-document.getElementById("school_details").querySelector('.modal-footer').innerHTML = "<h5>Site de l'établissement : <%=@school.web_site%></h5>";
+document.getElementById("school_details").querySelector('.modal-footer').innerHTML = "<h5> <a href=<%=@school.web_site%>>Consulter le site de l'établissement </a></h5>";
 document.getElementById("sd_button").click();

@@ -44,7 +44,7 @@ CSV.foreach('seed-studiesurl.csv', { col_sep: ';', headers: true} ) do |row|
   end
 end
 
-CSV.foreach('seed-schools.csv', csv_options) do |row|
+CSV.foreach('seed-schools.csv', { col_sep: ';', headers: true}) do |row|
   school = School.create(name: "#{row[0]}", address: "#{row[1]}", cost: "#{row[2]}", url: "#{row[3]}", web_site: "#{row[4]}", difficulty: "#{row[5]}", description: "#{row[6]}")
 end
 
