@@ -23,7 +23,8 @@
           <!-- Sinon, lister les écoles sauvegardées seulement -->
           <% else %>
             <ul>
-              <% parcours_match.each do |instance| %>
+              <% parcours_match2 = parcours_match.uniq {|profile| profile.school_id} %>
+              <% parcours_match2.each do |instance| %>
                 <li>  <%= School.find(instance.school_id).name %></li>
               <% end %>
             </ul>
