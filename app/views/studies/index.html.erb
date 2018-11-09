@@ -17,13 +17,20 @@
             <div class="container-title-text">
               <div class="card-vertical-category"> <h4 id="studyname"><%= study.name %></h4> </div>
                 <div class="card-vertical-description">
+                  <% array_average = [] %>
+                  <%  sum = 0 %>
                   <% study.diplomas.each do |diploma| %>
-                    <div class="details">
-                      <% diploma.difficulty.to_i.times do  %>
-                        <i class="fas fa-star"></i>
-                      <% end %>
-                    <p><%= diploma.length %> années d'étude</p>
-                    </div>
+                    <% sum = sum + diploma.length %>
+                    <% array_average << diploma.difficulty.to_i %>
+                  <% end %>
+                  <% average = array_average.inject {|sum,el| sum + el}.to_f / array_average.size %>
+                  <div class="details">
+                    <% average.to_i.times do  %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <p><%= sum %> années d'étude</p>
+                  </div>
+                  <% study.diplomas.each do |diploma| %>
                     <p><%= diploma.description %></p>
                   <% end %>
                 </div>
