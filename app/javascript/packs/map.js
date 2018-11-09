@@ -4,7 +4,7 @@ import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
-  const map = new GMaps({ el: '#map', lat: 46.227638, lng: 2.213749 });
+  const map = new GMaps({ el: '#map', lat: 46.227638, lng: 2.213749, disableDefaultUI: true });
   map.setZoom(5);
 
 const styles = [
@@ -177,6 +177,7 @@ map.setStyle('map_style');
           } else {
             map.fitLatLngBounds(markers);
           }
+
 
 
     });
