@@ -1,0 +1,49 @@
+.bannerV2 {
+  color: white;
+  text-align: center;
+  height: 95vh;
+  background-size: cover !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.banner-contentV2 {
+  margin-top: 5em;
+}
+
+.bannerV2 h1 {
+  font-weight: bold;
+  margin-bottom: 2.5em;
+}
+
+
+.container-headerV2 {
+  width: 46em;
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-item: center;
+  padding: 1em 1.5em;
+  h4 {
+    color: $grey-invia;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+}
+
+.form-control {
+
+}
+
+.ctaButton {
+  width: 48em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+

@@ -1,13 +1,19 @@
 .banner {
   color: white;
   text-align: center;
-  height: 65vh;
+  height: 95vh;
   background-size: cover !important;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
+.banner-form {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}
 
 .banner h1 {
   font-weight: bold;
@@ -26,3 +32,4 @@
   margin-bottom: -1.5em;
   margin-top: 3em;
 }
+

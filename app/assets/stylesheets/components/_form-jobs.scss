@@ -1,14 +1,14 @@
 .form-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .cell {
-   width: 34em;
+   width: 41em;
    border-radius: 3px;
-   padding-right: 1.5em;
-
+   padding-bottom: 1.5em;
 }
 .form-control {
   border: 2px solid $light-grey-invia;
@@ -16,6 +16,7 @@
   height: 3em;
   font-family: Raleway;
   font-weight: bold;
+
 }
 
 
