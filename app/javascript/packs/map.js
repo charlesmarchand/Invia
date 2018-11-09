@@ -169,8 +169,15 @@ map.setStyle('map_style');
             });
           });
 
+          if (markers.length === 0) {
+            map.setZoom(2);
+          } else if (markers.length === 1) {
+            map.setCenter(markers[0].lat, markers[0].lng);
+            map.setZoom(10);
+          } else {
+            map.fitLatLngBounds(markers);
+          }
 
-          map.fitLatLngBounds(markers);
 
     });
   });
