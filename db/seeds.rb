@@ -30,13 +30,16 @@ end
 
 CSV.foreach('seed-studiesurl.csv', { col_sep: ';', headers: true} ) do |row|
   job = Job.find_by_name(row[0])
-  row[1].split(",").each do |study|
-    row[2].split("§§").each do |url|
-      stu = Study.create(name: "#{study}", url: "#{url}")
-      job.studies << stu
-        study.split("+").each do |diploma|
-          stu.diplomas << Diploma.find_by_name("#{diploma}")
-      end
+  urls = []
+  row[2].split("§§").each do |job|
+    urls << job
+  end
+
+  row[1].split(",").each_with_index do |study, i|
+  stu = Study.create(name: "#{study}", url: "#{urls[i]}")
+    job.studies << stu
+      study.split("+").each do |diploma|
+        stu.diplomas << Diploma.find_by_name("#{diploma}")
     end
   end
 end
