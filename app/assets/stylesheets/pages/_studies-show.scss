@@ -5,15 +5,21 @@
 .back {
   color: $purple-invia;
   font-size: 15px;
-  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
   border:none;
   outline: none;
   background: none;
   font-family: Raleway;
-  margin-left: 10px;
   text-decoration: none;
   cursor: pointer;
+  margin-right: 5em;
+  p {
+    color: $purple-invia;
+    padding-left: 1em;
+  }
 }
+
 .header {
   display: block;
   text-align: center;
@@ -37,21 +43,22 @@
 .inputs {
   margin-top: 10px;
   padding: 10px 0px;
-  background-color: #E9E9E9;
+  background-color: white;
   display:flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 70px;
+  height: 50px;
+  width: 93em;
 }
 
 
 .search-input {
+  border: 2px solid $light-grey-invia;
   width: 25%;
-  height: 30px;
-  background-color:white;
-  color: gray;
-  border: none;
-  padding: none;
+  height: 25px;
+  padding: 0.5em;
+  background-color: white;
+  color: $grey-invia;
 }
 
 .search-inputB {
@@ -66,6 +73,9 @@
 }
 
 .extended {
+  display: flex;
+  justify-content: left;
+  margin-top: 1em;
   margin-left: 60px;
   margin-right: 60px;
   font-family: Raleway;
@@ -73,8 +83,7 @@
 
 .extended h4 {
   font-size: 17px;
-  background-color: $purple-invia;
-  color: white;
+  color: $grey-invia;
   width: 100%;
   padding: 10px;
   text-align: center;
@@ -109,6 +118,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px 5px;
+  background-color: white;
 }
 
 .formation {
@@ -146,7 +156,6 @@
   font-size: 15px;
   padding: 5px 5px;
   border-radius: 5px;
-  border: 1px solid $purple-invia;
   outline: none;
   background:none ;
   text-align: center;
@@ -161,6 +170,7 @@
   align-items:center;
   height: 100%;
   padding: 0px;
+  background-color: white;
 }
 
 .parcours-diplomas {
@@ -213,7 +223,6 @@ a.fas {
 .fa-angle-double-left {
   color: $purple-invia;
   font-size: 15px;
-  margin-left: 80px;
 }
 
 .link-to-details {

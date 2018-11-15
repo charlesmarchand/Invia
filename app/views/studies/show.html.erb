@@ -1,8 +1,13 @@
 
 <div class="conteneur">
-<i class="fas fa-angle-double-left"></i><%= link_to "Retour aux parcours", job_studies_path(@job), class: "back" %>
 
 <div class="extended">
+  <div class="back">
+    <%= link_to job_studies_path(@job), class: "back" do %>
+      <i class="fas fa-angle-double-left"></i>
+      <p>Retour aux parcours</p>
+    <% end %>
+  </div>
     <div class= "header">
       <h3>Ajoute tes établissements pour les <%=@study.diplomas.size%> étapes de ce parcours</h3>
     </div>
@@ -23,8 +28,6 @@
  <!-- SCHOOL BUTTONS & MARKERS  -->
       <div class="col-md-4 col-lg-4">
         <div class="formations">
-          <h4>Ajoute des établissements à ton parcours </h4>
-
           <div class="filtered" >Choisis parmi <%=@count%> établissements</div>
 
         <%@study.diplomas.each_with_index do |diploma, i|%>
