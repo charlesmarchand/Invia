@@ -6,13 +6,13 @@
 
   <div class="banner-content">
     <% if user_signed_in? %>
-      <%= link_to "Recherche", jobs_path, class: "loginButton" %>
+      <%= link_to "Recherche",  homeV2_path, class: "loginButton" %>
     <% else %>
       <%= link_to "Se connecter", new_user_session_path, class: "loginButton" %>
     <% end %>
 
+    <h1>Invia</h1>
     <h1>Fais de ta passion, ton métier</h1>
-    <h2>Invia se base sur tes passions et te propose les métiers qui te correspondent.</h2>
     <button type="button" class="ctaButton" href="#ancre" title="Comment ça marche ?">Comment ça marche ?</button>
   </div>
 </div>
