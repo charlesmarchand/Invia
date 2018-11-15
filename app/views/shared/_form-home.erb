@@ -1,30 +1,25 @@
-  <%= form_tag(jobs_path, class: 'containerjob', method: :get) do %>
+<%= form_tag(jobs_path, class: 'form-container', method: :get) do %>
 
-  <div class="celljob">
+  <div class="cell">
 
    <%= text_field_tag :interests,
      params[:interests],
-     class: "formjob",
+     class: "form-control",
      placeholder: "Centres d'intêrets ?"
    %>
 
   </div>
 
-  <div class="celljob">
+  <div class="cell">
 
    <%= text_field_tag :subjects,
      params[:subjects],
-      class: "formjob",
+      class: "form-control",
      placeholder: "Matières favorites ?"
    %>
 
   </div>
 
-  <%= submit_tag "Cancel", class: 'invisible'%>
+  <%= submit_tag "Trouve un métier !", class: 'ctaButton home'%>
 
   <% end %>
-
-
-
-
-
