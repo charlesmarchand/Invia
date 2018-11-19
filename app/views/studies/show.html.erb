@@ -31,9 +31,10 @@
       </div>
 
       <div class="formations-parcours">
-        <div class="col-md-4 col-lg-4">
+        <div class="col-md-4 col-lg-6">
           <div class="formations">
             <h4 class="filtered" >Choisis parmi <%=@count%> établissements</h4>
+            <div class="bigline"></div>
 
             <%@study.diplomas.each_with_index do |diploma, i|%>
               <% markers = @schools[diploma.id].map do |school|
@@ -71,8 +72,9 @@
 <!--       <div class="arrow"><i class="fas fa-angle-right"></i></div>
  -->
         <div class="col-md-4 col-lg-4">
-          <div class="parcours">
             <h4 class="filtered">Mon parcours</h4>
+            <div class="bigline"></div>
+          <div class="parcours">
 
             <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
               <%@study.diplomas.each do |diploma|%>
@@ -81,7 +83,7 @@
                 <div class="parcours-<%=diploma.id%>-schools"></div>
                 </div>
               <% end %>
-              <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: "save_button", id: "save_button" %>
+              <%= button_tag "Sauvegarder mon parcours", type: 'submit', class: " ctaButton save_button", id: "save_button" %>
             <% end %>
           </div>
         </div>

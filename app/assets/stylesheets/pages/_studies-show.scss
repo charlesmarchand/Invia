@@ -52,13 +52,14 @@
 
 .white-big-container {
   background-color: white;
-  margin-left: 1em;
+  margin-left: 3em;
   height: 40em;
 }
 
 .formations-parcours {
   display: flex;
   justify-content: space-around;
+  width: 100%
 }
 
 .extended {
@@ -110,15 +111,26 @@
   color: $grey-invia;
   width: 100%;
   padding: 10px;
+  padding-bottom: 0px;
   text-align: center;
+}
+
+.bigline {
+  width: 5em;
+  border-bottom: 6px solid $grey-invia;
+  opacity: 0.8;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
 }
 
 .filtered {
   font-weight: bold;
   color: $grey-invia;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 2px;
+  margin-bottom: 4px;
 }
+
 
 .formation-map-parcours {
   display:flex;
@@ -141,7 +153,6 @@
   align-items: center;
   padding: 0px 5px;
   background-color: white;
-  border-right: 2px solid $light-grey-invia;
 }
 
 .formation {
@@ -180,10 +191,14 @@
 .parcours {
   display:flex;
   flex-direction: column;
+  text-align: center;
   align-items:center;
-  height: 100%;
-  padding: 0px;
-  background-color: white;
+  height: 85%;
+  margin-bottom: 1em;
+  background-color: rgba(242, 241, 241, 0.4);
+  border: 2px solid $light-grey-invia;
+  border-radius: 2px;
+  padding: 0.5em;
 }
 
 .parcours-diplomas {
@@ -192,7 +207,7 @@
 }
 
 .diploma-name {
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -222,15 +237,8 @@ a.fas {
 }
 
 .save_button {
-  color: white;
-  width: 100%;
-  font-size: 14px;
-  padding: 7px 10px;
-  background: $purple-invia;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 1px rgba(17, 17, 17, 0.3);
-  border:none;
-  outline: none;
+  font-size: 10px;
+  margin-bottom: 3.5em;
 }
 
 .fa-angle-double-left {
