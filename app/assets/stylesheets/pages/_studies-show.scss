@@ -107,7 +107,6 @@
 }
 
 .extended h4 {
-  font-size: 17px;
   color: $grey-invia;
   width: 100%;
   padding: 10px;
@@ -115,13 +114,10 @@
 }
 
 .filtered {
-  font-size: 16px;
-  color: #333333;
+  font-weight: bold;
+  color: $grey-invia;
   width: 100%;
-  text-align: center;
-  margin-bottom: 25px;
-  font-style: italic;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .formation-map-parcours {
@@ -139,12 +135,13 @@
   height: 100%;
 }
 .formations {
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px 5px;
   background-color: white;
+  border-right: 2px solid $light-grey-invia;
 }
 
 .formation {
@@ -169,7 +166,6 @@
 
 .list-group-item {
   background: none;
-  color: $purple-invia;
   font-size: 14px;
 
 }
@@ -178,17 +174,8 @@
 }
 
 .diplomaButtons {
-  color: $purple-invia;
-  font-size: 15px;
-  padding: 5px 5px;
-  border-radius: 5px;
-  outline: none;
-  background:none ;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom: 10px;
 }
+
 
 .parcours {
   display:flex;

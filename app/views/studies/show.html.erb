@@ -33,7 +33,7 @@
       <div class="formations-parcours">
         <div class="col-md-4 col-lg-4">
           <div class="formations">
-            <div class="filtered" >Choisis parmi <%=@count%> établissements</div>
+            <h4 class="filtered" >Choisis parmi <%=@count%> établissements</h4>
 
             <%@study.diplomas.each_with_index do |diploma, i|%>
               <% markers = @schools[diploma.id].map do |school|
@@ -45,7 +45,7 @@
               <% end %>
 
             <div class="formation">
-              <div class="diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>"style="display: flex; align-items: center; ">
+              <div class="ctaButton diplomaButtons show_schools" data-markers="<%= markers.to_json %>" data-diploma="<%=diploma%>"style="display: flex; align-items: center; ">
                 <div style="width: 95%;"><%=diploma.name.capitalize%></div>
                   <div><i class="fas fa-angle-down"></i></div>
               </div>
@@ -72,7 +72,7 @@
  -->
         <div class="col-md-4 col-lg-4">
           <div class="parcours">
-            <h4>Mon parcours</h4>
+            <h4 class="filtered">Mon parcours</h4>
 
             <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
               <%@study.diplomas.each do |diploma|%>
