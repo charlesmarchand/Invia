@@ -4,10 +4,16 @@
     <%= image_tag "logo.png", alt: "logo" %>
   </a>
 
-  <!-- Right Navigation -->
-  <div class="navbar-invia-right hidden-xs hidden-sm">
-    <%= link_to "Recherche", jobs_path, class: "navbar-invia-item navbar-invia-link" %>
-    <%= link_to "Dashboard", dashboard_path, class: "navbar-invia-item navbar-invia-link" %>
+  <% if (!params[:interests].present?) && (!params[:subjects].present?) %>
+  <% else %>
+    <%= render "shared/form-jobs" %>
+    <!-- Right Navigation -->
+  <% end %>
+
+    <div class="navbar-invia-right hidden-xs hidden-sm">
+      <%= link_to "Recherche", jobs_path, class: "navbar-invia-item navbar-invia-link" %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-invia-item navbar-invia-link" %>
+
 
 
     <!-- Profile picture with dropdown list -->
@@ -30,6 +36,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-invia-dropdown-menu">
         <li><%= link_to "Recherche", jobs_path %></li>
         <li><%= link_to "Dashboard", dashboard_path %></li>
+        <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
   </div>

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get 'homeV2', to: 'pages#homeV2', as: :homeV2
+
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 
   get 'dashboard/job/:job_id/study/:id', to: 'pages#dashboard_show', as: :dashboard_study
