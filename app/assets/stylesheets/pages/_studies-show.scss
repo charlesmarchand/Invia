@@ -41,9 +41,10 @@
 }
 
 .white-big-container {
-  background-color: white;
-  margin-left: 3em;
-  height: 40em;
+  background-color: transparent;
+  height: 42em;
+  width: 100%;
+  margin-left: 17em;
 }
 
 .formations-parcours {
@@ -58,7 +59,6 @@
   margin-right: 40px;
   font-family: Raleway;
   margin-bottom: 1em;
-  border-bottom: 2px solid $light-grey-invia;
 }
 
 .inputs {
@@ -69,6 +69,7 @@
   align-items: center;
   height: 70px;
   width: 53em;
+  border: 3px solid $light-grey-invia;
 }
 
 .inputs-place {
@@ -144,12 +145,12 @@
 }
 
 .map-container {
-  padding: 0px;
-  height: 560px;
+  height: 42em;
 }
 
 .map {
-  width: 100%;
+  margin-top: 0.5em;
+  width: 200%;
   height: 100%;
 }
 .formations {
@@ -162,6 +163,7 @@
   border: 3px solid $light-grey-invia;
   border-radius: 2px;
   padding: 0.5em 2em;
+  height: 85%
 }
 
 .formation {
@@ -197,12 +199,14 @@
 }
 
 .diplomaButtons {
+  cursor: pointer;
 }
 
 
 .parcours {
   display:flex;
   flex-direction: column;
+  background-color: white;
   width: 18em;
   text-align: center;
   align-items:center;
@@ -210,7 +214,7 @@
   margin-bottom: 1em;
   border: 3px solid $light-grey-invia;
   border-radius: 2px;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 }
 
 
@@ -225,7 +229,8 @@
   text-align: center;
   margin-bottom: 1em;
   padding-bottom: 0.5em;
-  border-bottom: 0.2px solid $grey-invia;
+  border-bottom: 3px solid $light-grey-invia;
+  border-top: 3px solid $light-grey-invia;
 }
 
 .displayflex a {
@@ -267,7 +272,7 @@ a.fas {
 
 .save_button {
   font-size: 10px;
-  margin-bottom: 3.5em;
+  margin-bottom: 7.5em;
 }
 
 .fa-angle-double-left {

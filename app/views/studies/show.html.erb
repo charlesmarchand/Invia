@@ -31,9 +31,9 @@
       </div>
 
       <div class="formations-parcours">
-        <div class="col-md-4 col-lg-6">
+        <div class="col-md-6 col-lg-6">
           <div class="formations">
-            <h4 class="filtered" >Choisis parmi <%=@count%> établissements</h4>
+            <h4 class="filtered" >1. Choisis parmi <%=@count%> établissements</h4>
             <div class="bigline"></div>
 
             <%@study.diplomas.each_with_index do |diploma, i|%>
@@ -75,7 +75,7 @@
  -->
         <div class="col-md-4 col-lg-4">
           <div class="parcours">
-          <h4 class="filtered">Mon parcours</h4>
+          <h4 class="filtered">2. Mon parcours</h4>
             <div class="bigline"></div>
 
             <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
