@@ -40,16 +40,6 @@
   margin-bottom: 10px;
 }
 
-.inputs {
-  padding: 10px 0px;
-  background-color: white;
-  display:flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 70px;
-  width: 53em;
-}
-
 .white-big-container {
   background-color: white;
   margin-left: 3em;
@@ -68,8 +58,17 @@
   margin-right: 40px;
   font-family: Raleway;
   margin-bottom: 1em;
-  padding-bottom: 1em;
   border-bottom: 2px solid $light-grey-invia;
+}
+
+.inputs {
+  padding: 10px 0px;
+  background-color: white;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70px;
+  width: 53em;
 }
 
 .inputs-place {
@@ -82,16 +81,22 @@
   border: 2px solid $light-grey-invia;
   width: 25%;
   height: 25px;
+  border-radius: 5px;
   padding: 0.5em;
+  font-size: 12px;
   background-color: white;
-  color: $grey-invia;
+  color: #777777;
+  font-weight: bold;
 }
 
+
+
 .search-inputB {
-  width: 10%;
+  width: 15%;
   background-color:$purple-invia;
+  font-size: 12px;
+  font-weight: bold;
   color: white ;
-  font-family: Raleway;
   border: 1px solid white ;
   border-radius: 5px;
   padding: none;
@@ -121,6 +126,7 @@
   opacity: 0.8;
   margin-top: 0.5em;
   margin-bottom: 1.5em;
+  text-align: center;
 }
 
 .filtered {
@@ -147,12 +153,15 @@
   height: 100%;
 }
 .formations {
-  width: 100%;
+  width: 120%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px 5px;
   background-color: white;
+  border: 3px solid $light-grey-invia;
+  border-radius: 2px;
+  padding: 0.5em 2em;
 }
 
 .formation {
@@ -178,6 +187,9 @@
 .list-group-item {
   background: none;
   font-size: 14px;
+  color: $grey-invia;
+  text-align: center;
+  border: none;
 
 }
 .list-group-item:hover {
@@ -191,15 +203,16 @@
 .parcours {
   display:flex;
   flex-direction: column;
+  width: 18em;
   text-align: center;
   align-items:center;
   height: 85%;
   margin-bottom: 1em;
-  background-color: rgba(242, 241, 241, 0.4);
-  border: 2px solid $light-grey-invia;
+  border: 3px solid $light-grey-invia;
   border-radius: 2px;
   padding: 0.5em;
 }
+
 
 .parcours-diplomas {
   text-align:center;
@@ -207,11 +220,26 @@
 }
 
 .diploma-name {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.2px solid $grey-invia;
 }
 
+.displayflex a {
+  display: flex;
+  color: $grey-invia;
+}
 
+.fa-question:before {
+   color: gray;
+  margin-left: -0.6em;
+}
+
+li {
+}
 
 a.disabled {
     pointer-events: none;
@@ -225,10 +253,11 @@ a.fas {
 
 .added-element {
   text-decoration: none;
-  color: gray;
+  color: $grey-invia;
   border-radius: 20px;
   padding: 5px 5px;
-  font-size: 16px;
+  font-size: 14px;
+  margin-bottom: 0.5em;
   font-family: Raleway;
 }
 

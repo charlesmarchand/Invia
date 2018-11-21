@@ -53,11 +53,13 @@
               <ul id="school_list_<%=diploma.name%>" class="list-group list-group-flush">
               <%@schools[diploma.id].each_with_index do |school, index| %>
                 <li>
-                  <div id="choice-<%=diploma.id%>-<%=school.id%>" class="list-group-item" style="display: flex;" data-marker="<%=markers[index].to_json%>">
-                    <div style="width: 80%;"><%=school.name%></div>
-                     <div style="display: flex; justify-content: flex-end; width: 20%;">
-                        <%=link_to "", details_path(school.id, diploma.id), method: :post, class: 'fas fa-question', remote: true %>
-                        <%=link_to "", add_path(school.id, diploma.id), method: :post, class: 'fas fa-plus', remote: true %>
+                  <div id="choice-<%=diploma.id%>-<%=school.id%>" class="list-group-item" data-marker="<%=markers[index].to_json%>">
+                     <div class="displayflex" style="width: 20% display:flex;">
+                      <%=link_to add_path(school.id, diploma.id), method: :post, remote: true do %>
+                            <i class="fas fa-plus"></i>
+                            <div style="width: 80%; margin-top: 0.5em;"><%=school.name%></div>
+                          <%=link_to "", details_path(school.id, diploma.id), method: :post, class: 'fas fa-question', remote: true%>
+                      <% end %>
                      </div>
                   </div>
                 </li>
@@ -72,9 +74,9 @@
 <!--       <div class="arrow"><i class="fas fa-angle-right"></i></div>
  -->
         <div class="col-md-4 col-lg-4">
-            <h4 class="filtered">Mon parcours</h4>
-            <div class="bigline"></div>
           <div class="parcours">
+          <h4 class="filtered">Mon parcours</h4>
+            <div class="bigline"></div>
 
             <%= form_for([@job, @study, ProfileSavedInfo.new]) do |form| %>
               <%@study.diplomas.each do |diploma|%>
