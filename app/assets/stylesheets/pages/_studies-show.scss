@@ -152,6 +152,7 @@
   margin-top: 0.5em;
   width: 200%;
   height: 100%;
+  border-radius: 3px;
 }
 .formations {
   width: 120%;
@@ -192,6 +193,8 @@
   color: $grey-invia;
   text-align: center;
   border: none;
+  text-align: center;
+  padding-left: 3em;
 
 }
 .list-group-item:hover {
@@ -200,6 +203,7 @@
 
 .diplomaButtons {
   cursor: pointer;
+  text-align: center;
 }
 
 
@@ -227,6 +231,7 @@
   font-size: 12px;
   font-weight: bold;
   text-align: center;
+  padding-top: 0.4em;
   margin-bottom: 1em;
   padding-bottom: 0.5em;
   border-bottom: 3px solid $light-grey-invia;
@@ -236,11 +241,13 @@
 .displayflex a {
   display: flex;
   color: $grey-invia;
+  text-align: center;
 }
 
 .fa-question:before {
-   color: gray;
+   color: $purple-invia;
   margin-left: -0.6em;
+
 }
 
 li {
@@ -271,7 +278,7 @@ a.fas {
 }
 
 .save_button {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 7.5em;
 }
 
