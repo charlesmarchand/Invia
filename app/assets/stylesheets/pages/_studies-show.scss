@@ -175,7 +175,7 @@
 }
 
 .formation.open ul {
-  height: auto;
+  height: 300px;
   width: auto;
 }
 
@@ -193,6 +193,7 @@
   color: $grey-invia;
   text-align: center;
   border: none;
+  border-bottom: 2px solid $light-grey-invia;
   text-align: center;
   padding-left: 3em;
 
