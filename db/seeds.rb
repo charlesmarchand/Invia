@@ -12,7 +12,7 @@ Category.destroy_all
 Keyword.destroy_all
 School.destroy_all
 
-CSV.foreach('seed-jobs.csv', csv_options) do |row|
+CSV.foreach('seed-jobs.csv', { col_sep: ';', headers: true}) do |row|
   job = Job.create(name: "#{row[0]}", description: "#{row[2]}", url: "#{row[3]}")
   row[1].split(",").each do |keyword|
     if ! Keyword.find_by_name("#{keyword}").nil?
@@ -23,7 +23,7 @@ CSV.foreach('seed-jobs.csv', csv_options) do |row|
   end
 end
 
-CSV.foreach('seed-diplomasUTF8.csv', csv_options) do |row|
+CSV.foreach('seed-diplomasUTF8.csv', { col_sep: ';', headers: true}) do |row|
   diploma = Diploma.create(name: "#{row[0]}", description: "#{row[3]}", length: "#{row[1]}", difficulty: "#{row[2]}")
 end
 
