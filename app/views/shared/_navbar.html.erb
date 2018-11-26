@@ -11,7 +11,7 @@
   <% end %>
 
     <div class="navbar-invia-right hidden-xs hidden-sm">
-      <%= link_to "Recherche", jobs_path, class: "navbar-invia-item navbar-invia-link" %>
+      <%= link_to "Recherche", homeV2_path, class: "navbar-invia-item navbar-invia-link" %>
       <%= link_to "Dashboard", dashboard_path, class: "navbar-invia-item navbar-invia-link" %>
 
 
@@ -34,7 +34,7 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-invia-dropdown-menu">
-        <li><%= link_to "Recherche", jobs_path %></li>
+        <li><%= link_to "Recherche", homeV2_path %></li>
         <li><%= link_to "Dashboard", dashboard_path %></li>
         <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
       </ul>
