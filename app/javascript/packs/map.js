@@ -163,9 +163,9 @@ map.setStyle('map_style');
                   mapMarkers[index].setAnimation(google.maps.Animation.BOUNCE, );
                   setTimeout(function(){ mapMarkers[index].setAnimation(null); }, 1500);
                 // }
-            });
             school.addEventListener('click', () => {
               google.maps.event.trigger(mapMarkers[index], 'click');
+            });
             });
           });
 

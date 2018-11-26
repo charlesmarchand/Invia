@@ -1,3 +1,3 @@
 console.dir(document.querySelector('.added-<%=@diploma_id%>-<%=@school.id%>').parentNode);
 document.querySelector('.added-<%=@diploma_id%>-<%=@school.id%>').parentNode.removeChild(document.querySelector('.added-<%=@diploma_id%>-<%=@school.id%>'));
-document.getElementById('choice-<%=@diploma_id%>-<%=@school.id%>').lastElementChild.lastElementChild.classList.remove('disabled')
+document.getElementById('choice-<%=@diploma_id%>-<%=@school.id%>').lastElementChild.firstElementChild.classList.remove('disabled')
